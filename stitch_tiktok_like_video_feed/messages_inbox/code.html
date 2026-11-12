@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary": "#29fcf3",
+              "on-background": "#ffffff",
+              "surface-container-low": "#141313",
+              "surface-bright": "#2d2c2c",
+              "primary-fixed": "#ff7482",
+              "on-error-container": "#ffd2c8",
+              "error-container": "#b92902",
+              "inverse-primary": "#bf003a",
+              "on-error": "#450900",
+              "inverse-on-surface": "#565554",
+              "outline": "#777575",
+              "surface-container": "#1a1919",
+              "primary-fixed-dim": "#ff576e",
+              "primary-container": "#ff7482",
+              "background": "#0e0e0e",
+              "tertiary-fixed-dim": "#efec00",
+              "on-tertiary-fixed": "#4d4c00",
+              "on-primary-container": "#4e0012",
+              "on-tertiary-container": "#5b5a00",
+              "on-primary-fixed-variant": "#5f0018",
+              "primary-dim": "#e80048",
+              "tertiary-container": "#f5f200",
+              "inverse-surface": "#fcf8f8",
+              "primary": "#ff8c95",
+              "on-primary": "#64001a",
+              "on-secondary": "#005c59",
+              "tertiary": "#fffcc5",
+              "on-secondary-fixed": "#004845",
+              "surface-dim": "#0e0e0e",
+              "surface-container-highest": "#262625",
+              "surface-tint": "#ff8c95",
+              "on-primary-fixed": "#000000",
+              "secondary-dim": "#00ede5",
+              "surface-container-lowest": "#000000",
+              "on-tertiary-fixed-variant": "#6b6900",
+              "on-surface": "#ffffff",
+              "on-secondary-fixed-variant": "#006763",
+              "on-surface-variant": "#adaaaa",
+              "on-tertiary": "#636200",
+              "outline-variant": "#494847",
+              "error-dim": "#d53d18",
+              "surface-variant": "#262625",
+              "surface-container-high": "#201f1f",
+              "tertiary-fixed": "#fefb00",
+              "error": "#ff7351",
+              "surface": "#0e0e0e",
+              "secondary-fixed-dim": "#00ede5",
+              "secondary-container": "#006a66",
+              "tertiary-dim": "#efec00",
+              "on-secondary-container": "#dafffc",
+              "secondary-fixed": "#29fcf3"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Be Vietnam Pro"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .neon-glow-primary {
+            box-shadow: 0 0 15px rgba(255, 140, 149, 0.3);
+        }
+        .neon-pulse-active {
+            box-shadow: 0 0 8px #29fcf3;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 w-full z-50 bg-black/10 backdrop-blur-xl flex justify-between items-center px-6 py-4 w-full shadow-[0_16px_3.5rem_rgba(255,0,80,0.08)]">
+<div class="flex items-center gap-4">
+<button class="hover:bg-zinc-800/50 transition-colors p-2 rounded-full scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-rose-500">arrow_back</span>
+</button>
+<h1 class="font-['Plus_Jakarta_Sans'] font-bold tracking-tight text-lg text-rose-500">Messages</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="hover:bg-zinc-800/50 transition-colors p-2 rounded-full scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-rose-500">more_vert</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-2xl mx-auto space-y-8">
+<!-- Search Tactical HUD -->
+<section>
+<div class="relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-on-surface-variant group-focus-within:text-secondary transition-colors">search</span>
+</div>
+<input class="w-full bg-surface-container-highest border-none rounded-full py-4 pl-12 pr-6 text-on-surface placeholder:text-on-surface-variant focus:ring-1 focus:ring-secondary/20 focus:bg-surface-bright transition-all" placeholder="Search conversations..." type="text"/>
+</div>
+</section>
+<!-- Active Now Horizontal HUD -->
+<section class="space-y-4">
+<h2 class="font-headline font-bold text-sm tracking-widest uppercase text-on-surface-variant px-1">Active Now</h2>
+<div class="flex gap-5 overflow-x-auto pb-4 no-scrollbar">
+<!-- User Story Style -->
+<div class="flex-shrink-0 flex flex-col items-center gap-2">
+<div class="relative p-1 rounded-full border-2 border-primary group cursor-pointer transition-transform active:scale-90">
+<div class="w-16 h-16 rounded-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="portrait of a stylish man with neon city lights reflecting on his face, cinematic night photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAI_i61IjQQN2ajmXlHZfjhyFBG01EmJQi545oufyuHSIbzy6S_0S4W3_dqDqDYFoSNrqJdpdMZX-AyRjZvnLreDs7fSX0FqXo5vImuvf8jhpGJbplwL0st7OI8eHtWFA2NAzAEDHQS1YoY5gqfb6n4osCe5PSSPRDmDV1PODeQKps9XprFECiCerzKhwV0-3kxJr0znBxPMjYP3FEV0PPk5mynnQlBA0jc2MDK1zqLIFRJK0XyJWtdrMQl_dffjsAgtCyzmupdLqI"/>
+</div>
+<div class="absolute bottom-1 right-1 w-4 h-4 bg-secondary rounded-full border-2 border-background neon-pulse-active"></div>
+</div>
+<span class="text-[11px] font-medium text-on-surface-variant">Your Story</span>
+</div>
+<!-- Active Users -->
+<div class="flex-shrink-0 flex flex-col items-center gap-2">
+<div class="w-16 h-16 rounded-full overflow-hidden bg-surface-container-highest cursor-pointer hover:ring-2 hover:ring-secondary/50 transition-all">
+<img class="w-full h-full object-cover" data-alt="portrait of a woman with vibrant blue hair lighting, futuristic aesthetic, sharp focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAELpKvFQ0-54XbMI3niL5BaDqR7QzHBnjBZubHnQKNaUx6hsBkQu7sDCz-U57s95UAT8bGYjSmd54BStm-3Cg564wxjo7HePnzQZJkfOM6iVGq1LGE4dXKki8-QY4d7jaQJN-ZgHLYSrlnovy8sSbQvcW83ecpI_Ouh-SBJA-xaILJdxcf2NoTFTUILXjD5vbDL3fejkysjR0wDIT4p948qO5jxnx94dy2ML03HMRKYw72Ai4lP87bmTBtrJDrYj5lsNIsZju0kVQ"/>
+</div>
+<span class="text-[11px] font-medium">Alex</span>
+</div>
+<div class="flex-shrink-0 flex flex-col items-center gap-2">
+<div class="w-16 h-16 rounded-full overflow-hidden bg-surface-container-highest cursor-pointer hover:ring-2 hover:ring-secondary/50 transition-all">
+<img class="w-full h-full object-cover" data-alt="modern portrait of a man in a dark hoodie with subtle cyan rim lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXTrLLlDrfcPGxRhXp4-ZvqhpSm_WGCahHuiYWkeA39USRAKqMU4qKOteY-xLQFyyR3-Sa5N5NqnKV3MEgr2llaoqZVVmLxLsoRRmhpvDSdabk4buyFiRVGfCxeUfuvrLyF7TsLmO42tsw0EwiNg8Opi-kUKLCtCgVQlKo1-Viv_k17EGrgNB8ZTjdO_JyXhQa6i-XYx6fmIW_weyZxt6PJLaSuJIXJ-FeycOG6sxLcp3ftgsZP0HKkgckyRAolraH-V2tOHy-P8o"/>
+</div>
+<span class="text-[11px] font-medium text-on-surface-variant">Jordan</span>
+</div>
+<div class="flex-shrink-0 flex flex-col items-center gap-2">
+<div class="w-16 h-16 rounded-full overflow-hidden bg-surface-container-highest cursor-pointer hover:ring-2 hover:ring-secondary/50 transition-all">
+<img class="w-full h-full object-cover" data-alt="fashion portrait of a woman with dramatic pink lighting and shadow, sleek look" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGjPI1gYDWHfS96cMyS84E8TGGgzUTNcbiSZUetdpeIreyiG3IhM-7oomBI4PXcrKoAhWSuWdlMn7XrJh1wxLc0tyS457SqU2I2J06bsywEgR8fmbAWr8K35iiSxLKlzn9sCI3CTypdFgzEHtps4GwyRDSFjrklviZ7Xi0iTTn_QN8CRfyId4_dl0g5LDOq4PGgDsDdQuaHWhjwt_RpBRhWmBQuC64yu5YKCn-7LC5LjxfkTzQyCP31nnx8H8Jq8IJKY8m9nxyyHk"/>
+</div>
+<span class="text-[11px] font-medium">Sasha</span>
+</div>
+<div class="flex-shrink-0 flex flex-col items-center gap-2">
+<div class="w-16 h-16 rounded-full overflow-hidden bg-surface-container-highest cursor-pointer hover:ring-2 hover:ring-secondary/50 transition-all">
+<img class="w-full h-full object-cover" data-alt="close up of a person with glowing neon face paint in a dark environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFvi4NPiW3p4Nwj0EgVA8EkbV6fBhUMqI6DuazvnhS0XXkrX9JDQJjLW4QvHjXlxFUnY1a6QXcim5KdKOvvn97zADwNAZK126-hHyv3fglHxoRQsRGUlz5x07sIIEC6WuQSv_pIy1hXA3zHQRqgu1sqK5-LuOOkNgHa2NZ3S30rfOAWJc_y8J2R7muMWM72X38vTcEEw6O8hTcR8-L-NX9DtmH8ZuMv4n255VktiCSkb_eTI0JWfLzPuRyEeT9tMpPDUzOuZvEbvQ"/>
+</div>
+<span class="text-[11px] font-medium">Kai</span>
+</div>
+</div>
+</section>
+<!-- Conversations List -->
+<section class="space-y-1">
+<!-- Unread Thread -->
+<div class="group flex items-center gap-4 p-4 rounded-xl hover:bg-white/5 transition-all cursor-pointer relative overflow-hidden">
+<div class="relative">
+<div class="w-14 h-14 rounded-full overflow-hidden ring-2 ring-primary/20">
+<img class="w-full h-full object-cover" data-alt="portrait of a woman with creative makeup and intense lighting, high fashion photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzaHxXCnHQRPnvF_CMox9DYbZZqipbo0Q9ZkmdgLM5hAOzKlkkfsor1N1mTw06MNqUt7q1Lsj1pE-unI07gjAs2DixkYW289QtD5minFkdthAPlAQgnKW5D41N8M6w7Sr0gObe0R7ipK_-cj7XBlTytNCUR9e0nx1mXclOgS0kurRuo58cclzEfOt7OvXbTKVdpangABhFDhEBgTikWf7MYQlB2prUQiFTxLk2WLjWhOaIV8XZdyTVhn4tt_kAEObRfkVjv-PTv4k"/>
+</div>
+<div class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-secondary rounded-full border-2 border-background neon-pulse-active"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<h3 class="font-headline font-bold text-on-surface">Maya Sterling</h3>
+<span class="text-xs font-bold text-primary">2m ago</span>
+</div>
+<p class="text-sm font-semibold text-on-surface truncate pr-8">That edit you posted was insane! 🔥</p>
+</div>
+<div class="w-2.5 h-2.5 bg-primary rounded-full neon-glow-primary"></div>
+</div>
+<!-- Standard Thread -->
+<div class="group flex items-center gap-4 p-4 rounded-xl hover:bg-white/5 transition-all cursor-pointer">
+<div class="relative">
+<div class="w-14 h-14 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="classic studio portrait of a man with soft lighting and dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABfVRBKimuLzvPJ9W7J2g9Wv3qLFWov1jH1CoPG4XLFXVTDQvrTadMbg4onSgRe1Swz_I2O-DtoQroiS2Wt_pgEO_ILOOcjr0ndyQgVQH4u9V1hlV8lUc-Kr5vuvjCYNmKrO7Ul8REmaThOpaHaNH6M8FNXZTTKYCZQ47OdddNNfjsVuTQpRqEVIIOxy2SPkZcB3H6QIZ86eOsQTlVSkzYfeRw--idGx8afRN2vZNvp-s9MsDqTIiL-jzdzOgJ_CZx3YAT5P71Wjk"/>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<h3 class="font-headline font-bold text-on-surface">Liam Carter</h3>
+<span class="text-xs text-on-surface-variant">1h ago</span>
+</div>
+<p class="text-sm text-on-surface-variant truncate">See you at the studio tonight?</p>
+</div>
+</div>
+<!-- Thread with Image Preview -->
+<div class="group flex items-center gap-4 p-4 rounded-xl hover:bg-white/5 transition-all cursor-pointer">
+<div class="relative">
+<div class="w-14 h-14 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="artistic portrait of a woman with colorful shadows and highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxtr7pb_vkgB5fhjjq-sWwl8qEHBJ29ozqbiaBMO_Ly30OeYseyGqT-3co46oHM8_tAwtg8lTgDCYWL3SY6af6iM7s9DwGsQXlh4cYU5GFYAHEC7mlysrek6lmIuqj0twjxQR3p6jTKxfJC7yXpjECevF2W88am-NmQqY7olL4JVQIvPeu_XUdCF6hhCvn_wSuDJ1BcSJIY2cf4DbPKqc5MycusAvKTjcNlhzmclmwvkElSenIaYSsg7oED7ZpiANI9HxSmGleJ4w"/>
+</div>
+<div class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-secondary rounded-full border-2 border-background neon-pulse-active"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<h3 class="font-headline font-bold text-on-surface">Chloe Chen</h3>
+<span class="text-xs text-on-surface-variant">3h ago</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-on-surface-variant">image</span>
+<p class="text-sm text-on-surface-variant italic truncate">Sent a photo</p>
+</div>
+</div>
+</div>
+<!-- More threads -->
+<div class="group flex items-center gap-4 p-4 rounded-xl hover:bg-white/5 transition-all cursor-pointer">
+<div class="w-14 h-14 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="casual portrait of a person in a bright neon-lit environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOVqwLLRdgkWx7RadXNrzGzmuVtHSawxXEjj18P-ROeuRKDeWS8r0LRzgZsCRyixAjxLlXlqvCRKtCJPSsykYVny60oKrond3IqkK5VPV3mKlReJHz2g3SDU5VVAFB0pYSA--7dXxDPjbcU6HgiVjIyoULeYRjqMYBabdISbliofDggUly6daxnDOScKszCy9stdJMzb_Dn0NCOMvjq3x-ZuEuc-l7jXeedTLxUGD2lyRwEbk412QtJpJZZ09uqfg4Bu7hdR4XbGI"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<h3 class="font-headline font-bold text-on-surface">Digital Dave</h3>
+<span class="text-xs text-on-surface-variant">Yesterday</span>
+</div>
+<p class="text-sm text-on-surface-variant truncate">The glitch effect is perfect.</p>
+</div>
+</div>
+<!-- Group Thread -->
+<div class="group flex items-center gap-4 p-4 rounded-xl hover:bg-white/5 transition-all cursor-pointer">
+<div class="relative w-14 h-14">
+<div class="absolute top-0 right-0 w-9 h-9 rounded-full overflow-hidden border-2 border-background z-10">
+<img class="w-full h-full object-cover" data-alt="woman portrait for group avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApAWLEu07SYMjCe-sPoQIh8biwW0btw8c7ImeqZe8mM0kDZSggDreGqoXEcZvmKVW4OKAny2VU7hIWlDUp5HQKDLfTXU-xhrYdIxKAA1n_dmaNyvqZWIUoCvWT-UAfZja1yeKPi9jrZDruFyvS97uiXZFXdBoxeKSlsD54l_rVYVJB8e0AtPYfkluDHUDW4ZLPmjbnY6iNAidmVVObXpRlnpBiKnN0LL7hiFyBazwT5f7zW5P4MT0QMjSFvqVut5Edg_I8LHsvOP8"/>
+</div>
+<div class="absolute bottom-0 left-0 w-9 h-9 rounded-full overflow-hidden border-2 border-background">
+<img class="w-full h-full object-cover" data-alt="man portrait for group avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7FlV152r187GFLIlqGYemUGC5pucEbBRWOKJoeIhlYnvLaD734ua10e5YG9hD0gf6pUUtkSGpMCN9mz0qIRH58VMETosqUjDHwWWL4C5jdfiS-vhRoG2RzPlj_Acx7ydjGS0cI54emq-USnVQs244qd_EaoPNHt9kFJNkcida_pUnNkm47poZbs816k8VZgO3RI4gVr0XqYB4nKpV_wNpyh1i2fnMno97DxEy5Gi9HyFQyald6o4FknIHT41USYbIP6P9hQyZD0o"/>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<h3 class="font-headline font-bold text-on-surface">Creative Squad 🎨</h3>
+<span class="text-xs text-on-surface-variant">Yesterday</span>
+</div>
+<p class="text-sm text-on-surface-variant truncate"><span class="font-bold">You:</span> Added 4 new files to the group...</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Action Button (FAB) -->
+<button class="fixed bottom-24 right-6 w-14 h-14 rounded-full bg-gradient-to-br from-primary to-primary-container text-on-primary-fixed shadow-[0_0_20px_rgba(255,140,149,0.5)] flex items-center justify-center scale-100 active:scale-90 transition-transform z-40">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">edit_square</span>
+</button>
+<!-- BottomNavBar Shell -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-6 py-3 pb-8 bg-[#201f1f]/80 backdrop-blur-2xl rounded-t-[2rem] z-50 shadow-2xl shadow-rose-500/10">
+<a class="flex items-center justify-center text-zinc-400 p-3 hover:text-rose-300 transition-all" href="#">
+<span class="material-symbols-outlined">home</span>
+</a>
+<a class="flex items-center justify-center text-zinc-400 p-3 hover:text-rose-300 transition-all" href="#">
+<span class="material-symbols-outlined">search</span>
+</a>
+<a class="flex items-center justify-center text-zinc-400 p-3 hover:text-rose-300 transition-all" href="#">
+<span class="material-symbols-outlined">add_circle</span>
+</a>
+<!-- Active Tab: Messages maps to chat_bubble -->
+<a class="flex items-center justify-center bg-gradient-to-br from-[#ff8c95] to-[#ff7482] text-white rounded-full p-3 shadow-[0_0_15px_rgba(255,140,149,0.5)]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+</a>
+<a class="flex items-center justify-center text-zinc-400 p-3 hover:text-rose-300 transition-all" href="#">
+<span class="material-symbols-outlined">person</span>
+</a>
+</nav>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Electric Cinema - Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-dim": "#e80048",
+                        "on-primary-container": "#4e0012",
+                        "secondary-dim": "#00ede5",
+                        "on-error": "#450900",
+                        "background": "#0e0e0e",
+                        "primary-fixed": "#ff7482",
+                        "primary-container": "#ff7482",
+                        "surface-container-low": "#141313",
+                        "error": "#ff7351",
+                        "on-error-container": "#ffd2c8",
+                        "on-tertiary-container": "#5b5a00",
+                        "outline-variant": "#494847",
+                        "surface-container-high": "#201f1f",
+                        "surface-container": "#1a1919",
+                        "on-tertiary-fixed-variant": "#6b6900",
+                        "surface": "#0e0e0e",
+                        "on-secondary-fixed-variant": "#006763",
+                        "on-secondary": "#005c59",
+                        "inverse-surface": "#fcf8f8",
+                        "on-primary-fixed": "#000000",
+                        "on-tertiary": "#636200",
+                        "secondary": "#29fcf3",
+                        "primary-fixed-dim": "#ff576e",
+                        "on-tertiary-fixed": "#4d4c00",
+                        "inverse-primary": "#bf003a",
+                        "surface-variant": "#262625",
+                        "on-primary": "#64001a",
+                        "tertiary-container": "#f5f200",
+                        "inverse-on-surface": "#565554",
+                        "surface-tint": "#ff8c95",
+                        "tertiary-fixed-dim": "#efec00",
+                        "tertiary-dim": "#efec00",
+                        "surface-dim": "#0e0e0e",
+                        "secondary-fixed-dim": "#00ede5",
+                        "on-secondary-fixed": "#004845",
+                        "primary": "#ff8c95",
+                        "surface-container-lowest": "#000000",
+                        "on-primary-fixed-variant": "#5f0018",
+                        "on-secondary-container": "#dafffc",
+                        "error-dim": "#d53d18",
+                        "surface-container-highest": "#262625",
+                        "tertiary": "#fffcc5",
+                        "tertiary-fixed": "#fefb00",
+                        "on-surface": "#ffffff",
+                        "on-surface-variant": "#adaaaa",
+                        "on-background": "#ffffff",
+                        "error-container": "#b92902",
+                        "secondary-fixed": "#29fcf3",
+                        "secondary-container": "#006a66",
+                        "outline": "#777575",
+                        "surface-bright": "#2d2c2c"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Be Vietnam Pro"],
+                        "label": ["Be Vietnam Pro"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(255, 140, 149, 0.3);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .gradient-button {
+            background: linear-gradient(135deg, #ff8c95 0%, #ff7482 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-primary-dim selection:text-white overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-neutral-950/80 backdrop-blur-xl flex justify-between items-center px-6 h-16 w-full shadow-[0_0_15px_rgba(255,0,80,0.1)]">
+<div class="flex items-center gap-3">
+<button class="text-rose-600 hover:text-rose-400 transition-colors scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-xl font-black italic text-rose-600 uppercase tracking-tighter font-['Plus_Jakarta_Sans']">Electric Cinema</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-neutral-400 hover:text-rose-400 transition-colors scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="text-neutral-400 hover:text-rose-400 transition-colors scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</header>
+<main class="pt-20 pb-32 px-4 max-w-4xl mx-auto">
+<!-- Profile Header Section -->
+<section class="relative mb-8">
+<div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+<!-- Avatar with Asymmetric Glow -->
+<div class="relative">
+<div class="w-32 h-32 md:w-40 md:h-40 rounded-xl overflow-hidden border-4 border-surface-container-highest shadow-[0_0_30px_rgba(255,140,149,0.2)] rotate-3 hover:rotate-0 transition-transform duration-500">
+<img alt="Profile Avatar" class="w-full h-full object-cover" data-alt="Close-up portrait of a stylish young woman with neon pink lighting highlights on her face and cool editorial aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcjPo9BL0ETXYwhPrVqgW3rBjF69lMS-mZqfM_Fwr04EQk2OPcDeCze5IhbxsWXtgStp_3SRP8b-WrmTBMPzjndwJdLAxA1KEAvVyrE7CR0_wdEp213RSt7Hxliy4zBYXEobA8q6EF83zGNEFfEQzcgTMQywnpOIT4VW-w8e68a-brCrFCX0G01YMA-y7tecXgVq2EDQMc6KqzWvLifxKgMlZYo-O1K3ACF9EnQ0f4g6ycS2vR20iQg8KD0ZtlvaR7VAGJzHhuaCs"/>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-secondary w-8 h-8 rounded-full flex items-center justify-center text-on-secondary shadow-lg">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<!-- Profile Info & Stats -->
+<div class="flex-1 text-center md:text-left">
+<div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-6 mb-4">
+<h2 class="text-3xl font-headline font-extrabold tracking-tight">@neon_velocity</h2>
+<div class="flex justify-center md:justify-start gap-3">
+<button class="gradient-button px-6 py-2 rounded-full text-on-primary font-bold text-sm shadow-lg active:scale-95 transition-all">
+                                Edit Profile
+                            </button>
+<button class="glass-panel px-4 py-2 rounded-full text-secondary font-bold text-sm flex items-center gap-2 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-base" data-icon="share">share</span>
+                                Share
+                            </button>
+</div>
+</div>
+<!-- Stats Row -->
+<div class="flex justify-center md:justify-start gap-8 mb-6">
+<div class="flex flex-col items-center md:items-start">
+<span class="text-2xl font-headline font-black text-on-surface">12.4K</span>
+<span class="text-xs uppercase tracking-widest text-on-surface-variant font-bold">Followers</span>
+</div>
+<div class="flex flex-col items-center md:items-start">
+<span class="text-2xl font-headline font-black text-on-surface">842</span>
+<span class="text-xs uppercase tracking-widest text-on-surface-variant font-bold">Following</span>
+</div>
+<div class="flex flex-col items-center md:items-start">
+<span class="text-2xl font-headline font-black text-on-surface">1.2M</span>
+<span class="text-xs uppercase tracking-widest text-on-surface-variant font-bold">Likes</span>
+</div>
+</div>
+<!-- Bio -->
+<div class="glass-panel p-5 rounded-lg border-l-4 border-primary-fixed max-w-md">
+<p class="text-on-surface-variant leading-relaxed text-sm italic font-medium">
+                            Capturing the hyper-digital heartbeat of Tokyo nights. ⚡️ Experimental filmmaker &amp; visual architect. "The light that burns twice as bright burns half as long."
+                        </p>
+<div class="mt-3 flex items-center gap-2 text-secondary font-bold text-xs uppercase tracking-tighter">
+<span class="material-symbols-outlined text-sm" data-icon="link">link</span>
+<a class="hover:underline" href="#">portfolio.neonpulse.io</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Content Grid (Asymmetric Layout) -->
+<section class="mt-12">
+<div class="flex items-center justify-between mb-8">
+<div class="flex gap-8">
+<button class="text-on-surface border-b-2 border-primary-fixed pb-2 font-headline font-bold uppercase tracking-widest text-sm">Videos</button>
+<button class="text-on-surface-variant hover:text-on-surface pb-2 font-headline font-bold uppercase tracking-widest text-sm transition-colors">Playlists</button>
+<button class="text-on-surface-variant hover:text-on-surface pb-2 font-headline font-bold uppercase tracking-widest text-sm transition-colors">Liked</button>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="grid_view">grid_view</span>
+</div>
+<!-- Bento-style Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<!-- Video 1 (Large Featured) -->
+<div class="relative group aspect-[9/16] rounded-xl overflow-hidden surface-container-highest">
+<img alt="Thumbnail 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Cyberpunk street in rain at night with glowing magenta and teal neon signs reflecting in puddles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-6tNadvKbejKFfoaT7peYENK0qV1a934UKSokB5K5-IN_Id9kddmXsznwBBYydc5y5Jifi1TyEGP9lmg_UGYLm6deTm24Khgbw1k1vCTawPcAh3HtTslAaN29e4tEeSlaK3kafu_CPclNM30tk4awEz8JjV2zJH5fomUPyAwwrjDuRp6SKfmkmo_XC24r61PLMkxQTwNkdw1oSxk78PY9JDqDtKkwk2BlqisQzNDJfuSz_u6KOdYhF-cUrWNsuFy9ZvHezQaMwlE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-3 left-3 flex items-center gap-1.5 text-white">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+<span class="font-headline font-bold text-sm tracking-tight">240K</span>
+</div>
+</div>
+<!-- Video 2 -->
+<div class="relative group aspect-[9/16] rounded-xl overflow-hidden surface-container-highest">
+<img alt="Thumbnail 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Retro tech aesthetic with glowing computer monitors in a dark room casting blue light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmInVm7hSvok07YdVPiKDT8oz2BFmlRwJYhu0rI4ieYvEtMS6T4h2rEn5M1NTazEsi3hG0KxjSWTb_xiNjBOeXBT03A2vX5b4u6nETN_n28v0Bh4DhKSA5WaWEZyzbL-IbqjoJVeM5BIf7wGosJrOALiil1pvpzZ1uR7-ZABvBgp4qdw0_qM_wwAmSWcB8eUBPtxEEKlLOT6l1chDt1h_qIrrixVjy_eVWecRwWC6cKcqv8XNdbIetZhdhaxhCuRrw7gSMuOKwQY8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-3 left-3 flex items-center gap-1.5 text-white">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+<span class="font-headline font-bold text-sm tracking-tight">82K</span>
+</div>
+</div>
+<!-- Video 3 -->
+<div class="relative group aspect-[9/16] rounded-xl overflow-hidden surface-container-highest">
+<img alt="Thumbnail 3" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Dreamy landscape photography of a pink mountain sunset with high contrast and grain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmeEoIG-W9utUj59msAwjeE7AnD2yEc4iF9vBEcRLStTYE8wnN8HLxpGgR1PfjqW-EiriQZLEUKZUyQrkxh34yv43RlL-XoAmjpnQ-axmmFu6pKXKy4KwTVsOEIAZYsFLcdr_DGGf9N-USa6Kn8p5S3i5vO_3efxANUfWY0crik1WIycR9qYJAsg-4MnBGHhvkyJX6pR60L0UIeu4q7yfH4YWtIBk_pULZMRl9l0bgaZsZNNOXUdeNUGikWposTqxiyarClEg_MV8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-3 left-3 flex items-center gap-1.5 text-white">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+<span class="font-headline font-bold text-sm tracking-tight">1.5M</span>
+</div>
+</div>
+<!-- Video 4 -->
+<div class="relative group aspect-[9/16] rounded-xl overflow-hidden surface-container-highest">
+<img alt="Thumbnail 4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Abstract fluid motion in vibrant liquid metal pink and silver textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQ8Y1syNB6OpSo95HCqc0grMSS5ODOI3YR0gSbvoqZRI1oYuDAat0C-KYRS53QMjzqjvmMF0uJq_Kzsj-OYWy2RR13zpD81oX7bsjQ_Pqn5O7A0bMoNcnPJv8Fvgq-gm5_fErlzKUoRtn0TX6vZNR5hU8s435HmVC66R6GlrTNygnk_AFdNb8N4dsc70jk-erHqR8KHIFnaox9XCTTAnVU0I5ztgAN_PLaTNeT68bOj6CFH0AJnRXYAl_pIoTRMPjN_TMiyxEeX6Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-3 left-3 flex items-center gap-1.5 text-white">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+<span class="font-headline font-bold text-sm tracking-tight">45K</span>
+</div>
+</div>
+<!-- Video 5 -->
+<div class="relative group aspect-[9/16] rounded-xl overflow-hidden surface-container-highest">
+<img alt="Thumbnail 5" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Close-up of a high-tech robotic eye with red light sensors and intricate hardware" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5YvI09Mo-GPlPz1vUIVAx_gik9LaNRItzST9c6GSghHNJgn3_cdlivVVKAfGZ-kZgQ4iY-GYu6imJTxc72g6IYddHLn3gO4My_DageDn8_3o9p4fGVvWn3sOK-FuAGusWZUYHP6L_EOLmgxGrzO6c6hR4LPV75BSG75kyokjTgzjihOgLFcKLyAVScUEuI4qhLpI1kKF3Bud3gPnms4QMn7StqBhpuB99s6XEo0Wicuuq6hyx2u6SackixrTxKK1o-V3FxwEjnp4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-3 left-3 flex items-center gap-1.5 text-white">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+<span class="font-headline font-bold text-sm tracking-tight">310K</span>
+</div>
+</div>
+<!-- Video 6 -->
+<div class="relative group aspect-[9/16] rounded-xl overflow-hidden surface-container-highest">
+<img alt="Thumbnail 6" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Urban architectural detail of a brutalist building with harsh sunlight and dark shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbuE77JRJJhC2P45hX3ceEJHdDlUJFxxvMs4m4TQ6iWv8BzzKFTFBh5vFUr0hjiZYNElLuxS1e45Ped2yfDby8_wFDRExoEkrP1oYYDxeFAjxNUejssLsF-JNSVgi0emcHuKO2knuxUfZ-U9mK0s6pFQ46tYXY9lRHy7DEoBCNI1Hw-GosnsAD3OfhhYAX7iydjoc-qwp_-mBL9g6iLQ5m74yVEYe6Ji_7-Jeycclx3wvpUATRuPTzo-Y-cr1SlDeiysDjDi3UqgA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-3 left-3 flex items-center gap-1.5 text-white">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+<span class="font-headline font-bold text-sm tracking-tight">12K</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-neutral-900/90 backdrop-blur-2xl rounded-t-[2rem] shadow-[0_-4px_20px_rgba(0,0,0,0.5)]">
+<a class="flex flex-col items-center justify-center text-neutral-500 p-3 hover:bg-neutral-800 rounded-full transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-500 p-3 hover:bg-neutral-800 rounded-full transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-rose-600 p-3 hover:bg-neutral-800 rounded-full transition-all" href="#">
+<span class="material-symbols-outlined text-3xl" data-icon="add_box">add_box</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-500 p-3 hover:bg-neutral-800 rounded-full transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</a>
+<!-- ACTIVE TAB: Profile -->
+<a class="flex flex-col items-center justify-center bg-rose-600/20 text-rose-500 rounded-full p-3 shadow-[0_0_10px_rgba(255,0,80,0.3)] scale-110 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+</a>
+</nav>
+</body></html>

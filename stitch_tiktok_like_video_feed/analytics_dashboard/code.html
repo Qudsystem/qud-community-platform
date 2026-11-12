@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-primary": "#bf003a",
+              "outline-variant": "#494847",
+              "on-secondary-fixed-variant": "#006763",
+              "error-container": "#b92902",
+              "on-secondary-fixed": "#004845",
+              "surface-container-highest": "#262625",
+              "surface-container": "#1a1919",
+              "primary-fixed-dim": "#ff576e",
+              "on-background": "#ffffff",
+              "secondary": "#29fcf3",
+              "secondary-container": "#006a66",
+              "on-tertiary": "#636200",
+              "inverse-surface": "#fcf8f8",
+              "surface-container-high": "#201f1f",
+              "primary-fixed": "#ff7482",
+              "error-dim": "#d53d18",
+              "inverse-on-surface": "#565554",
+              "on-surface": "#ffffff",
+              "tertiary-container": "#f5f200",
+              "surface": "#0e0e0e",
+              "on-surface-variant": "#adaaaa",
+              "on-primary-fixed-variant": "#5f0018",
+              "on-primary-container": "#4e0012",
+              "secondary-fixed-dim": "#00ede5",
+              "on-tertiary-container": "#5b5a00",
+              "on-secondary": "#005c59",
+              "surface-tint": "#ff8c95",
+              "on-tertiary-fixed-variant": "#6b6900",
+              "on-secondary-container": "#dafffc",
+              "error": "#ff7351",
+              "on-error": "#450900",
+              "on-primary-fixed": "#000000",
+              "on-primary": "#64001a",
+              "outline": "#777575",
+              "secondary-fixed": "#29fcf3",
+              "tertiary": "#fffcc5",
+              "surface-dim": "#0e0e0e",
+              "surface-variant": "#262625",
+              "surface-container-lowest": "#000000",
+              "primary": "#ff8c95",
+              "on-error-container": "#ffd2c8",
+              "primary-dim": "#e80048",
+              "primary-container": "#ff7482",
+              "surface-container-low": "#141313",
+              "background": "#0e0e0e"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Be Vietnam Pro"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .neon-glow-rose {
+            filter: drop-shadow(0 0 8px rgba(255, 140, 149, 0.4));
+        }
+        .neon-glow-cyan {
+            filter: drop-shadow(0 0 8px rgba(41, 252, 243, 0.4));
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<header class="fixed top-0 w-full z-50 bg-neutral-950/80 backdrop-blur-xl flex items-center justify-between px-6 h-16 w-full shadow-[0_8px_32px_0_rgba(0,0,0,0.36)]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant/30">
+<img class="w-full h-full object-cover" data-alt="close up portrait of a confident young digital creator with vibrant street style and moody neon lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1a0YLHEnmr-B2sjMW62cvqD7SLddjkUw7uIXPqjsjUklRwaQWamLsuz9G5fnzXecGQroiv90zgtq3JnsIutUe_USuW8BlU_GimKqysJP1Djq96U5hzHPVXlZtvT2PjvMnq23TUQD2xHlGthJWn-7KMDmqYv65QD2a4vVaE3ujcK6riJsrtwJflrr-ToYiJ1wQtZJG7dtpNhcUoOLlY_lcODLhYz5GkjHL72T3vRsZYB9KyJ0t4CKhg-4b9j7Xf8POCqMLbRwJtUo"/>
+</div>
+<span class="font-plus-jakarta font-bold tracking-tighter text-2xl font-black italic text-transparent bg-clip-text bg-gradient-to-br from-rose-400 to-rose-600">Pulse</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-neutral-400 hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto space-y-10">
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="space-y-1">
+<h1 class="text-4xl font-headline font-extrabold tracking-tight">Creator Analytics</h1>
+<p class="text-on-surface-variant font-medium">Monitoring your digital growth and resonance.</p>
+</div>
+<div class="relative inline-block">
+<div class="flex items-center gap-2 px-5 py-3 rounded-full bg-surface-container-highest border border-outline-variant/20 cursor-pointer hover:bg-surface-bright transition-colors group">
+<span class="text-sm font-semibold font-headline">Last 30 Days</span>
+<span class="material-symbols-outlined text-secondary text-lg group-hover:rotate-180 transition-transform">expand_more</span>
+</div>
+</div>
+</section>
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-surface-container-high p-6 rounded-lg relative overflow-hidden group hover:bg-surface-bright transition-all duration-300">
+<div class="absolute top-0 right-0 p-4 opacity-10 text-secondary">
+<span class="material-symbols-outlined text-6xl" style="font-variation-settings: 'FILL' 1;">group</span>
+</div>
+<div class="flex flex-col gap-1 relative z-10">
+<span class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Total Followers</span>
+<div class="text-3xl font-headline font-bold text-secondary neon-glow-cyan">128.4K</div>
+<div class="flex items-center gap-1 text-xs text-secondary/80 font-medium">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>+12% vs last month</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-high p-6 rounded-lg relative overflow-hidden group hover:bg-surface-bright transition-all duration-300">
+<div class="absolute top-0 right-0 p-4 opacity-10 text-primary">
+<span class="material-symbols-outlined text-6xl" style="font-variation-settings: 'FILL' 1;">visibility</span>
+</div>
+<div class="flex flex-col gap-1 relative z-10">
+<span class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Video Views</span>
+<div class="text-3xl font-headline font-bold text-primary neon-glow-rose">4.2M</div>
+<div class="flex items-center gap-1 text-xs text-primary/80 font-medium">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>+24% vs last month</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-high p-6 rounded-lg relative overflow-hidden group hover:bg-surface-bright transition-all duration-300">
+<div class="absolute top-0 right-0 p-4 opacity-10 text-secondary">
+<span class="material-symbols-outlined text-6xl" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<div class="flex flex-col gap-1 relative z-10">
+<span class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Engagement</span>
+<div class="text-3xl font-headline font-bold text-secondary neon-glow-cyan">842K</div>
+<div class="flex items-center gap-1 text-xs text-secondary/80 font-medium">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>+8.4% vs last month</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-high p-6 rounded-lg relative overflow-hidden group hover:bg-surface-bright transition-all duration-300">
+<div class="absolute top-0 right-0 p-4 opacity-10 text-tertiary">
+<span class="material-symbols-outlined text-6xl" style="font-variation-settings: 'FILL' 1;">share</span>
+</div>
+<div class="flex flex-col gap-1 relative z-10">
+<span class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Total Shares</span>
+<div class="text-3xl font-headline font-bold text-tertiary drop-shadow-[0_0_8px_rgba(255,252,197,0.3)]">54.2K</div>
+<div class="flex items-center gap-1 text-xs text-tertiary/80 font-medium">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>+15.2% vs last month</span>
+</div>
+</div>
+</div>
+</section>
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2 bg-surface-container-low p-8 rounded-lg relative overflow-hidden">
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-xl font-headline font-bold">Follower Growth</h3>
+<div class="flex items-center gap-4 text-xs font-label font-semibold text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<div class="w-3 h-3 rounded-full bg-secondary shadow-[0_0_8px_#29fcf3]"></div>
+<span>New Followers</span>
+</div>
+</div>
+</div>
+<div class="h-64 flex items-end justify-between gap-1 relative">
+<div class="absolute inset-0 flex flex-col justify-between opacity-5">
+<div class="w-full border-t border-white"></div>
+<div class="w-full border-t border-white"></div>
+<div class="w-full border-t border-white"></div>
+<div class="w-full border-t border-white"></div>
+</div>
+<div class="flex-1 bg-gradient-to-t from-secondary/5 to-secondary/30 rounded-t-sm h-[40%] transition-all hover:h-[45%] group relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-surface-bright px-2 py-1 rounded text-[10px] hidden group-hover:block border border-secondary/20">420</div>
+</div>
+<div class="flex-1 bg-gradient-to-t from-secondary/5 to-secondary/30 rounded-t-sm h-[55%] transition-all hover:h-[60%] group relative"></div>
+<div class="flex-1 bg-gradient-to-t from-secondary/5 to-secondary/30 rounded-t-sm h-[35%] transition-all hover:h-[40%] group relative"></div>
+<div class="flex-1 bg-gradient-to-t from-secondary/5 to-secondary/30 rounded-t-sm h-[65%] transition-all hover:h-[70%] group relative"></div>
+<div class="flex-1 bg-gradient-to-t from-secondary/5 to-secondary/30 rounded-t-sm h-[85%] transition-all hover:h-[90%] group relative"></div>
+<div class="flex-1 bg-gradient-to-t from-secondary/5 to-secondary/30 rounded-t-sm h-[45%] transition-all hover:h-[50%] group relative"></div>
+<div class="flex-1 bg-gradient-to-t from-secondary/5 to-secondary/30 rounded-t-sm h-[60%] transition-all hover:h-[65%] group relative"></div>
+<div class="flex-1 bg-gradient-to-t from-secondary/5 to-secondary/30 rounded-t-sm h-[75%] transition-all hover:h-[80%] group relative"></div>
+<div class="flex-1 bg-gradient-to-t from-secondary/5 to-secondary/30 rounded-t-sm h-[95%] transition-all hover:h-[100%] group relative"></div>
+<div class="flex-1 bg-gradient-to-t from-secondary/5 to-secondary/30 rounded-t-sm h-[80%] transition-all hover:h-[85%] group relative"></div>
+<div class="flex-1 bg-gradient-to-t from-secondary/5 to-secondary/30 rounded-t-sm h-[65%] transition-all hover:h-[70%] group relative"></div>
+<div class="flex-1 bg-gradient-to-t from-secondary/5 to-secondary/30 rounded-t-sm h-[40%] transition-all hover:h-[45%] group relative"></div>
+</div>
+<div class="flex justify-between mt-4 px-1">
+<span class="text-[10px] text-on-surface-variant font-label">WK 1</span>
+<span class="text-[10px] text-on-surface-variant font-label">WK 2</span>
+<span class="text-[10px] text-on-surface-variant font-label">WK 3</span>
+<span class="text-[10px] text-on-surface-variant font-label">WK 4</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-8 rounded-lg">
+<h3 class="text-xl font-headline font-bold mb-8">Top Engagement</h3>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="close up of energetic dance performer with vivid stage lights creating colorful bokeh effects" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhlC39c0L17-Y7HH3k4LN7-kIyOKM2XnKVXTJgMvPCsi9JPyzxvSl0dox37tqmc45JXuE9iJqpuGjrPC3fpLMo948ISkpj8N8L3PmYMgpV9vsRMsQm31jlwtWyPoWXDKl2U1cr2fbEOuv0RKFeOOKSwWOuT8cf4IIhfWKGp9LxU4WS4DPnDRtTFalMRZGGOo965ngHbIJvUTrEFAYS149AXkefiL-w8Q4NRr4qZV4lHeYk6_ajPIKl1ubJkA-JMkX_FW920GOgf-c"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-semibold truncate">Summer Vibe 2024</p>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full mt-2">
+<div class="bg-primary h-full rounded-full w-[88%] shadow-[0_0_8px_#ff8c95]"></div>
+</div>
+</div>
+<span class="text-xs font-label font-bold text-primary">8.8%</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="abstract tech background with glowing data lines and interconnected nodes in deep blue and purple tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvkQzClfPpS9Ujh6flR8ge_J1CbNG_swtyL4oPVUcVZj5NYLgalr2Wk6Vg9_YeDZvo6LM9-c_788zZTioYrw2wPaNmzCKPbPVgddfgiBI593y5jJs3HRP2ygAfmHZX_9tSIvDa1LZzVXEtFdjSr77Ej2krFwEd9hKVSzah7ETPIedJaStA4AykOWEI8sWXqRK0h11pvYgmQFZZOT8SE9D55PE5hwE0mE33gOfOfErXHavSwmSjHo6G1ce9F53EWwcDObfUjjkjhfc"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-semibold truncate">Daily Tech Routine</p>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full mt-2">
+<div class="bg-primary h-full rounded-full w-[72%] shadow-[0_0_8px_#ff8c95]"></div>
+</div>
+</div>
+<span class="text-xs font-label font-bold text-primary">7.2%</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="vibrant neon arcade scene with retro consoles and colorful light reflections on dark floors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL4H0lX-w0xr7StpEC6MgKqaNtRM-WROGamM6AVmAIckk9zcj066aGUrkgKzmGk--oMcuOt3i_4RhvwAfF_LimMaR92XsdbKlDpPczM5IFRApHctZvZZszZxhkfrxp3oAE7z-c90Z_7K2Yjjwpd6srInYbDdCcyAw1evI-r648K1ZaMEs8ltXmIPdckIUw_X53gRGuffNs7FyC0fniVn6Q4-54Q9tKgFQ_HUPJzbNEEyHWq6Y8WQl8ajlLEfkU84EcLqpxd9M2aCU"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-semibold truncate">Night in the Arcade</p>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full mt-2">
+<div class="bg-primary h-full rounded-full w-[64%] shadow-[0_0_8px_#ff8c95]"></div>
+</div>
+</div>
+<span class="text-xs font-label font-bold text-primary">6.4%</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="cinematic shot of high end camera lens with glass reflections and professional lighting setup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAihkF0yexCer-FzCDgZFI9r2Ojx4FhOMTiyw37grGIZb7KEifVcFiaMVrPDl8HylOYcFvK0VZuAk2-F6seYfWN7uXvxMh-3nFw8GVF2DcxiDzq28rQujCBepHQ8QxEFft2yzl1S_mR6tiwf1yuf1nlYwIVc6JhIi_m3Nyv6X2SkdITbYyEJ02aV4o_CdqDm5nOSu2w_-ElvGHPAFC4Tt4nUhvyPhsm05SxXhvfsqxVgf2kL8O6r7QBmocMa0x-O6AGhVeBmLsy1Qk"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-semibold truncate">Studio Tour</p>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full mt-2">
+<div class="bg-primary h-full rounded-full w-[58%] shadow-[0_0_8px_#ff8c95]"></div>
+</div>
+</div>
+<span class="text-xs font-label font-bold text-primary">5.8%</span>
+</div>
+</div>
+</div>
+</section>
+<section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-glass p-8 rounded-lg border border-outline-variant/10">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<div>
+<h4 class="font-headline font-bold">Engagement Pulse</h4>
+<p class="text-xs text-on-surface-variant font-medium">Daily average interaction frequency</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center text-sm font-medium">
+<span>Peak Activity</span>
+<span class="text-secondary">8 PM - 11 PM</span>
+</div>
+<div class="flex justify-between items-center text-sm font-medium">
+<span>Audience Loyalty</span>
+<span class="text-secondary">High (72%)</span>
+</div>
+</div>
+</div>
+<div class="bg-glass p-8 rounded-lg border border-outline-variant/10">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+<div>
+<h4 class="font-headline font-bold">Growth Velocity</h4>
+<p class="text-xs text-on-surface-variant font-medium">Acceleration of new reach</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center text-sm font-medium">
+<span>Virality Score</span>
+<span class="text-primary">92/100</span>
+</div>
+<div class="flex justify-between items-center text-sm font-medium">
+<span>Est. Net Gain</span>
+<span class="text-primary">+1.2K daily</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 bg-neutral-900/90 backdrop-blur-2xl rounded-t-3xl shadow-[0_-10px_40px_rgba(41,252,243,0.1)]">
+<div class="flex flex-col items-center justify-center text-neutral-500 hover:text-neutral-200 transition-colors active:scale-110 duration-300 ease-out cursor-pointer">
+<span class="material-symbols-outlined">home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-neutral-500 hover:text-neutral-200 transition-colors active:scale-110 duration-300 ease-out cursor-pointer">
+<span class="material-symbols-outlined">search</span>
+</div>
+<div class="flex flex-col items-center justify-center text-neutral-500 hover:text-neutral-200 transition-colors active:scale-110 duration-300 ease-out cursor-pointer">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+</div>
+<div class="flex flex-col items-center justify-center text-neutral-500 hover:text-neutral-200 transition-colors active:scale-110 duration-300 ease-out cursor-pointer">
+<span class="material-symbols-outlined">chat_bubble</span>
+</div>
+<div class="flex flex-col items-center justify-center text-cyan-400 drop-shadow-[0_0_8px_rgba(41,252,243,0.8)] active:scale-110 duration-300 ease-out cursor-pointer">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">analytics</span>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-tint": "#ff8c95",
+              "primary-dim": "#e80048",
+              "on-error-container": "#ffd2c8",
+              "on-background": "#ffffff",
+              "error-container": "#b92902",
+              "inverse-surface": "#fcf8f8",
+              "on-tertiary-container": "#5b5a00",
+              "on-tertiary-fixed": "#4d4c00",
+              "secondary": "#29fcf3",
+              "secondary-fixed-dim": "#00ede5",
+              "error-dim": "#d53d18",
+              "tertiary-dim": "#efec00",
+              "tertiary-fixed-dim": "#efec00",
+              "tertiary": "#fffcc5",
+              "surface-container": "#1a1919",
+              "background": "#0a0a0a",
+              "tertiary-container": "#f5f200",
+              "on-secondary-fixed": "#004845",
+              "primary": "#ff8c95",
+              "surface-bright": "#222222",
+              "on-error": "#450900",
+              "surface-container-low": "#121212",
+              "primary-container": "#ff7482",
+              "inverse-on-surface": "#565554",
+              "error": "#ff7351",
+              "secondary-dim": "#00ede5",
+              "on-surface-variant": "#949494",
+              "primary-fixed": "#ff7482",
+              "outline-variant": "#333333",
+              "secondary-container": "#004d4a",
+              "on-surface": "#ffffff",
+              "on-secondary": "#000000",
+              "on-primary-container": "#ffffff",
+              "surface-variant": "#1a1a1a",
+              "surface-container-lowest": "#000000",
+              "outline": "#444444",
+              "on-tertiary-fixed-variant": "#6b6900",
+              "surface-dim": "#0a0a0a",
+              "on-tertiary": "#000000",
+              "on-secondary-container": "#dafffc",
+              "surface-container-highest": "#262626",
+              "on-secondary-fixed-variant": "#006763",
+              "inverse-primary": "#bf003a",
+              "surface": "#0e0e0e",
+              "on-primary-fixed-variant": "#5f0018",
+              "secondary-fixed": "#29fcf3",
+              "tertiary-fixed": "#fefb00",
+              "on-primary": "#000000",
+              "primary-fixed-dim": "#ff576e",
+              "on-primary-fixed": "#000000",
+              "surface-container-high": "#1e1e1e"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans", "sans-serif"],
+              "body": ["Be Vietnam Pro", "sans-serif"],
+              "label": ["Be Vietnam Pro", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.75rem", "lg": "1.25rem", "xl": "2rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .glass-header {
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(25px) saturate(180%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .premium-card {
+            background: linear-gradient(145deg, rgba(30, 30, 30, 0.4), rgba(15, 15, 15, 0.6));
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .premium-card:hover {
+            background: linear-gradient(145deg, rgba(40, 40, 40, 0.5), rgba(20, 20, 20, 0.7));
+            border-color: rgba(255, 140, 149, 0.2);
+            transform: translateY(-2px);
+        }
+        .accent-gradient {
+            background: linear-gradient(135deg, #ff8c95 0%, #ff576e 100%);
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(255, 140, 149, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30 antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 glass-header flex justify-between items-center px-6 h-16">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden ring-1 ring-white/20">
+<img alt="User Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhiWcBOKqRA5fG5s54nGzLSTDQfNdyNFHWviBLDs-9JnKOgl-RyyqT2jSORPM8nXj8sKkAmRRTh0NqFFeEVfIlJPliMuUJluci-6I6-huRzVXYNtyK25toXmv80oQIhBhE29bykNunHwtuN3q7n4tBjlUNxHOhyJ7GYMXo7qvPSEcrb9scuYjkr34nsMZ1IK3ZxL3WdRbMCF3ZDofzWeH4T6Y73A5pEJu_HEWHIEBd0J30Q7OLzUmoYKVcBSfO4jvQzPlYh-UvkvE"/>
+</div>
+<span class="text-lg font-extrabold tracking-tight text-white font-headline">The Electric Cinema</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="search">search</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-4xl mx-auto">
+<!-- Search Bar Section -->
+<section class="mb-10">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors" data-icon="search">search</span>
+<input class="w-full bg-surface-container border border-white/5 rounded-2xl py-3.5 pl-12 pr-6 text-sm text-on-surface placeholder:text-on-surface-variant/50 focus:ring-1 focus:ring-primary/30 focus:bg-surface-bright transition-all outline-none font-medium" placeholder="Search for artists, genres, or moods..." type="text"/>
+</div>
+</section>
+<!-- Horizontal Categories -->
+<section class="mb-12">
+<div class="flex items-baseline justify-between mb-5 px-1">
+<h2 class="font-headline text-lg font-bold tracking-tight">Browse Genres</h2>
+<button class="text-[10px] font-bold uppercase tracking-widest text-primary/80 hover:text-primary transition-colors">View All</button>
+</div>
+<div class="flex gap-4 overflow-x-auto no-scrollbar -mx-6 px-6">
+<!-- Category Item -->
+<div class="flex-shrink-0 group cursor-pointer text-center">
+<div class="relative w-28 h-28 rounded-2xl overflow-hidden mb-3 ring-1 ring-white/5 shadow-xl">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC79hrb8LMYGsE3UMordaUXP1UOnUP6vzu69lOVvKVdztzeIyhx-eCLEO00OiFavaClsiwONA26E7wk8Ikuvg95UeGrhG8cCbfWuEFAOeaeUar1kBWP-G1mTJOVIiMsm7VHUoRI0rnG_enmcron4zy-QoM7qmNZ5mHH82ePzpRxf54n-ulUyVzdqtUWaEBJk1ckiK-CYa41w9XOqhCCkcJRXK76OPJlb1l0j404NeL2ZHFLR4uPvESEOV7HLAvCmfwLSFgzuStAGCA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+</div>
+<span class="text-xs font-semibold text-on-surface-variant group-hover:text-white transition-colors">Pop</span>
+</div>
+<!-- Category Item -->
+<div class="flex-shrink-0 group cursor-pointer text-center">
+<div class="relative w-28 h-28 rounded-2xl overflow-hidden mb-3 ring-1 ring-white/5 shadow-xl">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAV6OmnfjqGrE9uSzrw4Hs49Q4GemdTL-ZxVVAUYEIMsP1X8c4tZupll93v0-B58u1qdk1LBU29Yx_HKT9JDa6iYRCJlPxQYKnERj5P-73DnP6YFvILRgQJzYjsE6pZ0iM_KEg3oapTPaWVKzUhD1gFOJ5JP1AghX54FTlitwgoLR3GsTRpJyap1oh08W-Zjt56Mzxfn6idpVnGZIk4l2b3iRyEsOwbs7ksFRRA0oBzJrcOkYB4FxTwpZzLnyADEeU80C1H1HfoCiw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+</div>
+<span class="text-xs font-semibold text-on-surface-variant group-hover:text-white transition-colors">Electronic</span>
+</div>
+<!-- Category Item -->
+<div class="flex-shrink-0 group cursor-pointer text-center">
+<div class="relative w-28 h-28 rounded-2xl overflow-hidden mb-3 ring-1 ring-white/5 shadow-xl">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWlVrlSq6Psjp7iO5tcWbqTf7Ng2bAy2AgDOBMhkJ347OMn3WgHgs-4YjAZuLxypMmqC-KPRaBhLqWpTB_sJOdSWa-YSTaM89cXCguqWrjIS5NAZsPbt1GvJFfHZ6O-Xiy73V_f6TfvcwHulh4Y6R0IDuke5qxpvAIjUKUDbbeup5AinAODZZd44eK-DdkFOhWc5KbfurCNce8j1xM8CIqkiLJ5X-eCex6qVG38M6eMSkoJBNJtS_DBI7xYlyGudwH0XHzW_90DDo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+</div>
+<span class="text-xs font-semibold text-on-surface-variant group-hover:text-white transition-colors">Retro Tech</span>
+</div>
+<!-- Category Item -->
+<div class="flex-shrink-0 group cursor-pointer text-center">
+<div class="relative w-28 h-28 rounded-2xl overflow-hidden mb-3 ring-1 ring-white/5 shadow-xl">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaDmHu9dy5cGB74ouAqfXqRghUKddob-QWJ2gM8nFKUcf7nCIxvrBVAYJtEz2oH_rBe3MdYp2ZXXxaPVtjA4VRjQojSbEjmcbbgXXL_z197HKdHc4IBiaPogY0-PfQskU5Bsf2VS3Ti--zgoyh0q4GgM7e828ZJ8ykb4wlzyJUwWrWwqARwtgXnO-RK5eTNP6-lnXmeCh0p2c4N52XUeTj2140wvMhZUh8uznPDSYFwL4SpCvOArzm7UHCZBYmMmJ3APYhcOjE32g"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+</div>
+<span class="text-xs font-semibold text-on-surface-variant group-hover:text-white transition-colors">Lo-Fi</span>
+</div>
+</div>
+</section>
+<!-- Bento Grid Section -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-12">
+<!-- Saved Sounds Section -->
+<section class="md:col-span-8 premium-card rounded-lg p-7">
+<div class="flex justify-between items-center mb-6">
+<div>
+<h2 class="font-headline text-xl font-bold tracking-tight">Saved Sounds</h2>
+<p class="text-on-surface-variant text-[11px] uppercase tracking-widest mt-0.5 opacity-60">Your private collection</p>
+</div>
+<span class="material-symbols-outlined text-secondary text-xl opacity-80" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div class="space-y-1">
+<!-- Sound Row 1 -->
+<div class="flex items-center gap-4 p-2.5 rounded-xl hover:bg-white/[0.03] group transition-all cursor-pointer">
+<div class="relative w-12 h-12 rounded-lg overflow-hidden flex-shrink-0 ring-1 ring-white/10">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDa4JQkhvdrGRPd6psnwNCvD14tq8qlCdGqqCQuqa0MpQc8LMrmbgDoSHLqImqqhMVDIYyH4G2NHWiNZmd-jMB37P_4qsCyD66QeQsmuzAIfAbvrNopnxCRHDni9w49hQSCKgFXo4AJRPwYd0uZ82VqwpAAC0xg8aEJiKkY1gPprDpBOanrY79r8-eEB2T-SrcnHYStcG_h0paowz8jNqAWL0bSe6U2YQDm9TzsODaml2RdfmAHz_0nBRjZ5JShAL12e_AKZTNwcB0"/>
+<div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white text-base" data-icon="play_arrow" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-semibold text-sm truncate text-on-surface group-hover:text-primary transition-colors">Neon Horizon Pulse</h3>
+<p class="text-[11px] text-on-surface-variant font-medium mt-0.5">CyberWave_Producer</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-[10px] font-medium text-on-surface-variant opacity-40">0:24</span>
+<button class="text-secondary p-1 hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-base" data-icon="bookmark" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+</button>
+</div>
+</div>
+<!-- Sound Row 2 -->
+<div class="flex items-center gap-4 p-2.5 rounded-xl hover:bg-white/[0.03] group transition-all cursor-pointer">
+<div class="relative w-12 h-12 rounded-lg overflow-hidden flex-shrink-0 ring-1 ring-white/10">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAS1oM71GBoqxLkaSJp_Q7oNuS0VQE-o4e3FvMOI22qlpHC53m1zt1Dghp9qy82t6cqRwrtmkfENzkc2P1trs8CXbShouCg2EGxXYeLN0s0gs8ZDPY0X9oAkJuGc6UTiI3gRT0NSFtmOuOPPclPPrWAk7oA7rpt94vOmwyTp4T_Fnq2YEmf4ovC_VJXcMhGc27q4UQtxoEz2Vz4DIcbmBsNpL1gAb5Z9gjXeVy8TEMeLYbX7V3nXrQt3-ZINMMZFVshgAdfrB3KD0k"/>
+<div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white text-base" data-icon="play_arrow" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-semibold text-sm truncate text-on-surface group-hover:text-primary transition-colors">Digital Midnight</h3>
+<p class="text-[11px] text-on-surface-variant font-medium mt-0.5">Synth_Lord</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-[10px] font-medium text-on-surface-variant opacity-40">0:15</span>
+<button class="text-secondary p-1 hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-base" data-icon="bookmark" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Trending Sidebar -->
+<section class="md:col-span-4 bg-surface-container-high rounded-lg p-6 border border-white/5 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-6 text-secondary/80">
+<span class="material-symbols-outlined text-sm" data-icon="bolt" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<h3 class="font-headline font-bold uppercase tracking-[0.2em] text-[10px]">Trending Now</h3>
+</div>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<span class="font-bold text-lg text-white/5 leading-none">01</span>
+<div>
+<p class="font-semibold text-xs text-on-surface leading-tight">Glitch Core Base</p>
+<p class="text-[10px] text-on-surface-variant font-medium mt-1">2.4M Creators</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="font-bold text-lg text-white/5 leading-none">02</span>
+<div>
+<p class="font-semibold text-xs text-on-surface leading-tight">Rainy Day Jazz</p>
+<p class="text-[10px] text-on-surface-variant font-medium mt-1">1.8M Creators</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="font-bold text-lg text-white/5 leading-none">03</span>
+<div>
+<p class="font-semibold text-xs text-on-surface leading-tight">Cyberpunk Kick</p>
+<p class="text-[10px] text-on-surface-variant font-medium mt-1">942K Creators</p>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full mt-8 py-2.5 rounded-lg bg-white/5 border border-white/10 text-white font-bold text-[10px] hover:bg-white/10 transition-colors uppercase tracking-widest">Global Charts</button>
+</section>
+</div>
+<!-- Featured Sound Library -->
+<section>
+<div class="flex justify-between items-end mb-8 px-1">
+<div>
+<h2 class="font-headline text-lg font-bold tracking-tight">New Releases</h2>
+<p class="text-[11px] text-on-surface-variant font-medium opacity-60 mt-0.5">Curated discoveries for your productions</p>
+</div>
+<a class="text-[10px] font-bold uppercase tracking-widest text-primary hover:underline" href="#">See more</a>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-5">
+<!-- New Release Card 1 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-square rounded-2xl overflow-hidden mb-3 ring-1 ring-white/5 shadow-2xl">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHQn5jbh7Zks8KYPs06QOVZdMOAqr2AAGipnu5uQ0jwhig32uhUJnAghpFSereWmPBy8LSZlC3AI8lNr5FTf1zbi-uth4ewVfONeRM4PAnDZBjZ4U1ZX0JSUZi1ZlbzgYKFP6s7A-pw0vA6R89EHyvjSOKpmwlCB6DmOuH9QGbbPnhjSFqRAbuk1-zdDQ8q-rW7wrWeFNGmjmY0eTYjlqlXsxOGVGFkk9kNgrdIGPO3Kc0ezLTxWA-TK1cSdR-BFWkd-6mdCTtj9s"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="w-12 h-12 rounded-full accent-gradient flex items-center justify-center text-on-primary shadow-lg transform scale-75 group-hover:scale-100 transition-transform duration-300">
+<span class="material-symbols-outlined text-2xl" data-icon="play_arrow" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-start px-1">
+<div class="min-w-0">
+<h4 class="font-bold text-sm truncate text-on-surface">Etheric Echoes</h4>
+<p class="text-[11px] text-on-surface-variant font-medium mt-0.5 truncate">Sonic Architect</p>
+</div>
+<button class="p-1 text-on-surface-variant/40 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="add_circle">add_circle</span>
+</button>
+</div>
+</div>
+<!-- New Release Card 2 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-square rounded-2xl overflow-hidden mb-3 ring-1 ring-white/5 shadow-2xl">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAom7JXrPHOgMKk4ujchDTwnw8Pc6P4Q5hllmAG9DJso7obXCnl4qaMmvRQmKY9P4lVRP8OxBOPTsRRoliENu7gY244K6AU_F6F0q0a60FIOdlUJZxQqJJoTliZcJMBQtpC0L1iL6Nh4NQUoCYSfDK_D3UZnsouxh3oszW30w9d4C1sB2ejrXbRXPiNlAB_n0POe-Bhx9ibgc5fQXzO2ybW3Rhno65_zk1-pPLrHp49HfatNZoMIBaZ4t7kVpTGDnRXoeXwjHXvA28"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="w-12 h-12 rounded-full accent-gradient flex items-center justify-center text-on-primary shadow-lg transform scale-75 group-hover:scale-100 transition-transform duration-300">
+<span class="material-symbols-outlined text-2xl" data-icon="play_arrow" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-start px-1">
+<div class="min-w-0">
+<h4 class="font-bold text-sm truncate text-on-surface">Riff Fury</h4>
+<p class="text-[11px] text-on-surface-variant font-medium mt-0.5 truncate">Iron Strings</p>
+</div>
+<button class="p-1 text-on-surface-variant/40 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="add_circle">add_circle</span>
+</button>
+</div>
+</div>
+<!-- New Release Card 3 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-square rounded-2xl overflow-hidden mb-3 ring-1 ring-white/5 shadow-2xl">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6LdMeRYlfMfXs_DYwAG0XWKNk27jusbJYQM7J4RjFFhpdfk1m9ItRC3vlze__oo6wxnz7bGyG1U0RLPqLl1k3xYzRBqjLbI1YHEQEGQCpBjigqsrgCP6Bpnq3BqZ31444ZxZcNQVujToYIX_1-gTyIgrilJ5S8wF48BjQF85QJh9V2jZKlJh2zGmbCGMCw6M8uaHNzVbsUQsz41FCAyAAGfP8i8LHUPWBW6DCw-E0o_wLge6uxgAhTyECFf3CpW5ux06X50PB5sw"/>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="w-12 h-12 rounded-full accent-gradient flex items-center justify-center text-on-primary shadow-lg transform scale-75 group-hover:scale-100 transition-transform duration-300">
+<span class="material-symbols-outlined text-2xl" data-icon="play_arrow" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-start px-1">
+<div class="min-w-0">
+<h4 class="font-bold text-sm truncate text-on-surface">Neural Pulse</h4>
+<p class="text-[11px] text-on-surface-variant font-medium mt-0.5 truncate">Bio-BPM</p>
+</div>
+<button class="p-1 text-on-surface-variant/40 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="add_circle">add_circle</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full px-6 pb-6 pt-3 bg-background/80 backdrop-blur-3xl z-50">
+<div class="max-w-md mx-auto flex justify-between items-center bg-[#151515]/95 rounded-full px-3 py-2 border border-white/10 shadow-2xl">
+<a class="flex flex-col items-center justify-center w-12 h-10 text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[8px] font-bold uppercase tracking-widest mt-0.5">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center w-12 h-10 text-on-surface-variant/60 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="explore">explore</span>
+<span class="text-[8px] font-bold uppercase tracking-widest mt-0.5">Explore</span>
+</a>
+<a class="flex items-center justify-center w-12 h-12 accent-gradient text-on-primary rounded-full shadow-lg shadow-primary/20 -mt-8 active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="add" style="font-variation-settings: 'wght' 600;">add</span>
+</a>
+<a class="flex flex-col items-center justify-center w-12 h-10 text-on-surface-variant/60 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="library_music">library_music</span>
+<span class="text-[8px] font-bold uppercase tracking-widest mt-0.5">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center w-12 h-10 text-on-surface-variant/60 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="person">person</span>
+<span class="text-[8px] font-bold uppercase tracking-widest mt-0.5">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>

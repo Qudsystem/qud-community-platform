@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-tint": "#ff8c95",
+              "primary-dim": "#e80048",
+              "on-error-container": "#ffd2c8",
+              "on-background": "#ffffff",
+              "error-container": "#b92902",
+              "inverse-surface": "#fcf8f8",
+              "on-tertiary-container": "#5b5a00",
+              "on-tertiary-fixed": "#4d4c00",
+              "secondary": "#29fcf3",
+              "secondary-fixed-dim": "#00ede5",
+              "error-dim": "#d53d18",
+              "tertiary-dim": "#efec00",
+              "tertiary-fixed-dim": "#efec00",
+              "tertiary": "#fffcc5",
+              "surface-container": "#1a1919",
+              "background": "#050505",
+              "tertiary-container": "#f5f200",
+              "on-secondary-fixed": "#004845",
+              "primary": "#ff3d6a",
+              "surface-bright": "#2d2c2c",
+              "on-error": "#450900",
+              "surface-container-low": "#141313",
+              "primary-container": "#ff7482",
+              "inverse-on-surface": "#565554",
+              "error": "#ff7351",
+              "secondary-dim": "#00ede5",
+              "on-surface-variant": "#adaaaa",
+              "primary-fixed": "#ff7482",
+              "outline-variant": "#494847",
+              "secondary-container": "#006a66",
+              "on-surface": "#ffffff",
+              "on-secondary": "#005c59",
+              "on-primary-container": "#4e0012",
+              "surface-variant": "#1c1c1c",
+              "surface-container-lowest": "#000000",
+              "outline": "#777575",
+              "on-tertiary-fixed-variant": "#6b6900",
+              "surface-dim": "#0e0e0e",
+              "on-tertiary": "#636200",
+              "on-secondary-container": "#dafffc",
+              "surface-container-highest": "#262625",
+              "on-secondary-fixed-variant": "#006763",
+              "inverse-primary": "#bf003a",
+              "surface": "#0e0e0e",
+              "on-primary-fixed-variant": "#5f0018",
+              "secondary-fixed": "#29fcf3",
+              "tertiary-fixed": "#fefb00",
+              "on-primary": "#ffffff",
+              "primary-fixed-dim": "#ff576e",
+              "on-primary-fixed": "#000000",
+              "surface-container-high": "#151515"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Be Vietnam Pro"]
+            },
+            borderRadius: {"DEFAULT": "1.25rem", "lg": "2.5rem", "xl": "3.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .vivid-pulse-glow {
+        box-shadow: 0 0 30px -5px rgba(255, 61, 106, 0.5);
+      }
+      .neon-border {
+        border: 1px solid rgba(41, 252, 243, 0.3);
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .pulse-animation {
+        animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+      @keyframes pulse-ring {
+        0%, 100% { opacity: 1; }
+        50% { opacity: .5; }
+      }
+      .mask-vignette {
+        mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+      }
+      .gradient-border-mask {
+        position: relative;
+      }
+      .gradient-border-mask::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        padding: 2px;
+        background: linear-gradient(to bottom right, #ff3d6a, #29fcf3, transparent);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-white overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-[100] bg-background/60 backdrop-blur-2xl border-b border-white/5 flex justify-between items-center px-6 h-18">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-secondary p-[2px]">
+<div class="w-full h-full rounded-full bg-background overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="portrait of a stylish young creator" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLAP5babzPupdNDLyFDsKw1t0B738wtnjAq4SxQ_v4wyeSA0C2UuAiOQEewY8p6zztGalc8xACiZQOMTidww41Cw2y0vDrjOQMvgeMi2SsxgB2xbN_G3DoehMNWh7qaA34Leji7-M2SZdiq-sgBwDYTaiN0z3pey_Le7YIopYSNiYiCee31YsDS3VE8hZKkRKVVTiBnBUp6sxC3lo8PPn38J-w-_77CKnGQjoiSWdcieS_qxksHFCrftZiT334vEd4CufDfmCg-WU"/>
+</div>
+</div>
+<h1 class="text-xl font-black italic tracking-tight font-headline">
+<span class="text-primary">VIVID</span><span class="text-on-surface ml-1">PULSE</span>
+</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-xl bg-surface-container-high text-on-surface hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="search">search</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-xl bg-surface-container-high text-on-surface">
+<span class="material-symbols-outlined text-xl" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-5 md:px-10 max-w-screen-2xl mx-auto">
+<!-- Featured "Vivid Pulse" Hero -->
+<section class="mb-12">
+<div class="relative w-full rounded-lg overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent z-10"></div>
+<div class="absolute top-6 right-6 z-20">
+<div class="flex items-center gap-2 glass-card px-4 py-2 rounded-full border-primary/20">
+<span class="w-2 h-2 rounded-full bg-primary pulse-animation"></span>
+<span class="text-[10px] font-bold tracking-widest uppercase text-white">Live Now</span>
+</div>
+</div>
+<div class="relative aspect-[4/5] md:aspect-[21/9]">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="Hero challenge image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuNKbEUOjBMeBjBS6_iLPegGpbqIvyDfXp12L1VVegdAS5HUNPxcIcSW47pazKkOmgpDd0de24xyOhROtdI9_fz54vtPvYPNOIRjY3FfLbsEr-8WR-WiAG6gMtWsfmtgKBltJYoCbGg31Qw86SCa87JBrB-IXKdNcKlNVIjyA9XSt1M2MOk_TYWyyaAAcAB5n0B9gujX1kEehK-rvoQ6DoFvYREW51-vtlKi7oltp6J9cQffeZUfo1-p_qEeAsaRARWDI5kY3AHBE"/>
+</div>
+<div class="absolute bottom-0 left-0 w-full p-8 z-20">
+<div class="max-w-3xl">
+<div class="flex items-center gap-3 mb-4">
+<span class="text-secondary text-xs font-black uppercase tracking-[0.2em]">Cinematic Motion</span>
+</div>
+<h2 class="text-5xl md:text-8xl font-black font-headline tracking-tighter mb-4 italic leading-none">#NeonDance</h2>
+<p class="text-on-surface-variant text-base md:text-lg mb-8 max-w-xl font-medium leading-relaxed">
+                        Unleash the light within. Submit your best rhythmic choreography using the "Pulse" visual suite.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary text-white h-14 px-10 rounded-full font-bold vivid-pulse-glow flex items-center justify-center gap-3 hover:scale-105 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="bolt" style="font-variation-settings: 'FILL' 1;">bolt</span>
+                            Join Challenge
+                        </button>
+<button class="glass-card text-white h-14 px-10 rounded-full font-bold flex items-center justify-center gap-3 hover:bg-white/10 transition-all">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+                            1.2M Views
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Grid Header -->
+<div class="flex items-end justify-between mb-10 px-1">
+<div>
+<span class="text-primary font-bold text-xs uppercase tracking-widest mb-1 block">The Front Page</span>
+<h3 class="text-3xl md:text-5xl font-black font-headline italic tracking-tighter">Pulse Trending</h3>
+</div>
+<button class="group flex items-center gap-2 text-on-surface-variant hover:text-secondary transition-colors font-bold text-sm">
+            See All <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<!-- Masonry-inspired Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8">
+<!-- Large Vertical Tile -->
+<div class="md:col-span-5 md:row-span-2 group relative h-[500px] md:h-auto rounded-lg overflow-hidden bg-surface-container-high gradient-border-mask">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Vertical challenge" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDanKMUK3_eTX2pXeKX0lqNY7nxNMiMUK06dPO4chVLmdjR082txSIW8UVAusUL43mCJC1QsynrBhsgzErwj5sjJ3EKaTiBiD7iuCtr87S4Ncc9hJMYWnHXXfCJoziQ-i2tMi8m01lJLkwbv8XtO3AhpnLzY7-nXYD5ES4psZEx_WTnSTVDJEk6sqT9I0THh8O-HBqZdRuljlG8bLmRNvx1DbeZvLy53k8wR26JpdHtiMTIn40X8KumlsTLymO7084DsQWEqu13dRY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent flex flex-col justify-end p-8">
+<div class="flex items-center gap-2 mb-4">
+<span class="bg-secondary text-background px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-tighter">Hot Battle</span>
+<span class="text-white/60 text-[10px] font-bold uppercase tracking-widest">Global Rank #3</span>
+</div>
+<h4 class="text-4xl font-black font-headline mb-4 italic tracking-tighter">#SynthVibe</h4>
+<div class="flex flex-col gap-6">
+<div class="flex items-center justify-between glass-card p-4 rounded-2xl border-white/5">
+<div class="flex flex-col">
+<span class="text-xs text-white/50 uppercase font-bold tracking-widest mb-1">Participants</span>
+<div class="flex items-center gap-3">
+<div class="flex -space-x-3">
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-slate-500 overflow-hidden">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlpF8I3N11_G8c6Uyf_pVjUG5SnWR0P3YISrI2gsv-mKcGZNf2Kww1TEDC_vVmfYH4ILvNWNj9kxkjcurvzlT7IpoZjtrgh-UxbsjUCu4EaMRWcKs8MKzCXw1ePMGRGijSvgWag_4zLvLtW5hFKqo0f4Hh7qc5CWm58_-PicndzHDIpUBrbUvbmOraE-fpRoFxWbGOYam4RC9qZeoWUH5vJ5sqJvFr23YxV-tc87hD4IEEOTxYYLS3NE44qReVM4npgpcdvNRk0ys"/>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-slate-500 overflow-hidden">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb1-oYSwv5SdLg84FmwaPAH1ANurLsQ5pmwFSzf5oxF8eb9KjxjSnw7CyGpAyEWyTKuM0hkGMqB3qu8h5kT0dOFFTZb9P1GFOobRHAM6ZCvkGFAYQlhY3URoF9RvATicA5vK8MICjrdCLtwt9s0eBtcGpcgZcnbtc_LChvBKp9suotkJ5-zjb0Z4ckGQW1Wov0RUAmieicH9ggbIncHKdO6oOc1gnUYYjFl8lhltdK84xS6aJHfoMGa6CutbQ5Lux_w7h0O4v2Nmg"/>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-surface-bright flex items-center justify-center text-[10px] font-bold text-secondary">
+                                        +8k
+                                    </div>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-xs text-white/50 uppercase font-bold tracking-widest mb-1">Prize</span>
+<span class="text-lg font-black text-secondary">50k SPK</span>
+</div>
+</div>
+<button class="w-full py-4 bg-primary text-white rounded-2xl font-black uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all flex items-center justify-center gap-2">
+                        Battle Now <span class="material-symbols-outlined text-lg" data-icon="sports_kabaddi">sports_kabaddi</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Horizontal Middle Tile -->
+<div class="md:col-span-7 group relative h-72 rounded-lg overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Retro gaming" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlO4lg1n7P0-SLT7TSTQX8tNjWHgIQExytdcKRxhWw1npqsK2lXJcNpfhIb1j6zDiAzL1i9M0k0legqX4eSY2pfpWyZ57jQTSbVNRRgmg_JO1jvC8X4Mu_mVuNsvQIVplIU0EE1RhrSOwpwade7vs7uo8o0P_xDl-TVGzk1ai1FzQjOEL_DnzDIW3riAT-_IPS-2N1KCcjndxJMCxxr3HU7qhs-YnBAaKy9XyacF5KldLGVSsAdFlHmZY8Q_Yh-CMvDlzmk95RqRI"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent flex flex-col justify-center p-8">
+<span class="text-secondary font-black text-[10px] uppercase tracking-[0.3em] mb-2">Music Evolution</span>
+<h4 class="text-4xl font-black font-headline mb-4 italic">#RetroGroove</h4>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 flex items-center justify-center rounded-full bg-secondary/10 text-secondary">
+<span class="material-symbols-outlined" data-icon="audiotrack">audiotrack</span>
+</div>
+<div>
+<p class="text-xs text-white/50 font-bold uppercase tracking-widest leading-none mb-1">Library</p>
+<p class="text-sm font-bold">12.4k Tracks</p>
+</div>
+</div>
+<button class="h-10 px-6 rounded-full bg-white text-background font-black text-xs uppercase tracking-widest hover:bg-secondary transition-colors">
+                        Enter Battle
+                    </button>
+</div>
+</div>
+</div>
+<!-- Small Square Tile Left -->
+<div class="md:col-span-3.5 group relative h-64 rounded-lg overflow-hidden bg-surface-container-high border border-white/5">
+<img class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" data-alt="Neon pet" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCY7cMZz5PziQeUUBM46cujw5bbHO-ELSPqSmRdxgBGMiA_f-JU8ndq7aMprs-kzFO1H6U5ZRiMM-ORhFVWYO_VNV1hEoD8qrTTZ8qecG-br77VZAtno339Elo-IV4OqysjeWJcypD7hfLZ9jlc2U-RxQUz0pAJ3db5hZaXnChwkK2ReH_khd68TJkGDuXRVzhJJeEaI8aJuZtC2JQfIwFBMhBxkjfNZrSrynl5gLRykWnLMSGD9ZrnmQicohxFzjhRip6qzRXAlE"/>
+<div class="absolute inset-0 p-6 flex flex-col justify-between">
+<div class="bg-black/50 backdrop-blur self-start px-2 py-1 rounded text-[10px] font-black text-tertiary uppercase tracking-widest">Ending Soon</div>
+<div>
+<h4 class="text-2xl font-black font-headline text-white mb-1">#NeonPets</h4>
+<p class="text-[10px] text-white/70 font-bold uppercase tracking-widest">24h Remaining</p>
+</div>
+</div>
+<button class="absolute bottom-4 right-4 w-12 h-12 rounded-2xl bg-primary text-white flex items-center justify-center vivid-pulse-glow group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+<!-- Small Square Tile Right -->
+<div class="md:col-span-3.5 group relative h-64 rounded-lg overflow-hidden bg-surface-container-high border border-white/5">
+<img class="w-full h-full object-cover" data-alt="Cyber tunnel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA4A9PdFzHwk-uyY3KhJj51PEZYq4m6V3yJcj0_V5hParm6zdIQNWc2I41j4eSvkTsnkjdptZBZLKDFArw0uYx6UvDqNG7oy9C9f5dIoe7kMkfELx3de__75MemNZ3LSC_ow0_bV1MUb4jqbBDWsOnwrApI_9PiI41JRAUsiVcE1aFD9Rf7XkeNrG-7dWU9qzQIXQvlUsVuXC-gJb7YPTlwYf8wWBPcymL-n86Brx10ChhbnaiiLb_8Z0ZKdXwkT8yKrgXJe6H6IA"/>
+<div class="absolute inset-0 bg-primary/20 group-hover:bg-primary/40 transition-colors flex flex-col items-center justify-center text-center p-6">
+<h4 class="text-2xl font-black font-headline text-white mb-2 italic">#CyberFlow</h4>
+<p class="text-xs text-white/80 font-medium mb-6">Master the tech-wear aesthetic.</p>
+<button class="h-9 px-8 rounded-full border border-white/30 text-white font-bold text-[10px] uppercase tracking-widest hover:bg-white hover:text-primary transition-all">
+                    View Submissions
+                </button>
+</div>
+<div class="absolute top-4 left-4 flex items-center gap-2 glass-card px-3 py-1 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary pulse-animation"></span>
+<span class="text-[9px] font-black text-white uppercase tracking-tighter">Rising</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Desktop SideNav -->
+<aside class="hidden xl:flex fixed left-0 top-0 h-full w-80 bg-background border-r border-white/5 flex-col p-8 pt-24 gap-10 z-[80]">
+<div class="flex items-center gap-4 p-5 rounded-3xl bg-surface-container-high border border-white/5">
+<div class="w-14 h-14 rounded-2xl overflow-hidden ring-2 ring-primary ring-offset-4 ring-offset-background">
+<img class="w-full h-full object-cover" data-alt="avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF7AqJvO0UJ6399REldUlbR9qaUw4Jzd2yLaRWedkbOXmSQuxjcz1WnVbBDCLAxFFYc4qWwDUIhuDyp4QVHeM2lBFG9_NmwxciN2tXx_GsjoFCmrf0y4n8NJEEWbreByqz4ptMqu3ipjn2-_UUZ9B8-AshGqquFtbjS5Z4VOWFLDhJ9AXtYFzDoSQTk5wOw1EQAvAbYdgIlR9wKUyRuKWMrJJM2iWxiFh9j8_MDMNj2ouFeDiUqXZTOR6V07jss1A4I-N1WiDrRfw"/>
+</div>
+<div>
+<h5 class="text-lg font-black font-headline">Creator_One</h5>
+<p class="text-primary text-[10px] font-black uppercase tracking-widest">Pulse Elite</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center justify-between p-4 bg-primary/10 text-primary rounded-2xl font-black font-headline group" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined" data-icon="local_fire_department" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+                Trending
+            </div>
+<div class="w-2 h-2 rounded-full bg-primary pulse-animation"></div>
+</a>
+<a class="flex items-center gap-4 p-4 text-on-surface-variant hover:text-white transition-all font-black font-headline" href="#">
+<span class="material-symbols-outlined" data-icon="music_note">music_note</span>
+            Library
+        </a>
+<a class="flex items-center gap-4 p-4 text-on-surface-variant hover:text-white transition-all font-black font-headline" href="#">
+<span class="material-symbols-outlined" data-icon="live_tv">live_tv</span>
+            Live Hub
+        </a>
+<a class="flex items-center gap-4 p-4 text-on-surface-variant hover:text-white transition-all font-black font-headline" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+            Options
+        </a>
+</nav>
+<div class="mt-auto glass-card p-6 rounded-[2.5rem] border-secondary/20 overflow-hidden relative group">
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-secondary/10 blur-3xl group-hover:bg-secondary/20 transition-all"></div>
+<p class="text-[10px] font-black text-secondary uppercase tracking-[0.2em] mb-2">Wallet Balance</p>
+<div class="flex items-center justify-between">
+<span class="text-3xl font-black font-headline">2.4M</span>
+<div class="w-10 h-10 flex items-center justify-center rounded-xl bg-secondary/20 text-secondary">
+<span class="material-symbols-outlined" data-icon="bolt" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Mobile Tab Bar -->
+<nav class="fixed bottom-0 left-0 w-full px-6 pb-8 pt-4 bg-background/80 backdrop-blur-2xl border-t border-white/5 z-[100] md:hidden">
+<div class="flex justify-between items-center max-w-sm mx-auto">
+<a class="p-3 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+</a>
+<a class="p-4 bg-primary text-white rounded-full vivid-pulse-glow" href="#">
+<span class="material-symbols-outlined text-3xl" data-icon="explore" style="font-variation-settings: 'FILL' 1;">explore</span>
+</a>
+<a class="p-3 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+</a>
+<a class="p-3 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</a>
+</div>
+</nav>
+<!-- Float Action -->
+<button class="fixed right-6 bottom-32 md:bottom-12 z-[90] w-16 h-16 rounded-2xl bg-secondary text-background flex items-center justify-center shadow-2xl shadow-secondary/30 active:scale-90 transition-transform hover:rotate-6">
+<span class="material-symbols-outlined text-3xl font-bold" data-icon="videocam">videocam</span>
+</button>
+</body></html>

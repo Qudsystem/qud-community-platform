@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-tint": "#ff8c95",
+              "primary-dim": "#e80048",
+              "on-error-container": "#ffd2c8",
+              "on-background": "#ffffff",
+              "error-container": "#b92902",
+              "inverse-surface": "#fcf8f8",
+              "on-tertiary-container": "#5b5a00",
+              "on-tertiary-fixed": "#4d4c00",
+              "secondary": "#29fcf3",
+              "secondary-fixed-dim": "#00ede5",
+              "error-dim": "#d53d18",
+              "tertiary-dim": "#efec00",
+              "tertiary-fixed-dim": "#efec00",
+              "tertiary": "#fffcc5",
+              "surface-container": "#1a1919",
+              "background": "#0a0a0a",
+              "tertiary-container": "#f5f200",
+              "on-secondary-fixed": "#004845",
+              "primary": "#ff8c95",
+              "surface-bright": "#2d2c2c",
+              "on-error": "#450900",
+              "surface-container-low": "#141313",
+              "primary-container": "#ff7482",
+              "inverse-on-surface": "#565554",
+              "error": "#ff7351",
+              "secondary-dim": "#00ede5",
+              "on-surface-variant": "#adaaaa",
+              "primary-fixed": "#ff7482",
+              "outline-variant": "#494847",
+              "secondary-container": "#006a66",
+              "on-surface": "#ffffff",
+              "on-secondary": "#005c59",
+              "on-primary-container": "#4e0012",
+              "surface-variant": "#262625",
+              "surface-container-lowest": "#000000",
+              "outline": "#777575",
+              "on-tertiary-fixed-variant": "#6b6900",
+              "surface-dim": "#0e0e0e",
+              "on-tertiary": "#636200",
+              "on-secondary-container": "#dafffc",
+              "surface-container-highest": "#262625",
+              "on-secondary-fixed-variant": "#006763",
+              "inverse-primary": "#bf003a",
+              "surface": "#0a0a0a",
+              "on-primary-fixed-variant": "#5f0018",
+              "secondary-fixed": "#29fcf3",
+              "tertiary-fixed": "#fefb00",
+              "on-primary": "#64001a",
+              "primary-fixed-dim": "#ff576e",
+              "on-primary-fixed": "#000000",
+              "surface-container-high": "#181818"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Be Vietnam Pro"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(26, 25, 25, 0.4);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .neon-border-primary {
+            box-shadow: 0 0 20px rgba(255, 140, 149, 0.2), inset 0 0 10px rgba(255, 140, 149, 0.1);
+        }
+        .text-glow {
+            text-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+        }
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #262625;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30 overflow-x-hidden antialiased">
+<!-- Premium TopBar -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-2xl border-b border-white/5 flex justify-between items-center px-6 h-16 md:h-20">
+<div class="flex items-center gap-4">
+<div class="relative">
+<div class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-40 group-hover:opacity-100 transition duration-1000"></div>
+<div class="relative w-10 h-10 md:w-11 md:h-11 rounded-full bg-surface-container overflow-hidden border border-white/10">
+<img class="w-full h-full object-cover" data-alt="portrait of a stylish creator" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLAP5babzPupdNDLyFDsKw1t0B738wtnjAq4SxQ_v4wyeSA0C2UuAiOQEewY8p6zztGalc8xACiZQOMTidww41Cw2y0vDrjOQMvgeMi2SsxgB2xbN_G3DoehMNWh7qaA34Leji7-M2SZdiq-sgBwDYTaiN0z3pey_Le7YIopYSNiYiCee31YsDS3VE8hZKkRKVVTiBnBUp6sxC3lo8PPn38J-w-_77CKnGQjoiSWdcieS_qxksHFCrftZiT334vEd4CufDfmCg-WU"/>
+</div>
+</div>
+<div>
+<h1 class="text-xl md:text-2xl font-extrabold italic tracking-tight font-headline">
+<span class="bg-clip-text text-transparent bg-gradient-to-r from-primary via-white to-secondary">Cinema</span>
+</h1>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-xl bg-surface-container hover:bg-surface-bright transition-all border border-white/5">
+<span class="material-symbols-outlined text-[22px] text-on-surface-variant" data-icon="search">search</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-xl bg-surface-container hover:bg-surface-bright transition-all border border-white/5">
+<span class="material-symbols-outlined text-[22px]" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-4 md:px-8 lg:px-12 max-w-7xl mx-auto space-y-12">
+<!-- Hero Section: Featured Challenge -->
+<section class="relative rounded-[2rem] overflow-hidden group">
+<div class="aspect-[16/10] md:aspect-[21/9] w-full overflow-hidden">
+<img class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-[2000ms] ease-out" data-alt="cinematic neon dance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuNKbEUOjBMeBjBS6_iLPegGpbqIvyDfXp12L1VVegdAS5HUNPxcIcSW47pazKkOmgpDd0de24xyOhROtdI9_fz54vtPvYPNOIRjY3FfLbsEr-8WR-WiAG6gMtWsfmtgKBltJYoCbGg31Qw86SCa87JBrB-IXKdNcKlNVIjyA9XSt1M2MOk_TYWyyaAAcAB5n0B9gujX1kEehK-rvoQ6DoFvYREW51-vtlKi7oltp6J9cQffeZUfo1-p_qEeAsaRARWDI5kY3AHBE"/>
+<!-- Sophisticated Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-background/80 via-transparent to-transparent hidden md:block"></div>
+</div>
+<div class="absolute inset-0 flex flex-col justify-end p-6 md:p-12 lg:p-16">
+<div class="space-y-6 max-w-2xl">
+<div class="flex flex-wrap items-center gap-3">
+<div class="glass-card px-4 py-1.5 rounded-full flex items-center gap-2 border-primary/20">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase text-primary">Live Challenge</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 backdrop-blur-md border border-white/5">
+<span class="material-symbols-outlined text-sm text-secondary" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="text-[10px] md:text-xs font-bold text-on-surface/80">1.2M Sparks</span>
+</div>
+</div>
+<h2 class="text-5xl md:text-8xl font-black font-headline tracking-tighter leading-[0.9] text-glow">#NeonDance</h2>
+<p class="text-on-surface-variant text-sm md:text-lg leading-relaxed max-w-md md:max-w-xl font-medium">
+                    Master the "Electric Pulse" filter. Synchronize your motion with the rhythm of the city's neon heartbeat.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<button class="px-8 py-4 bg-primary text-on-primary-fixed font-bold rounded-2xl flex items-center justify-center gap-3 neon-border-primary hover:brightness-110 active:scale-[0.98] transition-all group/btn">
+<span class="material-symbols-outlined group-hover/btn:rotate-12 transition-transform" data-icon="videocam">videocam</span>
+                        Join Challenge
+                    </button>
+<button class="px-8 py-4 glass-card text-on-surface font-bold rounded-2xl flex items-center justify-center gap-3 hover:bg-white/10 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined" data-icon="play_circle">play_circle</span>
+                        View Gallery
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Trending Section -->
+<section>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+<div class="space-y-1">
+<h3 class="text-3xl md:text-4xl font-black font-headline italic flex items-center gap-3">
+                    Trending <span class="text-primary text-glow">Battles</span>
+</h3>
+<p class="text-on-surface-variant text-xs font-bold uppercase tracking-[0.2em]">Live updates from the grid</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="px-3 py-1.5 rounded-lg bg-surface-container border border-white/5 text-[11px] font-bold text-on-surface-variant tracking-widest uppercase">42 Active</span>
+<button class="text-secondary text-xs font-bold hover:underline flex items-center gap-1">View All <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span></button>
+</div>
+</div>
+<!-- Professional Masonry Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Featured Vertical Tile -->
+<div class="md:col-span-4 md:row-span-2 group relative rounded-3xl overflow-hidden bg-surface-container border border-white/5">
+<img class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700" data-alt="synth vibe challenge" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDanKMUK3_eTX2pXeKX0lqNY7nxNMiMUK06dPO4chVLmdjR082txSIW8UVAusUL43mCJC1QsynrBhsgzErwj5sjJ3EKaTiBiD7iuCtr87S4Ncc9hJMYWnHXXfCJoziQ-i2tMi8m01lJLkwbv8XtO3AhpnLzY7-nXYD5ES4psZEx_WTnSTVDJEk6sqT9I0THh8O-HBqZdRuljlG8bLmRNvx1DbeZvLy53k8wR26JpdHtiMTIn40X8KumlsTLymO7084DsQWEqu13dRY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent p-8 flex flex-col justify-end">
+<h4 class="text-3xl font-black font-headline mb-4 group-hover:-translate-y-2 transition-transform duration-500">#SynthVibe</h4>
+<div class="flex items-center justify-between mb-6">
+<div class="flex -space-x-3">
+<img alt="User" class="w-9 h-9 rounded-full border-2 border-background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlpF8I3N11_G8c6Uyf_pVjUG5SnWR0P3YISrI2gsv-mKcGZNf2Kww1TEDC_vVmfYH4ILvNWNj9kxkjcurvzlT7IpoZjtrgh-UxbsjUCu4EaMRWcKs8MKzCXw1ePMGRGijSvgWag_4zLvLtW5hFKqo0f4Hh7qc5CWm58_-PicndzHDIpUBrbUvbmOraE-fpRoFxWbGOYam4RC9qZeoWUH5vJ5sqJvFr23YxV-tc87hD4IEEOTxYYLS3NE44qReVM4npgpcdvNRk0ys"/>
+<img alt="User" class="w-9 h-9 rounded-full border-2 border-background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb1-oYSwv5SdLg84FmwaPAH1ANurLsQ5pmwFSzf5oxF8eb9KjxjSnw7CyGpAyEWyTKuM0hkGMqB3qu8h5kT0dOFFTZb9P1GFOobRHAM6ZCvkGFAYQlhY3URoF9RvATicA5vK8MICjrdCLtwt9s0eBtcGpcgZcnbtc_LChvBKp9suotkJ5-zjb0Z4ckGQW1Wov0RUAmieicH9ggbIncHKdO6oOc1gnUYYjFl8lhltdK84xS6aJHfoMGa6CutbQ5Lux_w7h0O4v2Nmg"/>
+<div class="w-9 h-9 rounded-full border-2 border-background bg-surface-bright flex items-center justify-center text-[10px] font-bold">+8k</div>
+</div>
+<span class="text-secondary font-bold text-[10px] tracking-widest uppercase">Popular</span>
+</div>
+<button class="w-full py-4 glass-card rounded-2xl font-bold text-sm text-on-surface hover:bg-primary hover:text-on-primary-fixed transition-all active:scale-[0.98]">
+                        Enter Challenge
+                    </button>
+</div>
+</div>
+<!-- Horizontal Highlight -->
+<div class="md:col-span-8 group relative rounded-3xl overflow-hidden bg-surface-container-high border border-white/5 h-[300px]">
+<img class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="retro groove battle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlO4lg1n7P0-SLT7TSTQX8tNjWHgIQExytdcKRxhWw1npqsK2lXJcNpfhIb1j6zDiAzL1i9M0k0legqX4eSY2pfpWyZ57jQTSbVNRRgmg_JO1jvC8X4Mu_mVuNsvQIVplIU0EE1RhrSOwpwade7vs7uo8o0P_xDl-TVGzk1ai1FzQjOEL_DnzDIW3riAT-_IPS-2N1KCcjndxJMCxxr3HU7qhs-YnBAaKy9XyacF5KldLGVSsAdFlHmZY8Q_Yh-CMvDlzmk95RqRI"/>
+<div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent p-8 md:p-12 flex flex-col justify-center">
+<span class="text-secondary font-bold text-xs uppercase tracking-[0.3em] mb-3">Music Battle</span>
+<h4 class="text-4xl md:text-5xl font-black font-headline mb-6 tracking-tight">#RetroGroove</h4>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary" data-icon="audiotrack">audiotrack</span>
+<span class="text-on-surface/70 text-sm font-semibold">12.4k Tracks Remixed</span>
+</div>
+<button class="bg-secondary text-background px-8 py-3 rounded-xl font-bold text-sm hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(41,252,243,0.3)]">
+                            Drop a Beat
+                        </button>
+</div>
+</div>
+</div>
+<!-- Square Tile: Pets -->
+<div class="md:col-span-4 group relative rounded-3xl overflow-hidden bg-surface-container border border-white/5 h-64">
+<img alt="Neon Pets" class="w-full h-full object-cover opacity-70 transition-opacity group-hover:opacity-90 duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCY7cMZz5PziQeUUBM46cujw5bbHO-ELSPqSmRdxgBGMiA_f-JU8ndq7aMprs-kzFO1H6U5ZRiMM-ORhFVWYO_VNV1hEoD8qrTTZ8qecG-br77VZAtno339Elo-IV4OqysjeWJcypD7hfLZ9jlc2U-RxQUz0pAJ3db5hZaXnChwkK2ReH_khd68TJkGDuXRVzhJJeEaI8aJuZtC2JQfIwFBMhBxkjfNZrSrynl5gLRykWnLMSGD9ZrnmQicohxFzjhRip6qzRXAlE"/>
+<div class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center bg-black/30 group-hover:bg-black/10 transition-all duration-500">
+<h4 class="text-2xl font-black font-headline mb-2">#NeonPets</h4>
+<span class="px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20 text-[10px] font-bold uppercase">Ends in 24h</span>
+</div>
+<button class="absolute bottom-4 right-4 w-12 h-12 rounded-2xl bg-primary text-on-primary-fixed flex items-center justify-center shadow-lg active:scale-90 transition-all">
+<span class="material-symbols-outlined font-bold" data-icon="add">add</span>
+</button>
+</div>
+<!-- Square Tile: Cyber Flow -->
+<div class="md:col-span-4 group relative rounded-3xl overflow-hidden bg-surface-container border border-white/5 h-64">
+<img alt="Cyber Flow" class="w-full h-full object-cover opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA4A9PdFzHwk-uyY3KhJj51PEZYq4m6V3yJcj0_V5hParm6zdIQNWc2I41j4eSvkTsnkjdptZBZLKDFArw0uYx6UvDqNG7oy9C9f5dIoe7kMkfELx3de__75MemNZ3LSC_ow0_bV1MUb4jqbBDWsOnwrApI_9PiI41JRAUsiVcE1aFD9Rf7XkeNrG-7dWU9qzQIXQvlUsVuXC-gJb7YPTlwYf8wWBPcymL-n86Brx10ChhbnaiiLb_8Z0ZKdXwkT8yKrgXJe6H6IA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6">
+<h4 class="text-2xl font-black font-headline mb-1">#CyberFlow</h4>
+<p class="text-white/80 text-xs mb-4">The ultimate aesthetic battle.</p>
+<button class="py-2.5 bg-white text-primary font-bold rounded-xl text-xs hover:bg-white/90">Explore Entries</button>
+</div>
+<div class="absolute top-4 left-4 glass-card px-3 py-1 rounded-full flex items-center gap-2 border-secondary/30">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="text-[9px] font-black text-secondary tracking-[0.2em] uppercase">Trending</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Navigation Drawer: Large Screens -->
+<aside class="hidden xl:flex fixed left-0 top-0 h-full w-72 bg-background border-r border-white/5 flex-col p-8 gap-8 z-[60] pt-24">
+<div class="flex flex-col gap-8">
+<div class="flex items-center gap-4 p-4 rounded-2xl bg-surface-container-high border border-white/5">
+<div class="w-11 h-11 rounded-full overflow-hidden ring-2 ring-primary/30">
+<img alt="Creator Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF7AqJvO0UJ6399REldUlbR9qaUw4Jzd2yLaRWedkbOXmSQuxjcz1WnVbBDCLAxFFYc4qWwDUIhuDyp4QVHeM2lBFG9_NmwxciN2tXx_GsjoFCmrf0y4n8NJEEWbreByqz4ptMqu3ipjn2-_UUZ9B8-AshGqquFtbjS5Z4VOWFLDhJ9AXtYFzDoSQTk5wOw1EQAvAbYdgIlR9wKUyRuKWMrJJM2iWxiFh9j8_MDMNj2ouFeDiUqXZTOR6V07jss1A4I-N1WiDrRfw"/>
+</div>
+<div>
+<h5 class="text-sm font-bold font-headline">Creator_One</h5>
+<p class="text-primary text-[10px] font-bold tracking-widest uppercase">Elite Level 42</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-4 px-4 py-3.5 text-primary bg-primary/5 rounded-xl font-bold font-headline border-l-4 border-primary transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+                Challenges
+            </a>
+<a class="flex items-center gap-4 px-4 py-3.5 text-on-surface-variant hover:text-white hover:bg-white/5 rounded-xl font-bold font-headline transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="music_note">music_note</span>
+                Sound Library
+            </a>
+<a class="flex items-center gap-4 px-4 py-3.5 text-on-surface-variant hover:text-white hover:bg-white/5 rounded-xl font-bold font-headline transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="live_tv">live_tv</span>
+                Live Center
+            </a>
+<a class="flex items-center gap-4 px-4 py-3.5 text-on-surface-variant hover:text-white hover:bg-white/5 rounded-xl font-bold font-headline transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                Preferences
+            </a>
+</nav>
+<div class="mt-auto p-6 bg-gradient-to-br from-surface-container-highest/50 to-surface-container/50 rounded-3xl border border-white/5">
+<p class="text-[10px] font-bold text-on-surface-variant mb-2 uppercase tracking-[0.2em]">Sparks Balance</p>
+<div class="flex items-center justify-between">
+<span class="text-2xl font-black font-headline text-secondary tracking-tight">2,482,000</span>
+<span class="material-symbols-outlined text-primary" data-icon="bolt">bolt</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Sophisticated Mobile Nav -->
+<nav class="fixed bottom-0 left-0 w-full md:hidden flex justify-around items-center px-6 pb-8 pt-3 bg-background/90 backdrop-blur-2xl border-t border-white/5 z-50">
+<a class="text-on-surface-variant hover:text-white transition-colors" href="#"><span class="material-symbols-outlined text-[28px]" data-icon="home">home</span></a>
+<a class="text-on-surface-variant hover:text-white transition-colors" href="#"><span class="material-symbols-outlined text-[28px]" data-icon="explore">explore</span></a>
+<div class="relative -top-6">
+<button class="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-primary-dim text-on-primary-fixed shadow-[0_8px_25px_rgba(255,140,149,0.4)] flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl font-bold" data-icon="add">add</span>
+</button>
+</div>
+<a class="text-on-surface-variant hover:text-white transition-colors" href="#"><span class="material-symbols-outlined text-[28px]" data-icon="movie">movie</span></a>
+<a class="text-on-surface-variant hover:text-white transition-colors" href="#"><span class="material-symbols-outlined text-[28px]" data-icon="person">person</span></a>
+</nav>
+<!-- FAB: Large Screens -->
+<button class="hidden md:flex fixed right-10 bottom-10 z-40 w-16 h-16 rounded-2xl bg-primary text-on-primary-fixed items-center justify-center shadow-2xl hover:scale-105 active:scale-95 transition-all neon-border-primary">
+<span class="material-symbols-outlined text-3xl font-bold" data-icon="add">add</span>
+</button>
+</body></html>
