@@ -1,0 +1,63 @@
+/* Common styles shared across all pages */
+
+/* Variable definitions for colors and other design elements */
+:root {
+	--primary: #2563eb;
+	--primary-dark: #1e40af;
+	--primary-light: #dbeafe;
+	--secondary: #64748b;
+	--accent: #f59e0b;
+	--background: #f8fafc;
+	--white: #ffffff;
+}
+
+/* Reset and Base Styles - This section resets default browser styles and sets basic styles for the entire page */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+	line-height: 1.6;
+	color: #333;
+	background-color: var(--background);
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 2rem;
+}
+
+
+/* Footer Styles - Styles for the footer section of the page */
+.footer {
+	background-color: #1a237e;
+	color: var(--white);
+	padding: 4rem 0 2rem;
+}
+
+/* Common Button Styles - Styles for common button types used throughout the website */
+.primary-btn {
+	background-color: var(--primary);
+	color: var(--white);
+	padding: 0.75rem 1.5rem;
+	border: none;
+	border-radius: 8px;
+	font-weight: 500;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.secondary-btn {
+	background-color: transparent;
+	color: var(--primary);
+	border: 2px solid var(--primary);
+	padding: 0.75rem 1.5rem;
+	border-radius: 8px;
+	font-weight: 500;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
