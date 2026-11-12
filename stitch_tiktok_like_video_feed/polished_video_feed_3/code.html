@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,700;0,800;1,800&amp;family=Be+Vietnam+Pro:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "outline-variant": "#494847",
+            "primary-fixed-dim": "#ff576e",
+            "secondary-dim": "#00ede5",
+            "error": "#ff7351",
+            "secondary": "#29fcf3",
+            "on-tertiary-container": "#5b5a00",
+            "surface": "#0e0e0e",
+            "primary-fixed": "#ff7482",
+            "on-primary-container": "#4e0012",
+            "surface-container-highest": "#262625",
+            "secondary-fixed": "#29fcf3",
+            "error-dim": "#d53d18",
+            "on-secondary-fixed-variant": "#006763",
+            "on-primary": "#64001a",
+            "primary-dim": "#e80048",
+            "on-secondary-container": "#dafffc",
+            "surface-dim": "#0e0e0e",
+            "on-error-container": "#ffd2c8",
+            "background": "#0e0e0e",
+            "tertiary-fixed-dim": "#efec00",
+            "surface-container-lowest": "#000000",
+            "secondary-fixed-dim": "#00ede5",
+            "tertiary-container": "#f5f200",
+            "surface-bright": "#2d2c2c",
+            "secondary-container": "#006a66",
+            "tertiary-dim": "#efec00",
+            "on-tertiary-fixed-variant": "#6b6900",
+            "surface-container": "#1a1919",
+            "inverse-surface": "#fcf8f8",
+            "surface-variant": "#262625",
+            "primary": "#ff8c95",
+            "on-secondary-fixed": "#004845",
+            "outline": "#777575",
+            "tertiary": "#fffcc5",
+            "on-primary-fixed-variant": "#5f0018",
+            "primary-container": "#ff7482",
+            "surface-tint": "#ff8c95",
+            "on-surface-variant": "#adaaaa",
+            "surface-container-high": "#201f1f",
+            "inverse-on-surface": "#565554",
+            "on-error": "#450900",
+            "on-secondary": "#005c59",
+            "on-surface": "#ffffff",
+            "inverse-primary": "#bf003a",
+            "on-primary-fixed": "#000000",
+            "tertiary-fixed": "#fefb00",
+            "on-tertiary-fixed": "#4d4c00",
+            "on-tertiary": "#636200",
+            "error-container": "#b92902",
+            "surface-container-low": "#141313",
+            "on-background": "#ffffff"
+          },
+          fontFamily: {
+            "headline": ["Plus Jakarta Sans"],
+            "body": ["Be Vietnam Pro"],
+            "label": ["Be Vietnam Pro"]
+          },
+          borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .video-overlay-gradient {
+      background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 60%, rgba(0,0,0,0.8) 100%);
+    }
+    .glass-pill {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .glass-action {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .spinning-vinyl {
+      animation: spin 6s linear infinite;
+    }
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .glow-primary {
+      box-shadow: 0 0 15px rgba(255, 140, 149, 0.4);
+    }
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-black text-on-background font-body select-none overflow-hidden h-screen w-screen flex flex-col">
+<!-- Navigation Overlay (Top) -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 pt-10 h-24 pointer-events-none">
+<div class="flex items-center pointer-events-auto">
+<span class="material-symbols-outlined text-white/90 text-2xl drop-shadow-md cursor-pointer" data-icon="live_tv">live_tv</span>
+</div>
+<div class="flex gap-8 items-center pointer-events-auto bg-black/10 backdrop-blur-md px-6 py-2 rounded-full border border-white/5">
+<button class="font-headline font-bold text-sm tracking-widest uppercase text-white/50 hover:text-white transition-all">Following</button>
+<div class="flex flex-col items-center gap-1">
+<button class="font-headline font-bold text-sm tracking-widest uppercase text-white transition-all">For You</button>
+<div class="h-1 w-4 bg-primary rounded-full glow-primary"></div>
+</div>
+</div>
+<div class="flex items-center pointer-events-auto">
+<span class="material-symbols-outlined text-white/90 text-2xl drop-shadow-md cursor-pointer" data-icon="search">search</span>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="relative flex-grow w-full h-full bg-black overflow-hidden">
+<!-- Immersive Video Background -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover scale-105" data-alt="cinematic close-up of a neon-lit cyberpunk city street at night with rain reflections and glowing pink and cyan signs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9GbXp1m5nTCUBjPI92q6Gm_hvKhRFN-I1uGhWmUl6tzdka187RTNL2vI81GuwiJGN84qGobNkM4zQTXzrcewEzpL3eoK0Yr5_OD7PT96WLUVaUGa3SBbsR4796A9cRrcSglSde1P9Jc7ybAqmIRI4zrf2mWcjwDhdwd7C2wFJJMAhm4FLTQfn5EAYX-0zAx_48eva2MYAWY9Jnkzc4l9rv-wLrWn2Tm6NPToBPudLCfUoo4U7VsIdHQ9VXGhJ631ZXsX94OZoT0k"/>
+</div>
+<!-- Cinematic Gradient Overlay -->
+<div class="absolute inset-0 z-10 video-overlay-gradient pointer-events-none"></div>
+<!-- Interaction Sidebar (The Right-Rail) -->
+<div class="absolute right-4 bottom-32 flex flex-col items-center gap-y-7 z-20 pointer-events-auto">
+<!-- Profile Action -->
+<div class="relative mb-3">
+<div class="w-14 h-14 rounded-full border-2 border-white/40 overflow-hidden shadow-2xl transition-transform active:scale-90 cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="portrait of a stylish young creator with neon lighting highlights on hair and face" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAePnPPLrqHQ-xRqp4w9rYDu0jhEELCOc6YQaxpx_Mc6IsxlRkmoVjVS7_LCX7q7X3aIA3X7yiTiiGQZytrZ8F2ZcdrWvt17fkm9kB4SseGMZdtXB5ioUROKektXrf_8R_NFwudQu00ccYQjDR2L_EljXuM4qtctZr5blxd8NA2V3my4xq8dKVkZRdYuIoyBIX59JeWii_WN4TcFjsEkAaxL2aK7q-YMbvyJTZGdNt_p7X2zl9-BKzOz26bszvRUj4N3R7_wAAg1x4"/>
+</div>
+<div class="absolute -bottom-1.5 left-1/2 -translate-x-1/2 bg-primary rounded-full w-6 h-6 flex items-center justify-center border-2 border-black shadow-lg">
+<span class="material-symbols-outlined text-[14px] text-on-primary font-bold" data-icon="add">add</span>
+</div>
+</div>
+<!-- Like -->
+<button class="flex flex-col items-center gap-1 group">
+<div class="glass-action p-3 rounded-full transition-all group-active:scale-125 group-hover:bg-white/20">
+<span class="material-symbols-outlined text-[32px] text-white group-hover:text-primary transition-colors drop-shadow-lg" data-icon="favorite" data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<span class="font-label font-bold text-[11px] text-white/90 tracking-wide drop-shadow-sm">1.2M</span>
+</button>
+<!-- Comment -->
+<button class="flex flex-col items-center gap-1 group">
+<div class="glass-action p-3 rounded-full transition-all group-active:scale-125 group-hover:bg-white/20">
+<span class="material-symbols-outlined text-[32px] text-white group-hover:text-secondary transition-colors drop-shadow-lg" data-icon="chat_bubble" data-weight="fill" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+</div>
+<span class="font-label font-bold text-[11px] text-white/90 tracking-wide drop-shadow-sm">45.8K</span>
+</button>
+<!-- Bookmark -->
+<button class="flex flex-col items-center gap-1 group">
+<div class="glass-action p-3 rounded-full transition-all group-active:scale-125 group-hover:bg-white/20">
+<span class="material-symbols-outlined text-[32px] text-white group-hover:text-tertiary transition-colors drop-shadow-lg" data-icon="bookmark" data-weight="fill" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+</div>
+<span class="font-label font-bold text-[11px] text-white/90 tracking-wide drop-shadow-sm">102K</span>
+</button>
+<!-- Share -->
+<button class="flex flex-col items-center gap-1 group">
+<div class="glass-action p-3 rounded-full transition-all group-active:scale-125 group-hover:bg-white/20">
+<span class="material-symbols-outlined text-[32px] text-white group-hover:text-secondary-dim transition-colors drop-shadow-lg" data-icon="share" data-weight="fill" style="font-variation-settings: 'FILL' 1;">share</span>
+</div>
+<span class="font-label font-bold text-[11px] text-white/90 tracking-wide drop-shadow-sm">12K</span>
+</button>
+</div>
+<!-- Description & Metadata Area -->
+<div class="absolute left-6 bottom-28 right-24 z-20 pointer-events-auto">
+<div class="flex flex-col gap-3 max-w-lg">
+<div class="flex items-center gap-3">
+<h3 class="font-headline font-extrabold text-xl text-white tracking-tight drop-shadow-md hover:underline cursor-pointer">@cyber_neon_flux</h3>
+<button class="glass-pill px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-tighter text-white/90 border-white/20">Follow</button>
+</div>
+<p class="font-body text-[15px] text-white/90 leading-relaxed line-clamp-2 drop-shadow-md">
+          Lost in the echo of the digital grid. Exploring the neon noir vibes of the underground. ⚡️🌆 <span class="text-secondary font-bold">#cyberpunk</span> <span class="text-secondary font-bold">#neon</span> <span class="text-secondary font-bold">#future</span>
+</p>
+<div class="flex items-center gap-2 glass-pill w-fit px-3 py-1.5 rounded-full mt-1">
+<span class="material-symbols-outlined text-sm text-secondary spinning-vinyl" data-icon="music_note">music_note</span>
+<span class="font-label font-medium text-[11px] text-white/90 whitespace-nowrap overflow-hidden max-w-[200px]">Original Sound - @cyber_neon_flux - Midnight Drive</span>
+</div>
+</div>
+</div>
+<!-- Vinyl Spin Visual -->
+<div class="absolute right-4 bottom-28 z-20 pointer-events-auto">
+<div class="w-14 h-14 bg-black/40 rounded-full flex items-center justify-center p-1.5 spinning-vinyl border border-white/10 backdrop-blur-sm">
+<div class="w-full h-full rounded-full overflow-hidden flex items-center justify-center relative">
+<div class="absolute inset-0 bg-gradient-to-br from-transparent to-black/60 z-10"></div>
+<img class="w-full h-full object-cover scale-110" data-alt="abstract album art with swirling neon pink and blue colors and grain texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlOd3jxrXJsY536D4UrrengDW_K8j9weit_Z7M68YHfRyQOnreO5je3KQ9UKt-cpFWjlsyy-sg-8C8tGEQjkLPYb1FUdtBko2tS-gLaUKl9XZ-gBNbyhAiSREdkIgsFIzXQRX61Rg6Mhqlvl-47tuk--N3vdupWL67bQwr_XB5-OcXQUe6iFR8sGLMvCZL5Nq-EW_Ku92a_zBjJnitc8RUaChFXuvIb5KAqJy3RLr-GC-kL9uTxs_GeAMrr9rBJscCyjj7CiInxNA"/>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe h-20 bg-black/60 backdrop-blur-3xl border-t border-white/5">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center text-white group relative" href="#">
+<span class="material-symbols-outlined text-[28px] drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]" data-icon="home" data-weight="fill" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-headline font-bold text-[10px] tracking-widest mt-0.5 opacity-90 uppercase">Home</span>
+<div class="absolute -top-1 w-1 h-1 bg-white rounded-full"></div>
+</a>
+<!-- Discover -->
+<a class="flex flex-col items-center justify-center text-white/40 hover:text-white transition-all group" href="#">
+<span class="material-symbols-outlined text-[28px]" data-icon="explore">explore</span>
+<span class="font-headline font-bold text-[10px] tracking-widest mt-0.5 uppercase">Discover</span>
+</a>
+<!-- Upload (Center Highlight) -->
+<a class="flex items-center justify-center" href="#">
+<div class="relative h-11 w-14 flex items-center justify-center rounded-xl bg-white group shadow-lg active:scale-95 transition-transform overflow-hidden">
+<div class="absolute inset-y-0 left-0 w-2.5 bg-secondary blur-[2px] opacity-80"></div>
+<div class="absolute inset-y-0 right-0 w-2.5 bg-primary blur-[2px] opacity-80"></div>
+<span class="material-symbols-outlined text-black text-3xl font-bold relative z-10" data-icon="add">add</span>
+</div>
+</a>
+<!-- Inbox -->
+<a class="flex flex-col items-center justify-center text-white/40 hover:text-white transition-all group" href="#">
+<span class="material-symbols-outlined text-[28px]" data-icon="mail">mail</span>
+<span class="font-headline font-bold text-[10px] tracking-widest mt-0.5 uppercase">Inbox</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-white/40 hover:text-white transition-all group" href="#">
+<span class="material-symbols-outlined text-[28px]" data-icon="person">person</span>
+<span class="font-headline font-bold text-[10px] tracking-widest mt-0.5 uppercase">Profile</span>
+</a>
+</nav>
+</body></html>

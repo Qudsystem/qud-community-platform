@@ -1,0 +1,127 @@
+<section class="artdeco-card org-admin-jobs__auto-created-update-preview">
+<!---->
+  
+      <div class="display-flex justify-space-between mb3">
+        <div id="ember2712" class="artdeco-entity-lockup artdeco-entity-lockup--size-4 ember-view">
+          <div id="ember2713" class="artdeco-entity-lockup__image artdeco-entity-lockup__image--type-square ember-view" type="square">
+            <img src="https://media.licdn.com/dms/image/D4D0BAQHhgMF8vy_9ig/company-logo_100_100/0/1704942672528/qudtech_ltd_logo?e=1712793600&amp;v=beta&amp;t=gEW6V5_K6HEslwvWuhFX8e4FZt-xCGioF9c87871Qdk" loading="lazy" alt="QudSystem.Ltd logo" id="ember2714" class="evi-image lazy-image ember-view">
+          
+</div>
+          <div id="ember2715" class="artdeco-entity-lockup__content ember-view">
+            <div id="ember2716" class="artdeco-entity-lockup__title ember-view">
+              QudSystem.Ltd
+            
+</div>
+            <div id="ember2717" class="artdeco-entity-lockup__caption ember-view">
+              Technology, Information and Internet
+            </div>
+          </div>
+        
+</div>
+        <div>
+          <svg role="none" aria-hidden="true" class="t-black--light" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="overflow-web-ios-small">
+<!---->    
+
+    <use href="#overflow-web-ios-small" width="16" height="16"></use>
+</svg>
+
+        </div>
+      </div>
+      <p class="text-body-small mb3">
+          We're <span class="t-bold link">#hiring</span> a new Web Developer in Egypt. Apply today or share this post with your network.
+      </p>
+      <section class="artdeco-card display-flex justify-space-between p4 mb2">
+<!---->
+  
+        <div id="ember2718" class="artdeco-entity-lockup artdeco-entity-lockup--size-4 ember-view">
+          <div id="ember2719" class="artdeco-entity-lockup__image artdeco-entity-lockup__image--type-square ember-view" type="square">
+            <img src="https://media.licdn.com/dms/image/D4D0BAQHhgMF8vy_9ig/company-logo_100_100/0/1704942672528/qudtech_ltd_logo?e=1712793600&amp;v=beta&amp;t=gEW6V5_K6HEslwvWuhFX8e4FZt-xCGioF9c87871Qdk" loading="lazy" alt="QudSystem.Ltd logo" id="ember2720" class="evi-image lazy-image ember-view">
+          
+</div>
+          <div id="ember2721" class="artdeco-entity-lockup__content ember-view">
+            <div id="ember2722" class="artdeco-entity-lockup__title ember-view">
+              Job Title
+            
+</div>
+            <div id="ember2723" class="artdeco-entity-lockup__subtitle ember-view">
+              Job by QudSystem.Ltd
+            </div>
+              <p class="text-body-small">
+                Cairo, Giza, EG • In person or remote
+              </p>
+            <p class="text-body-small">
+              Salary • Benefits
+            </p>
+          </div>
+        
+</div>
+        <div role="presentation" class="org-admin-jobs__auto-created-update-preview-button artdeco-button artdeco-button--secondary artdeco-button--2 mt2">
+          View job
+        </div>
+      
+</section>
+      <p class="text-body-xsmall t-black--light mb2">
+        4 hours ago
+      </p>
+      <div class="display-flex justify-space-between">
+        <div class="display-flex align-items-center">
+          <img src="https://static.licdn.com/aero-v1/sc/h/cpho5fghnpme8epox8rdcds22" alt="Love" class="org-admin-jobs__icon">
+          <img src="https://static.licdn.com/aero-v1/sc/h/b1dl5jk88euc7e9ri50xy5qo8" alt="Applause" class="org-admin-jobs__icon">
+          <img src="https://static.licdn.com/aero-v1/sc/h/8ekq8gho1ruaf8i7f86vd1ftt" alt="Like" class="org-admin-jobs__icon">
+          <p class="ml2 text-body-xsmall t-black--light">
+            87
+          </p>
+        </div>
+        <p class="text-body-xsmall t-black--light">
+          96 comments
+        </p>
+      </div>
+      <hr class="artdeco-divider">
+      <div class="display-flex justify-space-around align-items-center">
+        <div class="display-flex align-items-center">
+          <svg role="none" aria-hidden="true" class="artdeco-button__icon t-black--light" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="thumbs-up-outline-medium">
+<!---->    
+
+    <use href="#thumbs-up-outline-medium" width="24" height="24"></use>
+</svg>
+
+          <span class="text-body-small-bold t-black--light">
+            Like
+          </span>
+        </div>
+        <div class="display-flex align-items-center">
+          <svg role="none" aria-hidden="true" class="artdeco-button__icon t-black--light" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="comment-medium">
+<!---->    
+
+    <use href="#comment-medium" width="24" height="24"></use>
+</svg>
+
+          <span class="text-body-small-bold t-black--light">
+            Comment
+          </span>
+        </div>
+        <div class="display-flex align-items-center">
+          <svg role="none" aria-hidden="true" class="artdeco-button__icon t-black--light" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="repost-medium">
+<!---->    
+
+    <use href="#repost-medium" width="24" height="24"></use>
+</svg>
+
+          <span class="text-body-small-bold t-black--light">
+            Repost
+          </span>
+        </div>
+        <div class="display-flex align-items-center">
+          <svg role="none" aria-hidden="true" class="artdeco-button__icon t-black--light rtl-flip" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="send-privately-medium">
+<!---->    
+
+    <use href="#send-privately-medium" width="24" height="24"></use>
+</svg>
+
+          <span class="text-body-small-bold t-black--light">
+            Send
+          </span>
+        </div>
+      </div>
+    
+</section>

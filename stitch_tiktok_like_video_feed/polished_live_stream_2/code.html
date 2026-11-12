@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-tint": "#ff8c95",
+                        "primary-dim": "#e80048",
+                        "on-background": "#ffffff",
+                        "secondary": "#29fcf3",
+                        "tertiary": "#fffcc5",
+                        "background": "#0e0e0e",
+                        "primary": "#ff8c95",
+                        "surface-container": "#1a1919",
+                        "surface-bright": "#2d2c2c",
+                        "surface-container-low": "#141313",
+                        "primary-container": "#ff7482",
+                        "on-surface": "#ffffff",
+                        "on-surface-variant": "#adaaaa",
+                        "outline-variant": "#494847",
+                        "surface-variant": "#262625",
+                        "outline": "#777575",
+                        "surface-dim": "#0e0e0e",
+                        "surface-container-high": "#201f1f"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Be Vietnam Pro"],
+                        "label": ["Be Vietnam Pro"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        glow: {
+                            'from': { 'box-shadow': '0 0 5px #ff8c95, 0 0 10px #ff8c95' },
+                            'to': { 'box-shadow': '0 0 20px #ff8c95, 0 0 30px #ff7482' }
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(14, 14, 14, 0.45);
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .video-bg {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .chat-mask {
+            mask-image: linear-gradient(to top, black 70%, transparent 100%);
+        }
+        .reaction-float {
+            animation: float-up 3.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+        @keyframes float-up {
+            0% { transform: translateY(0) scale(0.5) rotate(0deg); opacity: 0; }
+            15% { opacity: 1; transform: translateY(-20px) scale(1.2) rotate(10deg); }
+            100% { transform: translateY(-280px) scale(1.8) rotate(-20deg); opacity: 0; }
+        }
+        .vivid-gradient {
+            background: linear-gradient(135deg, #ff8c95 0%, #e80048 100%);
+        }
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body overflow-hidden select-none">
+<!-- Immersive Backdrop -->
+<img alt="Live Stream Content" class="video-bg" data-alt="Cinematic vertical video of a neon-lit DJ booth with vibrant pink and cyan stage lights and dynamic movement" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmr3fJcJzFHy4hry9HwGY7GL8Kv6PsZO8xTpRwh9SFZUkV8f0iOkZWjWvMoHfVXmTUsSsPD196liJCy1CXdWSV0wPfyyaTD18BHuwO7YlEEOg0bXZvV-y90ffANH39zD-fSRXHe37OW5nitDiYjMjhcZPGMJxC_PD6_IShFvmncVSCpyPRWmS4zFVRL96oPvK5G0ar9DlRIHXd34KNd_qmUiVVXAzTBjDs9zJxP2PGTmHYdO9ksGcGmz-h6h1PIwQeMRZhogJ6cMA"/>
+<!-- Top Bar: Sophisticated Hierarchy -->
+<header class="fixed top-0 w-full z-50 px-4 py-4">
+<div class="glass-panel rounded-full px-4 py-2 flex justify-between items-center shadow-2xl">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden shadow-[0_0_15px_rgba(255,140,149,0.4)]">
+<img alt="user_profile_neon_glow" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8pd_DNLaAGhn8XgU4A936VIP0MEXgA4nut3D6rW1J3tsg3K149T43-ulXn3KI54BoOP2Dh7oYvyEeZKDqFadzf8lrMYQUh6yJ2vgH2OPfscq7egHl3m9rLtDMVRPUDLNLXQ6KEw4Twm7Oo11ByNkbGjhsXYovLKBnmG7jgvq95mIPgO46uG7PXlhvGCtthIbl4WgEAObYctRvQEOlTlOmFOFoFRKzJyVEqcmTf0AWlCnPwlPZwpedZlkCs90rLv8tUU01VBPsFTs"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-primary w-4 h-4 rounded-full border-2 border-background flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px] text-white font-bold">check</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-headline font-extrabold italic tracking-tight text-white text-sm leading-none">The Electric Cinema</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="flex h-1.5 w-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="text-[9px] uppercase font-black text-primary tracking-widest leading-none">Live Session</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="bg-white/5 border border-white/10 px-3 py-1.5 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-base" style="font-variation-settings: 'FILL' 1;">visibility</span>
+<span class="text-xs font-bold font-headline tracking-tight">12,482</span>
+</div>
+<button class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-white/70">more_vert</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Engagement Interface -->
+<main class="relative h-screen w-full flex flex-col justify-end pb-32 px-4 pointer-events-none">
+<!-- Right Rail: Interaction Stack -->
+<aside class="absolute right-4 bottom-40 flex flex-col gap-5 items-center pointer-events-auto">
+<!-- Creator Profile -->
+<div class="relative mb-2">
+<div class="w-14 h-14 rounded-full border-2 border-white/30 p-0.5 bg-gradient-to-tr from-primary to-secondary animate-float shadow-xl">
+<img alt="Creator Profile" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdqHeqpwccC6Q1m21t_Gro8YoPXviBJPk37Pxh4VqTf1ZT0e7PFkpILGm121nfYUCnuqYo56LTqiTaoGrq__4vf5oILWnrTqVjkT2mghuv6XVe1cp6CNMBbdNcYVMXElY79-3DuGcODs-gfwbk7-AfyO6jm7VSKatnLCyg82IwekQ1qh1iiTMNCZ5Lo2GBvZpvwAJ3xjyx-6pwkRhn2B2DcOaD6_uI1ejQTw7alzrA5-4JanPERlifbP-sg1UYCky5W8OzG0yS9p8"/>
+</div>
+<button class="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center shadow-lg border-2 border-background active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-sm font-bold">add</span>
+</button>
+</div>
+<!-- Like Interaction -->
+<div class="flex flex-col items-center group">
+<button class="w-12 h-12 flex items-center justify-center rounded-full glass-panel active:scale-75 transition-all duration-200">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<span class="text-[10px] font-bold mt-1 text-white/80 drop-shadow-md">242.5K</span>
+</div>
+<!-- Chat Interaction -->
+<div class="flex flex-col items-center group">
+<button class="w-12 h-12 flex items-center justify-center rounded-full glass-panel active:scale-75 transition-all duration-200">
+<span class="material-symbols-outlined text-white group-hover:scale-110 transition-transform">chat_bubble</span>
+</button>
+<span class="text-[10px] font-bold mt-1 text-white/80 drop-shadow-md">1.2K</span>
+</div>
+<!-- Gift/Spark Interaction -->
+<div class="flex flex-col items-center group">
+<button class="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-tertiary to-yellow-500 text-black shadow-[0_0_20px_rgba(255,252,197,0.3)] active:scale-75 transition-all duration-200">
+<span class="material-symbols-outlined font-bold" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</button>
+<span class="text-[10px] font-black mt-1 text-tertiary drop-shadow-md uppercase tracking-tighter">Gift</span>
+</div>
+<!-- Share -->
+<button class="w-12 h-12 flex items-center justify-center rounded-full glass-panel active:scale-75 transition-all duration-200">
+<span class="material-symbols-outlined text-white">share</span>
+</button>
+</aside>
+<!-- Dynamic Overlay: Floating Hearts/Gifts -->
+<div class="fixed right-10 bottom-48 pointer-events-none w-24 h-64 overflow-hidden">
+<span class="material-symbols-outlined absolute bottom-0 left-2 text-primary opacity-0 reaction-float" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="material-symbols-outlined absolute bottom-0 left-10 text-secondary opacity-0 reaction-float" style="animation-delay: 0.8s; font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="material-symbols-outlined absolute bottom-0 left-6 text-tertiary opacity-0 reaction-float" style="animation-delay: 1.5s; font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="material-symbols-outlined absolute bottom-0 left-14 text-primary opacity-0 reaction-float" style="animation-delay: 2.2s; font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<!-- Left Column: Content & Chat -->
+<section class="w-full max-w-[82%] space-y-6 pointer-events-auto">
+<!-- Professional Chat Feed -->
+<div class="chat-mask max-h-56 overflow-y-auto flex flex-col gap-2 pb-2 pr-4">
+<div class="flex items-start gap-2.5 animate-fadeIn">
+<img alt="user" class="w-7 h-7 rounded-full border border-white/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMy9xwh3XJXqkx-1o0ahCm-nPbmtpoAltxhJK1BDLMCTGe7Iv-QB2gwgCs0h1tmWa7ZsMQBFq1BELcQ07E1M3xPyqvEjIQFqmgEbGAqUfiOywLd9MZKXXslZlbjANSEgqVq2Sh2BXXaSOQlCrSu2dlAKpRUQ8vU0fb8r6IdNn-s6X_h8tUUOpSABRVbfUw9CQbz84HyIVswdWZB-YhPTSTUmvw5Tap48ZkA7PP8kie80FZUjVUQbJDoPFlObUnfl9T1J3y4hY6U3I"/>
+<div class="bg-black/30 backdrop-blur-md rounded-2xl rounded-tl-none px-3.5 py-2 border border-white/5 shadow-sm">
+<p class="text-[13px] leading-relaxed"><span class="font-bold text-secondary mr-1.5">Cyber_Ghost</span>Mixing these vocals live is legendary! 🌊</p>
+</div>
+</div>
+<div class="flex items-start gap-2.5">
+<img alt="user" class="w-7 h-7 rounded-full border border-white/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVG7BJ7HD7Be9Zo21YWt-7jYLPWxt4At3tMs_byDyGrxvLuAaPdmFhbAmichVnIhTsuFveyRAbP9EDCoE7IWMlQc8gyId42CPxLTnNVczb-dlA8fsDDRsl0KdtR8EVOUeyH4QiWX-mpa6ppvI4OK0uF3JfR7_T_Xn1CAfUhlRTiAgfNqGDNG_ydIFC6lv_Nco9PAyNT2zAxuc9UhfOHdIRZI4mV5F99tHfTLEdmlq1l-MiZ3odPV9lozcdsScAM7X36-WD_q8PLtg"/>
+<div class="bg-black/30 backdrop-blur-md rounded-2xl rounded-tl-none px-3.5 py-2 border border-white/5">
+<p class="text-[13px] leading-relaxed"><span class="font-bold text-primary mr-1.5">Neon_Dreamer</span>Drop the preset pack link please! ✨</p>
+</div>
+</div>
+<!-- Highlighted Gift Message -->
+<div class="flex items-center gap-3 bg-gradient-to-r from-tertiary/20 to-transparent backdrop-blur-xl py-2 px-3 rounded-xl border-l-4 border-tertiary my-1">
+<div class="w-7 h-7 rounded-full bg-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-black text-sm font-bold">bolt</span>
+</div>
+<p class="text-xs font-bold text-tertiary uppercase tracking-wider">Pixel_King sent 500 Sparks!</p>
+</div>
+</div>
+<!-- Stream Metadata -->
+<div class="glass-panel p-5 rounded-3xl space-y-4 shadow-2xl relative overflow-hidden group">
+<!-- Subtle background pulse -->
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+<div class="relative z-10">
+<h1 class="font-headline font-extrabold text-xl leading-tight text-white mb-1.5">Midnight Pulse: Analog Sessions 04</h1>
+<p class="text-white/70 text-sm leading-relaxed line-clamp-2">Diving deep into FM synthesis and modular routing. Real-time Q&amp;A about the upcoming EP. <span class="text-secondary">#sounddesign #live</span></p>
+</div>
+<div class="flex items-center gap-3 relative z-10">
+<button class="vivid-gradient text-white font-headline font-black px-6 py-2.5 rounded-full text-[11px] uppercase tracking-[0.1em] flex items-center gap-2 shadow-[0_8px_20px_rgba(232,0,72,0.3)] active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm">person_add</span>
+                        Collab
+                    </button>
+<button class="bg-white/10 hover:bg-white/20 text-white font-headline font-bold px-5 py-2.5 rounded-full text-[11px] uppercase tracking-widest backdrop-blur-xl border border-white/10 transition-all">
+                        Preset Store
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Contextual Navigation Dock -->
+<nav class="fixed bottom-0 left-0 w-full z-[60] px-4 pb-6">
+<div class="glass-panel rounded-[2.5rem] py-2 px-6 flex justify-between items-center shadow-2xl">
+<a class="p-3 text-white/50 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">grid_view</span>
+</a>
+<a class="p-3 text-white/50 hover:text-secondary transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">explore</span>
+</a>
+<!-- Central Action -->
+<button class="w-14 h-14 -mt-8 vivid-gradient rounded-full flex items-center justify-center text-white shadow-[0_10px_25px_rgba(232,0,72,0.5)] border-4 border-background animate-glow ring-4 ring-primary/10">
+<span class="material-symbols-outlined text-3xl font-bold">add</span>
+</button>
+<a class="p-3 text-white/50 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">chat</span>
+</a>
+<a class="p-3 text-white/50 hover:text-white transition-colors" href="#">
+<div class="w-7 h-7 rounded-full border-2 border-white/20 overflow-hidden">
+<img alt="profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8pd_DNLaAGhn8XgU4A936VIP0MEXgA4nut3D6rW1J3tsg3K149T43-ulXn3KI54BoOP2Dh7oYvyEeZKDqFadzf8lrMYQUh6yJ2vgH2OPfscq7egHl3m9rLtDMVRPUDLNLXQ6KEw4Twm7Oo11ByNkbGjhsXYovLKBnmG7jgvq95mIPgO46uG7PXlhvGCtthIbl4WgEAObYctRvQEOlTlOmFOFoFRKzJyVEqcmTf0AWlCnPwlPZwpedZlkCs90rLv8tUU01VBPsFTs"/>
+</div>
+</a>
+</div>
+</nav>
+<!-- Bottom Safe Area Spacer -->
+<div class="h-6 w-full fixed bottom-0 bg-background/50 backdrop-blur-md z-[55]"></div>
+</body></html>

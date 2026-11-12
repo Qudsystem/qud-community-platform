@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Squad Chat - Electric Cinema</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "background": "#0e0e0e",
+              "tertiary": "#fffcc5",
+              "on-primary-fixed-variant": "#5f0018",
+              "surface": "#0e0e0e",
+              "surface-dim": "#0e0e0e",
+              "on-secondary-fixed-variant": "#006763",
+              "secondary": "#29fcf3",
+              "on-surface-variant": "#adaaaa",
+              "tertiary-container": "#f5f200",
+              "outline-variant": "#494847",
+              "outline": "#777575",
+              "on-tertiary-container": "#5b5a00",
+              "on-tertiary": "#636200",
+              "surface-bright": "#2d2c2c",
+              "on-background": "#ffffff",
+              "primary-dim": "#e80048",
+              "primary": "#ff8c95",
+              "error": "#ff7351",
+              "tertiary-dim": "#efec00",
+              "surface-container": "#1a1919",
+              "tertiary-fixed-dim": "#efec00",
+              "secondary-fixed": "#29fcf3",
+              "secondary-container": "#006a66",
+              "primary-fixed-dim": "#ff576e",
+              "tertiary-fixed": "#fefb00",
+              "on-primary-container": "#4e0012",
+              "on-error-container": "#ffd2c8",
+              "surface-container-highest": "#262625",
+              "error-container": "#b92902",
+              "secondary-dim": "#00ede5",
+              "surface-tint": "#ff8c95",
+              "surface-container-high": "#201f1f",
+              "primary-fixed": "#ff7482",
+              "on-secondary-fixed": "#004845",
+              "on-surface": "#ffffff",
+              "inverse-primary": "#bf003a",
+              "inverse-on-surface": "#565554",
+              "surface-variant": "#262625",
+              "on-primary-fixed": "#000000",
+              "primary-container": "#ff7482",
+              "on-secondary": "#005c59",
+              "on-error": "#450900",
+              "inverse-surface": "#fcf8f8",
+              "on-tertiary-fixed": "#4d4c00",
+              "error-dim": "#d53d18",
+              "surface-container-lowest": "#000000",
+              "surface-container-low": "#141313",
+              "secondary-fixed-dim": "#00ede5",
+              "on-secondary-container": "#dafffc",
+              "on-primary": "#64001a",
+              "on-tertiary-fixed-variant": "#6b6900"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Be Vietnam Pro"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        display: inline-block;
+        line-height: 1;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+      }
+      .glass-hud {
+        background: rgba(14, 14, 14, 0.7);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .message-cyan {
+        background: linear-gradient(135deg, rgba(41, 252, 243, 0.15) 0%, rgba(0, 106, 102, 0.1) 100%);
+        border: 1px solid rgba(41, 252, 243, 0.2);
+      }
+      .message-pink {
+        background: linear-gradient(135deg, rgba(255, 140, 149, 0.15) 0%, rgba(100, 0, 26, 0.1) 100%);
+        border: 1px solid rgba(255, 140, 149, 0.2);
+      }
+      .glow-pulse {
+        box-shadow: 0 0 15px rgba(255, 140, 149, 0.4);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-zinc-950/80 backdrop-blur-xl shadow-[0_8px_32px_rgba(41,252,243,0.08)] flex justify-between items-center px-6 py-4">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-zinc-800/50 transition-all active:scale-90">
+<span class="material-symbols-outlined text-on-surface">arrow_back</span>
+</button>
+<div class="flex -space-x-3 items-center">
+<img class="w-10 h-10 rounded-full border-2 border-background object-cover" data-alt="portrait of a stylish young man with neon lighting reflections on his face and dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhMonnnXe0i4cUe3r4YZDtlIO2_2s2muUSR0mdb1prvZISs47Vl1PFQB39kWCMooPI719lsPvJbvFnCW_96YTFNWgA0pcxBqyrDq5Lx-9vPp3pA-vIrdMrZmY5naJc8laVSt8xMqlO1UAMdpH83MAOUKEHerAGX1BktKG43-lZOV4DX9mEOQi_KFj7mjKBTY3aczp1SYM6Xgt-A-TGvEu798KkIf6sSfABlVYbhLAFqXuRFALr9zs8tatMbpygpsns-Fi6HEQVp9A"/>
+<img class="w-10 h-10 rounded-full border-2 border-background object-cover" data-alt="vibrant portrait of a woman with pink hair highlights and bright expressive eyes in a studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpIFXSVAXcFbZBWZ0hqgqzrzBRpsJDSd2xe_7Q8z-eWu-O6TRYDviS0-YV0kYed_gijJz-pEcaRJOUUow11Kav1Kq1OF1JVgYe3tWBfYR9TFWujfvjwfpZfDj-avEFwJ1YKhrkRJ_PmFYeDzNfoyjAJMzEwvSCmrVCV5roXp4y7rfuk4uzex0Ybfsz8BGj9k1b7jXEeC9JDlha_H9gRuHJUUXRyKCFOCw_zSMtmyvv4MklSlS5_ikfkHdLBTpiBSwjrsyBpUlMtWE"/>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest border-2 border-background flex items-center justify-center text-[10px] font-bold text-secondary-fixed">+8</div>
+</div>
+<div class="flex flex-col ml-1">
+<h1 class="font-headline font-bold text-[1.25rem] text-cyan-400 tracking-tight leading-none">Squad Chat</h1>
+<span class="text-[10px] text-zinc-400 font-label tracking-widest uppercase">12 members online</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-11 h-11 flex items-center justify-center rounded-xl hover:bg-zinc-800/50 text-cyan-400 transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="videocam">videocam</span>
+</button>
+<button class="w-11 h-11 flex items-center justify-center rounded-xl hover:bg-zinc-800/50 text-cyan-400 transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="pt-24 pb-40 px-4 min-h-screen space-y-8 max-w-2xl mx-auto">
+<!-- Date Separator -->
+<div class="flex justify-center">
+<span class="px-4 py-1 rounded-full bg-surface-container-high text-on-surface-variant text-[10px] font-label uppercase tracking-widest">Today</span>
+</div>
+<!-- Received Message (Cyan Theme) -->
+<div class="flex items-end gap-3 group">
+<img class="w-9 h-9 rounded-xl object-cover mb-1" data-alt="close up of a young man with sharp features and cool urban aesthetic looking directly at camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0oP0eVcKnD-ohrulDJmXRNR3BqJ4OvAPhUXLL--CPloXDUmX5qmVpojVopoEYU5actlmfjx9Ul5UACgWNKNq6CAdS-FTpVTwe1r3xUVkvxkmHHGNvmBiDYbrFdN4CZAhkPdts0BDh9HlWkPl46tEJc62vlAAJ2QSONCoy8yQbQVuc-gGvAIA5sTvC2N5vDW5lVs3xpg1WtisUSOyUjqJ2ortPPqxkznZBlClG1Jph9gWasj13wNmZnXyvNcRCRv1cDl4t1di5v4s"/>
+<div class="flex flex-col gap-1 max-w-[80%]">
+<span class="text-[11px] font-label text-secondary font-semibold ml-1">Alex Chen</span>
+<div class="message-cyan px-5 py-3 rounded-t-2xl rounded-br-2xl rounded-bl-none text-on-surface body-md shadow-sm">
+                    Yo! Who's down for the midnight premiere? I just saw the trailer and it looks insane. 🎬
+                </div>
+<span class="text-[9px] text-zinc-500 font-label ml-1">10:42 PM</span>
+</div>
+</div>
+<!-- Received Message (Pink Theme) -->
+<div class="flex items-end gap-3 group">
+<img class="w-9 h-9 rounded-xl object-cover mb-1" data-alt="smiling young woman with modern hair styling and glowing skin under soft neon city lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzM1FkmBtkS3nKp-hsVltuWvw5hp5ifk7y3myzAqDv5-kz5yoy8ap0gOvrhMo5D3rSmgmeD2Jx2fWWkS6wJgO1SHXbyTcIv9FQHm3t-I6WD6OGJlr4ZL4WO24vYxktaxVfarMznF_HEFNMNn0dCeJXQhH66XIR3gczd20C6FDp9hJSrGZ6edK2almTfPwoUBBW7S0sXD_KWCEKygxVZRfla98BxMmr_O8ZeqJrhiIZlBDcMyVcAzYvzq_h6iYDeG-IrMRVpgERRmc"/>
+<div class="flex flex-col gap-1 max-w-[80%]">
+<span class="text-[11px] font-label text-primary font-semibold ml-1">Sarah J.</span>
+<div class="message-pink px-5 py-3 rounded-t-2xl rounded-br-2xl rounded-bl-none text-on-surface body-md shadow-sm">
+                    Me!! 🙋‍♀️ The visuals look like they're straight out of a neon dream. We definitely need the IMAX seats for this one.
+                </div>
+<div class="message-pink px-5 py-3 rounded-2xl text-on-surface body-md shadow-sm mt-1">
+                    I'll check the bookings now.
+                </div>
+<span class="text-[9px] text-zinc-500 font-label ml-1">10:45 PM</span>
+</div>
+</div>
+<!-- Sent Message -->
+<div class="flex flex-col items-end gap-1 ml-auto max-w-[80%]">
+<div class="bg-gradient-to-br from-primary to-primary-dim px-5 py-3 rounded-t-2xl rounded-bl-2xl rounded-br-none text-on-primary-fixed font-medium body-md shadow-lg shadow-primary-dim/20">
+                Count me in too. Just finished work, I need a visual detox. Which cinema are we hitting?
+            </div>
+<div class="flex items-center gap-1 mr-1">
+<span class="text-[9px] text-zinc-500 font-label">10:47 PM</span>
+<span class="material-symbols-outlined text-[14px] text-secondary">done_all</span>
+</div>
+</div>
+<!-- Image Message -->
+<div class="flex items-end gap-3 group">
+<img class="w-9 h-9 rounded-xl object-cover mb-1" data-alt="cool young male avatar with neon backlight and dark aesthetic portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCk5EPghHIAIibfkeZbR6SGxuXGdVn7I1h49FrED0nnjMBwP53x_Nn9vVyV3kWFddfbUz_2pYiJoHNxJ4ub8wAJQO_yDL-_5HpSVZpt_pcci8aNFVwswMQ-ZVlJpH7oLF-LvY0Xbs0aWfk-rL0JFA8Fkdi0b1FPDN-0zsZh5sNDHAN2EFiemsxnbTI7WJHrK1_1yjIE8bXx4R2N2P0560SIY_cxPn8bhHcLhgyR4ZH8P3KF_cCGWOOZBCYcH3mxi03jh7pdch5GONQ"/>
+<div class="flex flex-col gap-2 max-w-[70%]">
+<span class="text-[11px] font-label text-secondary font-semibold ml-1">Alex Chen</span>
+<div class="rounded-2xl overflow-hidden border border-outline-variant/30 shadow-2xl">
+<img class="w-full aspect-video object-cover" data-alt="highly aesthetic cinematic shot of a neon city street at night with futuristic light trails and rain reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAI1kJW_6G9NH2UDorPS_m-p47wE6RKb04QjLNCmlM-wbmxtwgV3uxcLiwZGPkOMgj2POlC4O6nEXEd5X-Qxu0eaPPF3Yt07f4jB205aZfs9AI_KHpIlNyuaawbFcJXRmQc4WCQlRDeqB4mRFOEC13IYtwEtcEDogqkhWo2CL4wyIBoc3I89SV4bhYvWpc1fVfQO85CuIwk3ZSwfBQQF5mWeCJcMyO_zl_EKun_6NvtuxX73AaXpDEXLAMu82T3XZvsrG4WwNgGyVE"/>
+</div>
+<div class="message-cyan px-5 py-3 rounded-2xl text-on-surface body-md shadow-sm">
+                    Just saw the poster art at the station. This is the vibe! 🔥
+                </div>
+<span class="text-[9px] text-zinc-500 font-label ml-1">10:50 PM</span>
+</div>
+</div>
+<!-- Status indicator -->
+<div class="flex items-center gap-2 px-2 py-4">
+<div class="flex gap-1">
+<div class="w-1 h-1 bg-secondary rounded-full animate-bounce"></div>
+<div class="w-1 h-1 bg-secondary rounded-full animate-bounce [animation-delay:0.2s]"></div>
+<div class="w-1 h-1 bg-secondary rounded-full animate-bounce [animation-delay:0.4s]"></div>
+</div>
+<span class="text-[10px] text-on-surface-variant font-label italic">Jordan is typing...</span>
+</div>
+</main>
+<!-- Bottom Action Bar & Input -->
+<div class="fixed bottom-24 left-0 w-full px-4 z-50 pointer-events-none">
+<div class="max-w-2xl mx-auto glass-hud rounded-full p-2 flex items-center gap-2 shadow-2xl pointer-events-auto border border-white/5">
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-zinc-400 hover:text-secondary transition-colors">
+<span class="material-symbols-outlined">add</span>
+</button>
+<div class="flex-1 px-4 py-2 bg-surface-container rounded-full flex items-center gap-3">
+<input class="w-full bg-transparent border-none focus:ring-0 text-sm placeholder:text-zinc-600 text-on-surface py-1" placeholder="Send a message..." type="text"/>
+<button class="text-zinc-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">mood</span>
+</button>
+</div>
+<button class="w-10 h-10 bg-gradient-to-br from-primary to-rose-600 rounded-full flex items-center justify-center text-white glow-pulse active:scale-90 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-20 bg-zinc-900/90 backdrop-blur-2xl rounded-t-[2.5rem] flex justify-around items-center px-8 pb-4 z-50">
+<div class="flex flex-col items-center justify-center text-zinc-500 p-3 hover:text-cyan-400 transition-colors">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-500 p-3 hover:text-cyan-400 transition-colors">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+</div>
+<!-- Active Messaging Context - highlighting create or chat could work here, but usually Home/Main. Let's make Add Circle prominent as per instructions -->
+<div class="flex flex-col items-center justify-center bg-gradient-to-br from-pink-500 to-rose-600 text-white rounded-full p-4 shadow-[0_0_15px_rgba(255,140,149,0.5)] -translate-y-4 glow-tap-pulse-effect">
+<span class="material-symbols-outlined" data-icon="add_circle" style="font-variation-settings: 'FILL' 1; font-size: 32px;">add_circle</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-500 p-3 hover:text-cyan-400 transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-500 p-3 hover:text-cyan-400 transition-colors">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</div>
+</nav>
+<!-- Edge Decorative Bloom -->
+<div class="fixed top-0 left-0 w-full h-full pointer-events-none -z-10 overflow-hidden">
+<div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-secondary/5 rounded-full blur-[120px]"></div>
+</div>
+</body></html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="dark"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-color: #0e0e0e;
+            color: #ffffff;
+        }
+        .font-headline { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .neon-glow-primary {
+            box-shadow: 0 0 15px rgba(255, 140, 149, 0.2);
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-dim": "#e80048",
+              "on-primary-container": "#4e0012",
+              "secondary-dim": "#00ede5",
+              "on-error": "#450900",
+              "background": "#0e0e0e",
+              "primary-fixed": "#ff7482",
+              "primary-container": "#ff7482",
+              "surface-container-low": "#141313",
+              "error": "#ff7351",
+              "on-error-container": "#ffd2c8",
+              "on-tertiary-container": "#5b5a00",
+              "outline-variant": "#494847",
+              "surface-container-high": "#201f1f",
+              "surface-container": "#1a1919",
+              "on-tertiary-fixed-variant": "#6b6900",
+              "surface": "#0e0e0e",
+              "on-secondary-fixed-variant": "#006763",
+              "on-secondary": "#005c59",
+              "inverse-surface": "#fcf8f8",
+              "on-primary-fixed": "#000000",
+              "on-tertiary": "#636200",
+              "secondary": "#29fcf3",
+              "primary-fixed-dim": "#ff576e",
+              "on-tertiary-fixed": "#4d4c00",
+              "inverse-primary": "#bf003a",
+              "surface-variant": "#262625",
+              "on-primary": "#64001a",
+              "tertiary-container": "#f5f200",
+              "inverse-on-surface": "#565554",
+              "surface-tint": "#ff8c95",
+              "tertiary-fixed-dim": "#efec00",
+              "tertiary-dim": "#efec00",
+              "surface-dim": "#0e0e0e",
+              "secondary-fixed-dim": "#00ede5",
+              "on-secondary-fixed": "#004845",
+              "primary": "#ff8c95",
+              "surface-container-lowest": "#000000",
+              "on-primary-fixed-variant": "#5f0018",
+              "on-secondary-container": "#dafffc",
+              "error-dim": "#d53d18",
+              "surface-container-highest": "#262625",
+              "tertiary": "#fffcc5",
+              "tertiary-fixed": "#fefb00",
+              "on-surface": "#ffffff",
+              "on-surface-variant": "#adaaaa",
+              "on-background": "#ffffff",
+              "error-container": "#b92902",
+              "secondary-fixed": "#29fcf3",
+              "secondary-container": "#006a66",
+              "outline": "#777575",
+              "surface-bright": "#2d2c2c"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Be Vietnam Pro"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface selection:bg-primary/30 min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-neutral-950/80 backdrop-blur-xl flex justify-between items-center px-6 h-16 shadow-[0_0_15px_rgba(255,0,80,0.1)]">
+<div class="flex items-center gap-4">
+<button class="text-rose-600 scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-headline font-bold tracking-tight text-xl text-on-surface">Notifications</h1>
+</div>
+<button class="text-rose-600 scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">search</span>
+</button>
+</header>
+<main class="pt-20 pb-28 px-4 max-w-2xl mx-auto">
+<!-- Filter Chips -->
+<div class="flex gap-3 overflow-x-auto pb-6 no-scrollbar">
+<button class="px-6 py-2.5 rounded-full bg-gradient-to-br from-primary to-primary-container text-on-primary-fixed font-headline font-bold text-sm whitespace-nowrap shadow-[0_0_15px_rgba(255,140,149,0.3)]">All</button>
+<button class="px-6 py-2.5 rounded-full bg-surface-container-highest text-on-surface-variant font-headline font-bold text-sm whitespace-nowrap hover:bg-surface-bright transition-colors border border-outline-variant/10">Likes</button>
+<button class="px-6 py-2.5 rounded-full bg-surface-container-highest text-on-surface-variant font-headline font-bold text-sm whitespace-nowrap hover:bg-surface-bright transition-colors border border-outline-variant/10">Comments</button>
+<button class="px-6 py-2.5 rounded-full bg-surface-container-highest text-on-surface-variant font-headline font-bold text-sm whitespace-nowrap hover:bg-surface-bright transition-colors border border-outline-variant/10">Mentions</button>
+</div>
+<!-- Activity Feed -->
+<div class="space-y-4">
+<!-- Follower Notification -->
+<div class="glass-card p-4 rounded-xl flex items-center justify-between group hover:bg-white/10 transition-all">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img alt="User Profile" class="w-14 h-14 rounded-full object-cover border-2 border-secondary shadow-[0_0_10px_rgba(41,252,243,0.3)]" data-alt="Close up portrait of a young man with stylish curly hair and neon blue lighting on his face" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuoH_-8sMgEx4or-eSLKtoTgNegp9FyJPOWkkAIstk1iazW8YrFsRuFEgX276oJg5YT6GrMF6HMdXnRIiwdHouaAM2DVqNpqNMHc7Xr-Y23qGIPC5jxuAAMm8-DBCPuXEqFPvLCvkCI3eTS_LtF4Nyi17hQCGrlrvXCpyPYQpJugNXlQEsEyAbAUBjpraE-1r_d5dw98DnY0fvQpVpce03e8asD1qqWmwmAvgAvCl4lb-CE8dSq-qauZEdbCeJ22CDQ7gUtBobRik"/>
+<div class="absolute -bottom-1 -right-1 bg-secondary text-on-secondary rounded-full p-0.5 flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">person_add</span>
+</div>
+</div>
+<div>
+<p class="text-sm font-medium">
+<span class="font-headline font-extrabold text-on-surface">Alex Rivers</span>
+<span class="text-on-surface-variant"> started following you.</span>
+</p>
+<p class="text-xs text-on-surface-variant/60 font-medium mt-1 uppercase tracking-wider">2m ago</p>
+</div>
+</div>
+<button class="px-5 py-2 bg-secondary text-on-secondary font-headline font-bold text-xs rounded-full hover:scale-105 active:scale-95 transition-all">Follow</button>
+</div>
+<!-- Like Notification -->
+<div class="glass-card p-4 rounded-xl flex items-center justify-between group hover:bg-white/10 transition-all">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img alt="User Profile" class="w-14 h-14 rounded-full object-cover" data-alt="Portrait of a smiling woman with vibrantly dyed pink hair in a futuristic urban setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9XlvFS6oWaM42gwmB1fGmOQN9BO8vtoB2MSPZErE95KfmShZ7Oa4-s49NdGzkgME68JeQKiCHTCBVs-HKbdOkbmTl7QlSjw8y_loeSISJ5r3xuFKDuFOcrC-VaLt9infXnRqG8c92Th0ojFYqw9VarITGORsBP44Wjg9UNYnbLLqD3uW6wTTwYvs6aIP9OBsiP1LzvMeBJUKat6gA8XCzgIaeuIKp9aGInJjDiShuGcVf0G_GV_y9Ph2UvDLAbZSXzdIlpAdQ8L0"/>
+<div class="absolute -bottom-1 -right-1 bg-primary text-on-primary rounded-full p-0.5 flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+</div>
+<div>
+<p class="text-sm font-medium">
+<span class="font-headline font-extrabold text-on-surface">Elena Cyber</span>
+<span class="text-on-surface-variant"> liked your video.</span>
+</p>
+<p class="text-xs text-on-surface-variant/60 font-medium mt-1 uppercase tracking-wider">15m ago</p>
+</div>
+</div>
+<div class="w-14 h-14 rounded-lg overflow-hidden border border-outline-variant/20 flex-shrink-0">
+<img alt="Video Thumbnail" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-alt="Vibrant tech setup with multiple neon screens and glowing mechanical keyboards in a dark room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXjVFqoT6XYfz8hMW1bG94s191vuQTUcbqny5-p4d6YH0IqvGvEicDlaFIk740zaa4zJGGX9EEX_zQC0b0n4DG7ioxyDUUI89Bgmh5BgQCiaeemLOJNricYbT6EfaWQdkt3ggAIxUVjkTKjpGJjHU5wi2OUxG1bHyfiFiENbEt6tGhzfvewMmqAxONJbGvdIG7VC9NcGHA_6Lqgt9nAW3DIChAyUVcYRcafi86RDFGvAIWN3uVH9GzB_7vjHXJfzkt0Y2MOnn4BLc"/>
+</div>
+</div>
+<!-- Comment Notification -->
+<div class="glass-card p-4 rounded-xl flex items-center justify-between group hover:bg-white/10 transition-all">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img alt="User Profile" class="w-14 h-14 rounded-full object-cover" data-alt="Close-up of a man with sharp features wearing high-tech transparent glasses reflecting purple neon lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiD9f0wY09xVRAjTqRlwAphFqaAPzPoHkQeTQJTo3U6tgqrljy03iIP78Ex-ULv1d0_RBUnpoaWQhSkXDxvM6XbumZpSKj2VkK5nP8p0skv0oevcE_oD2GdQYK1kjSa_miKy_JHEhpGDDvZSWdBrypLbjbjW29IaPrj6oy_FYxICZbwzqvHsV8dQOFfoL9KhI3L-DXXuCVr8X9GhJEL3s5129eLWqmfoaLKiTwEcvdx6BVRdEcaNp1YQI4-sNZtPoQ9r6NanZrZvg"/>
+<div class="absolute -bottom-1 -right-1 bg-tertiary text-on-tertiary rounded-full p-0.5 flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">mode_comment</span>
+</div>
+</div>
+<div class="max-w-[180px] sm:max-w-xs">
+<p class="text-sm font-medium">
+<span class="font-headline font-extrabold text-on-surface">Marcus Vane</span>
+<span class="text-on-surface-variant"> commented: </span>
+<span class="text-primary italic">"This lighting is insane! 🔥"</span>
+</p>
+<p class="text-xs text-on-surface-variant/60 font-medium mt-1 uppercase tracking-wider">1h ago</p>
+</div>
+</div>
+<div class="w-14 h-14 rounded-lg overflow-hidden border border-outline-variant/20 flex-shrink-0">
+<img alt="Video Thumbnail" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-alt="Abstract flowing liquid waves in hot pink and electric blue colors with a high-gloss finish" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBb-_m0D-bQ2tBdqCZdoTVmvp6gDHhkT9CrTUsGIbOL0gDKM26RUN4Rnp_cnI0qcWhz60jUPh4J02IEprR26hiUo40sy7267HOnVn93A5yu2SHL3aEXCuSpJS6XfY_Pulz25wJS-5u3uCPq7_TVhdfvnemRf1E45wfUquNwuuKkYNHwNP6NkdHI5oAXW3x7Nx-RuKbeltRKRZZoBpx_YOycneCfGu5jsFaW6gvjNKvpb-UxlRnSK0TEzGV6ycMFuIcQH4cimNyqNDc"/>
+</div>
+</div>
+<!-- Mention Notification -->
+<div class="glass-card p-4 rounded-xl flex items-center justify-between group hover:bg-white/10 transition-all">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img alt="User Profile" class="w-14 h-14 rounded-full object-cover" data-alt="Cinematic portrait of a young woman standing in a rainy Tokyo street at night, illuminated by red and cyan neon signs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdEy_9Yqm9hp-oWynPsvoehhMUI9CL_TRLBvMA-s325jEoW_8Xb2yXmMMeJoCkqfspiRNGioH8kCGlvBdBozp1JRiZvHkBlXIVXE_GNXphMl0nnmI0N3zjd09zJ77doCt3YFckCt2OR7iFJD7Dqd3Y3FsKCmvMxb7ZoyCEUdGierJdwV82FELNkwoTA4bqFjCtgKGepRclgNiCKWHfKN5MTFyhHOKD9mfTwveNohu8O5S3wlegA87RtA2miWT7epxaApOVWZbVerA"/>
+<div class="absolute -bottom-1 -right-1 bg-secondary text-on-secondary rounded-full p-0.5 flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">alternate_email</span>
+</div>
+</div>
+<div>
+<p class="text-sm font-medium">
+<span class="font-headline font-extrabold text-on-surface">Luna Digital</span>
+<span class="text-on-surface-variant"> mentioned you in a comment.</span>
+</p>
+<p class="text-xs text-on-surface-variant/60 font-medium mt-1 uppercase tracking-wider">3h ago</p>
+</div>
+</div>
+<div class="w-14 h-14 rounded-lg overflow-hidden border border-outline-variant/20 flex-shrink-0">
+<img alt="Video Thumbnail" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-alt="Close-up of holographic fabric with iridescent pink and green shimmer reflecting dynamic light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAq_sZLPHg5fY6dCGtcH3Lh2G9OdUADeYq5Mym6WT5IjiqKF6YlYY9Z49px38RGreLOYzQAf2NjdTjtkt-EZJLMj0VmXeTj4u6BUSmPaQug0TZujistOVxGS18MSGM_YCHCvEoMgKUXQF0adXqLOCwJ8f_mg0JlwJ7Lnoe3fUpRUUNbs9ZCBl8arfmbDpKrMYXgj9pUv0cRCGow3tJXbkSTlCJ5x0gVU71cX51-6KEQ_6kqw4f2dGdN-Y-bWX4Qmw6lYm01AIn613M"/>
+</div>
+</div>
+<!-- System Message -->
+<div class="bg-surface-container p-4 rounded-xl flex items-start gap-4 border-l-4 border-primary/40">
+<div class="bg-primary/20 p-2 rounded-full text-primary">
+<span class="material-symbols-outlined">stars</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-sm text-on-surface">Creator Milestone!</h3>
+<p class="text-sm text-on-surface-variant mt-1">Your video "Neon Nights" just hit 10k views. Keep it up!</p>
+<p class="text-xs text-on-surface-variant/60 font-medium mt-2 uppercase tracking-wider">Yesterday</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-neutral-900/90 backdrop-blur-2xl rounded-t-[2rem] shadow-[0_-4px_20px_rgba(0,0,0,0.5)]">
+<a class="flex flex-col items-center justify-center text-neutral-500 p-3 hover:bg-neutral-800 rounded-full transition-all" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold uppercase mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-500 p-3 hover:bg-neutral-800 rounded-full transition-all" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold uppercase mt-1">Explore</span>
+</a>
+<a class="bg-rose-600 text-white rounded-full p-4 -mt-8 shadow-[0_0_20px_rgba(255,140,149,0.5)] active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">add_box</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-rose-600/20 text-rose-500 rounded-full p-3 shadow-[0_0_10px_rgba(255,0,80,0.3)]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">notifications</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold uppercase mt-1">Alerts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-500 p-3 hover:bg-neutral-800 rounded-full transition-all" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold uppercase mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Electric Cinema - Discovery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-dim": "#e80048",
+              "on-primary-container": "#4e0012",
+              "secondary-dim": "#00ede5",
+              "on-error": "#450900",
+              "background": "#0e0e0e",
+              "primary-fixed": "#ff7482",
+              "primary-container": "#ff7482",
+              "surface-container-low": "#141313",
+              "error": "#ff7351",
+              "on-error-container": "#ffd2c8",
+              "on-tertiary-container": "#5b5a00",
+              "outline-variant": "#494847",
+              "surface-container-high": "#201f1f",
+              "surface-container": "#1a1919",
+              "on-tertiary-fixed-variant": "#6b6900",
+              "surface": "#0e0e0e",
+              "on-secondary-fixed-variant": "#006763",
+              "on-secondary": "#005c59",
+              "inverse-surface": "#fcf8f8",
+              "on-primary-fixed": "#000000",
+              "on-tertiary": "#636200",
+              "secondary": "#29fcf3",
+              "primary-fixed-dim": "#ff576e",
+              "on-tertiary-fixed": "#4d4c00",
+              "inverse-primary": "#bf003a",
+              "surface-variant": "#262625",
+              "on-primary": "#64001a",
+              "tertiary-container": "#f5f200",
+              "inverse-on-surface": "#565554",
+              "surface-tint": "#ff8c95",
+              "tertiary-fixed-dim": "#efec00",
+              "tertiary-dim": "#efec00",
+              "surface-dim": "#0e0e0e",
+              "secondary-fixed-dim": "#00ede5",
+              "on-secondary-fixed": "#004845",
+              "primary": "#ff8c95",
+              "surface-container-lowest": "#000000",
+              "on-primary-fixed-variant": "#5f0018",
+              "on-secondary-container": "#dafffc",
+              "error-dim": "#d53d18",
+              "surface-container-highest": "#262625",
+              "tertiary": "#fffcc5",
+              "tertiary-fixed": "#fefb00",
+              "on-surface": "#ffffff",
+              "on-surface-variant": "#adaaaa",
+              "on-background": "#ffffff",
+              "error-container": "#b92902",
+              "secondary-fixed": "#29fcf3",
+              "secondary-container": "#006a66",
+              "outline": "#777575",
+              "surface-bright": "#2d2c2c"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Be Vietnam Pro"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+        }
+        .masonry-item:nth-child(3n) {
+            grid-row: span 2;
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-primary-dim selection:text-white pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-neutral-950/80 backdrop-blur-xl shadow-[0_0_15px_rgba(255,0,80,0.1)] flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="scale-95 active:scale-90 transition-transform text-rose-600">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-xl font-black italic text-rose-600 uppercase tracking-tighter font-['Plus_Jakarta_Sans']">Electric Cinema</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="scale-95 active:scale-90 transition-transform text-rose-600">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+</header>
+<main class="pt-20 px-6">
+<!-- Search Section -->
+<section class="mb-8">
+<div class="relative group">
+<div class="absolute -inset-0.5 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-30 group-focus-within:opacity-100 transition duration-500"></div>
+<div class="relative flex items-center bg-surface-container-highest rounded-full px-6 py-4 shadow-xl">
+<span class="material-symbols-outlined text-on-surface-variant mr-3" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-on-surface placeholder:text-on-surface-variant w-full font-medium" placeholder="Search for creators or vibes..." type="text"/>
+<span class="material-symbols-outlined text-secondary" data-icon="tune">tune</span>
+</div>
+</div>
+</section>
+<!-- Trending Topics -->
+<section class="mb-10 -mx-6">
+<div class="flex overflow-x-auto gap-4 px-6 no-scrollbar">
+<button class="flex-none px-6 py-2.5 bg-gradient-to-br from-primary to-primary-container text-on-primary-fixed font-bold rounded-full shadow-[0_0_15px_rgba(255,140,149,0.4)]">
+                    #NeonNights
+                </button>
+<button class="flex-none px-6 py-2.5 bg-surface-container-high text-on-surface-variant hover:text-secondary border border-outline-variant/20 font-semibold rounded-full transition-all">
+                    #CyberCity
+                </button>
+<button class="flex-none px-6 py-2.5 bg-surface-container-high text-on-surface-variant hover:text-secondary border border-outline-variant/20 font-semibold rounded-full transition-all">
+                    #ElectricVibe
+                </button>
+<button class="flex-none px-6 py-2.5 bg-surface-container-high text-on-surface-variant hover:text-secondary border border-outline-variant/20 font-semibold rounded-full transition-all">
+                    #RetroFuture
+                </button>
+<button class="flex-none px-6 py-2.5 bg-surface-container-high text-on-surface-variant hover:text-secondary border border-outline-variant/20 font-semibold rounded-full transition-all">
+                    #GlowCore
+                </button>
+</div>
+</section>
+<!-- Content Grid (Masonry-Style) -->
+<section class="masonry-grid">
+<!-- Item 1 -->
+<div class="masonry-item group relative overflow-hidden rounded-lg bg-surface-container-high aspect-[3/4]">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Close up of a neon-lit vintage computer setup in a dark room with cyan and magenta reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_aKjkmDvOtI1zxVO56FdYEtk9Gqg3dvpNQEYIetkR4RCqIeSDJ5hZ6QHFsD2yeZV5t1WPulJx-J5jhOJONLUhx64JeleHgHWDFUSQ5hoHz25m6EIIMNn-q_IIkfjlstIHKKmnCHrx2x3lfhi-B8phFy5RnOe2zzs8buq0hMEUvOvdtWBixVhudVuOG7flc2menPH1XTIb92H9rrM15y2AK_XMapCVbFXrSlEq17RrSsgMzCoKv8i1A2vjmIZFGlgxUrSL6CJ7B50"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<span class="text-[10px] font-bold uppercase tracking-widest text-secondary mb-1 block">Trending Now</span>
+<p class="font-headline font-bold text-white leading-tight">Retro Tech Revival</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="masonry-item group relative overflow-hidden rounded-lg bg-surface-container-high aspect-square">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Cyberpunk street photography of a busy Tokyo intersection at night with glowing neon billboards and rain reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3nzC0ebAFFj2XtHYxMT5XWGwOndnktghRIdMTiys_Ak55z9iV3vQepA-g5myyK9bFjbFxqDO6lGSTn8tPalZ5zJjYbAHCJasJx-lQ8GtIxejCIY3NmNlqcmrRO2eLONjcAUyYi3ZdfRMriP9hvGcqPzo-gJw99KtwktgRFk5teK3koSDIjnugSJ6KJt7jyt50qnaTrbF_FnD8DDbArnHGv77ypCMY-0QVH21OzZckTrRiiyNLqgP62WOiXBeTigj0NHwx_cedhiQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<p class="font-headline font-bold text-white leading-tight">Midnight Districts</p>
+</div>
+</div>
+<!-- Item 3 (Spanning) -->
+<div class="masonry-item group relative overflow-hidden rounded-lg bg-surface-container-high">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Cinematic portrait of a person wearing futuristic LED glasses with light trails and vibrant pink glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi5NmsliiYKB3fWT78zltrK07ZGgFcfurUxRwIZncNr2RyEQXICdvfeEetifH-AqzvYU9tLZ-fw_zpl7qBdW_AK99PEtW80Tg3ZW2joxi_Y246c7xp2Z71LQE4SilSY7JFkJvix_LCllwIvWxMeZoQO895mkeEBXEUHbj0fCz6hazYZjQpsem-MK75CJMlHuaAKtZWTWyDBP2BBhbBrvkongPKvsxw96w1tO-TAS4jVGFZYSK3GvFV7iowmxffjd2IeflFl_0jSOw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<div class="flex items-center gap-2 mb-2">
+<div class="w-8 h-8 rounded-full border-2 border-primary overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Profile photo of a stylish young creator with neon lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAV1mwPU-2_MnjCju2s_xGTgi5jKZxB4lPabRw5zRklEHSQSFZYsPiMP6WfQzoQI5W2fs7Z4LwaRXYRFV-T01CHUWxQ37IhpPm_aJLtF4bsw-A1Efb-9OqUOHWSqFsEPM7AKjdDWllUwfNwupCBxCbP5LCCANQlHxHlYmonJdRmZ5_lERjmvL1RNLlVrwaVVVmtzSZ5KAfMeMmXKOmL6bUOe_uOHyh_qeV4JmrchHbbK4PvWqdVqX_mBN5_iJn7SsJBXYUkn7emUtU"/>
+</div>
+<span class="text-xs font-bold text-white">@NeonProphet</span>
+</div>
+<p class="font-headline text-lg font-extrabold text-white leading-tight">The Future of Digital Identity</p>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="masonry-item group relative overflow-hidden rounded-lg bg-surface-container-high aspect-[3/4]">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Abstract fluid art with flowing iridescent colors and liquid chrome texture with neon pink accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwvdQyblSR9DO3aXI979l7FgnK7oQltMUl6UL49x-FLti_a-YKos52pwdd5FZOYAqaiCZsn3ROAM7mLhNSKpLnSyaBTrArpBDiNgSbfsXcq9mO5CqMI7fktS3sg4Sfb2dtnOL3i1r2AgS_pltBAuZEjQGkjlhNtNRXMAwehDqo_ltTWIA3GhEyJLUdCHsALHvMCU4l6GGTDQqMvVlU7TeAfMm3Nf5kN1VGdEZGO5GH2OnO9WpbuiaF8KrWOEIaZsPbw_03OUPGaWM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<p class="font-headline font-bold text-white leading-tight">Visual Synesthesia</p>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="masonry-item group relative overflow-hidden rounded-lg bg-surface-container-high aspect-square">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Distant silhouette of a person standing against a massive glowing violet sun in a minimalist sci-fi landscape" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCR0HJslDMI8_nNmDNmLQb0LCNUb_01FhZTbXzTU70MzCe3FiC3eStcfvjj2T3GHzC9SJYrJagwdO0aU-D9EzI-OCfLv6D2yo6k2u6nGLSCtyqWQBNV9DY4gDJp_aPuNQgyXLm4iQzITsoTUl5o5wz5SMJZmSjXaEEqhJDZKOXmB-yw8IksMqPH0iZE1Qt9VY-a8HrmoPSbRm675jx6jTBoh2oqkGaiVrwhh_b4kdudyW16qArjpsyYZXmKIbtNAxiUscGGtKgnSdE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<p class="font-headline font-bold text-white leading-tight">Hyper-Focus</p>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-neutral-900/90 backdrop-blur-2xl rounded-t-[2rem] shadow-[0_-4px_20px_rgba(0,0,0,0.5)]">
+<a class="flex flex-col items-center justify-center text-neutral-500 p-3 hover:bg-neutral-800 rounded-full transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold uppercase mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-rose-600/20 text-rose-500 rounded-full p-3 shadow-[0_0_10px_rgba(255,0,80,0.3)] active:scale-110 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold uppercase mt-1">Discover</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-500 p-3 hover:bg-neutral-800 rounded-full transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="add_box">add_box</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold uppercase mt-1">Create</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-500 p-3 hover:bg-neutral-800 rounded-full transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold uppercase mt-1">Alerts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-neutral-500 p-3 hover:bg-neutral-800 rounded-full transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold uppercase mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

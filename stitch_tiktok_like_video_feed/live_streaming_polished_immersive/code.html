@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-tint": "#FF0050",
+                        "primary-dim": "#FF0050",
+                        "on-error-container": "#ffd2c8",
+                        "on-background": "#ffffff",
+                        "error-container": "#b92902",
+                        "inverse-surface": "#fcf8f8",
+                        "on-tertiary-container": "#5b5a00",
+                        "on-tertiary-fixed": "#4d4c00",
+                        "secondary": "#29fcf3",
+                        "secondary-fixed-dim": "#00ede5",
+                        "error-dim": "#d53d18",
+                        "tertiary-dim": "#efec00",
+                        "tertiary-fixed-dim": "#efec00",
+                        "tertiary": "#fffcc5",
+                        "surface-container": "#1a1919",
+                        "background": "#0e0e0e",
+                        "tertiary-container": "#f5f200",
+                        "on-secondary-fixed": "#004845",
+                        "primary": "#FF0050",
+                        "surface-bright": "#2d2c2c",
+                        "on-error": "#450900",
+                        "surface-container-low": "#141313",
+                        "primary-container": "#4e0012",
+                        "inverse-on-surface": "#565554",
+                        "error": "#ff7351",
+                        "secondary-dim": "#00ede5",
+                        "on-surface-variant": "#adaaaa",
+                        "primary-fixed": "#ff7482",
+                        "outline-variant": "#494847",
+                        "secondary-container": "#006a66",
+                        "on-surface": "#ffffff",
+                        "on-secondary": "#005c59",
+                        "on-primary-container": "#ffd9de",
+                        "surface-variant": "#262625",
+                        "surface-container-lowest": "#000000",
+                        "outline": "#777575",
+                        "on-tertiary-fixed-variant": "#6b6900",
+                        "surface-dim": "#0e0e0e",
+                        "on-tertiary": "#636200",
+                        "on-secondary-container": "#dafffc",
+                        "surface-container-highest": "#262625",
+                        "on-secondary-fixed-variant": "#006763",
+                        "inverse-primary": "#bf003a",
+                        "surface": "#0e0e0e",
+                        "on-primary-fixed-variant": "#5f0018",
+                        "secondary-fixed": "#29fcf3",
+                        "tertiary-fixed": "#fefb00",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#ff576e",
+                        "on-primary-fixed": "#000000",
+                        "surface-container-high": "#201f1f"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Be Vietnam Pro"],
+                        "label": ["Be Vietnam Pro"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(14, 14, 14, 0.45);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .neon-pulse {
+            box-shadow: 0 0 15px rgba(255, 0, 80, 0.5);
+            animation: neon-flicker 2s infinite alternate;
+        }
+        @keyframes neon-flicker {
+            0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 15px rgba(255, 0, 80, 0.5); }
+            50% { opacity: 0.9; transform: scale(1.02); box-shadow: 0 0 25px rgba(255, 0, 80, 0.8); }
+        }
+        .video-background {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .chat-mask {
+            mask-image: linear-gradient(to top, black 85%, transparent 100%);
+        }
+        .interaction-button {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .interaction-button:active {
+            transform: scale(0.9);
+        }
+        .video-overlay-gradient {
+            background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0) 70%, rgba(0,0,0,0.5) 100%);
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body overflow-hidden h-screen select-none flex flex-col">
+<!-- Immersive Video Background -->
+<img alt="Live Stream" class="video-background" data-alt="Professional creator in a dark studio with neon pink and cyan aesthetic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmr3fJcJzFHy4hry9HwGY7GL8Kv6PsZO8xTpRwh9SFZUkV8f0iOkZWjWvMoHfVXmTUsSsPD196liJCy1CXdWSV0wPfyyaTD18BHuwO7YlEEOg0bXZvV-y90ffANH39zD-fSRXHe37OW5nitDiYjMjhcZPGMJxC_PD6_IShFvmncVSCpyPRWmS4zFVRL96oPvK5G0ar9DlRIHXd34KNd_qmUiVVXAzTBjDs9zJxP2PGTmHYdO9ksGcGmz-h6h1PIwQeMRZhogJ6cMA"/>
+<!-- Top Overlay Gradient -->
+<div class="video-overlay-gradient"></div>
+<!-- Top Header: Creator Info -->
+<header class="fixed top-0 w-full z-50 p-4 pt-10 flex items-center justify-between pointer-events-none">
+<div class="flex items-center gap-3 glass-panel rounded-full pl-1.5 pr-5 py-1.5 pointer-events-auto">
+<div class="relative">
+<img alt="Creator" class="w-10 h-10 rounded-full border-2 border-primary/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdqHeqpwccC6Q1m21t_Gro8YoPXviBJPk37Pxh4VqTf1ZT0e7PFkpILGm121nfYUCnuqYo56LTqiTaoGrq__4vf5oILWnrTqVjkT2mghuv6XVe1cp6CNMBbdNcYVMXElY79-3DuGcODs-gfwbk7-AfyO6jm7VSKatnLCyg82IwekQ1qh1iiTMNCZ5Lo2GBvZpvwAJ3xjyx-6pwkRhn2B2DcOaD6_uI1ejQTw7alzrA5-4JanPERlifbP-sg1UYCky5W8OzG0yS9p8"/>
+<div class="absolute -bottom-0.5 -right-0.5 w-4 h-4 bg-primary rounded-full border-2 border-background flex items-center justify-center">
+<div class="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></div>
+</div>
+</div>
+<div class="flex flex-col">
+<h1 class="font-headline font-bold text-[13px] tracking-tight leading-none mb-0.5">CyberVeda</h1>
+<div class="flex items-center gap-1.5">
+<span class="text-[10px] font-extrabold text-primary uppercase tracking-[0.1em] leading-none">Live</span>
+<span class="w-1 h-1 bg-white/30 rounded-full"></span>
+<span class="text-[10px] font-semibold text-white/80 leading-none">12.4K viewers</span>
+</div>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full glass-panel flex items-center justify-center interaction-button pointer-events-auto">
+<span class="material-symbols-outlined text-white text-xl">close</span>
+</button>
+</header>
+<!-- Main Viewport Content -->
+<main class="relative h-full flex flex-col justify-end pb-[92px] px-4 z-10">
+<!-- Interaction Side Rail -->
+<aside class="absolute right-4 bottom-[200px] flex flex-col gap-6 items-center">
+<div class="flex flex-col items-center gap-1">
+<button class="w-14 h-14 rounded-full glass-panel flex items-center justify-center interaction-button group overflow-hidden">
+<span class="material-symbols-outlined text-primary text-[28px] group-active:scale-125 transition-transform" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<span class="text-[11px] font-bold font-label text-white/90 drop-shadow-md">2.4M</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<button class="w-14 h-14 rounded-full glass-panel flex items-center justify-center interaction-button group">
+<span class="material-symbols-outlined text-white text-[28px]">mode_comment</span>
+</button>
+<span class="text-[11px] font-bold font-label text-white/90 drop-shadow-md">45.2K</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<button class="w-14 h-14 rounded-full glass-panel flex items-center justify-center interaction-button group neon-pulse bg-primary/10 border-primary/30">
+<span class="material-symbols-outlined text-primary text-[28px]" style="font-variation-settings: 'FILL' 1;">featured_seasonal_and_gifts</span>
+</button>
+<span class="text-[11px] font-bold font-label text-white/90 drop-shadow-md">Gift</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<button class="w-14 h-14 rounded-full glass-panel flex items-center justify-center interaction-button group">
+<span class="material-symbols-outlined text-white text-[28px]">share</span>
+</button>
+<span class="text-[11px] font-bold font-label text-white/90 drop-shadow-md">Share</span>
+</div>
+</aside>
+<!-- Chat Section -->
+<section class="w-full space-y-4 max-w-[85%] pb-4">
+<!-- Scrolling Live Chat Overlay -->
+<div class="chat-mask max-h-[220px] overflow-hidden flex flex-col gap-3.5">
+<div class="flex items-start gap-2.5">
+<img alt="Avatar" class="w-8 h-8 rounded-full border border-white/10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMy9xwh3XJXqkx-1o0ahCm-nPbmtpoAltxhJK1BDLMCTGe7Iv-QB2gwgCs0h1tmWa7ZsMQBFq1BELcQ07E1M3xPyqvEjIQFqmgEbGAqUfiOywLd9MZKXXslZlbjANSEgqVq2Sh2BXXaSOQlCrSu2dlAKpRUQ8vU0fb8r6IdNn-s6X_h8tUUOpSABRVbfUw9CQbz84HyIVswdWZB-YhPTSTUmvw5Tap48ZkA7PP8kie80FZUjVUQbJDoPFlObUnfl9T1J3y4hY6U3I"/>
+<div class="glass-panel rounded-2xl rounded-tl-none px-4 py-2.5">
+<p class="text-[13px] leading-relaxed">
+<span class="font-bold text-secondary mr-2">ZeroOne</span>
+<span class="text-white/90">The lighting in this stream is incredible! 🔥</span>
+</p>
+</div>
+</div>
+<div class="flex items-start gap-2.5">
+<img alt="Avatar" class="w-8 h-8 rounded-full border border-white/10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVG7BJ7HD7Be9Zo21YWt-7jYLPWxt4At3tMs_byDyGrxvLuAaPdmFhbAmichVnIhTsuFveyRAbP9EDCoE7IWMlQc8gyId42CPxLTnNVczb-dlA8fsDDRsl0KdtR8EVOUeyH4QiWX-mpa6ppvI4OK0uF3JfR7_T_Xn1CAfUhlRTiAgfNqGDNG_ydIFC6lv_Nco9PAyNT2zAxuc9UhfOHdIRZI4mV5F99tHfTLEdmlq1l-MiZ3odPV9lozcdsScAM7X36-WD_q8PLtg"/>
+<div class="glass-panel rounded-2xl rounded-tl-none px-4 py-2.5">
+<p class="text-[13px] leading-relaxed">
+<span class="font-bold text-primary mr-2">NeonDream</span>
+<span class="text-white/90">When is the next drop? 💎</span>
+</p>
+</div>
+</div>
+<div class="flex items-start gap-2.5">
+<img alt="Avatar" class="w-8 h-8 rounded-full border border-white/10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNMWc6SO9bHpKHLQldeeNRb_l0YHlPwZ9uPCXGT_-wjekxOINTDIaonsu89CU_rEwXlbq_ZPFNKeKE4SjuKRaFfhq0nCw3rcyjW9AcmhlB4q503ieqT9snwoYBbdCtB-4GWjqbnMLX2q_rIgj6-9YXoihAFOzNKXcQ1kB5PQpUPbM9RobMCpydSTJY5RqgbOW-hGWWwMfMdxrQ4m2EvPA-m_idstvbXYnrx7MDcZXvaMftOtIcaqd3Y3gR2HXw7g7ZvQjGfBlQtmg"/>
+<div class="glass-panel rounded-2xl rounded-tl-none px-4 py-2.5 border-primary/20">
+<p class="text-[13px] leading-relaxed">
+<span class="font-bold text-tertiary mr-2">PixelFlux</span>
+<span class="text-white/90">Just sent 10 Super Sparks! ⚡️</span>
+</p>
+</div>
+</div>
+</div>
+<!-- Say something... Input -->
+<div class="flex items-center gap-3 pr-2">
+<div class="flex-1 glass-panel rounded-full flex items-center px-4 h-12">
+<input class="bg-transparent border-none focus:ring-0 text-sm text-white placeholder-white/40 w-full" placeholder="Say something..." type="text"/>
+<button class="ml-2 text-white/50 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-xl">sentiment_satisfied</span>
+</button>
+</div>
+<button class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white interaction-button neon-pulse shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined font-bold text-[22px]">send</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Unified Bottom Navigation Bar (Consistent with SCREEN_39) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#201f1f]/90 backdrop-blur-2xl rounded-t-[2.5rem] shadow-[0_-10px_40px_rgba(0,0,0,0.5)] border-t border-white/5">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-gray-400 opacity-60 hover:opacity-100 hover:text-white transition-all duration-300 group" href="#">
+<span class="material-symbols-outlined text-2xl">home</span>
+<span class="font-headline text-[10px] font-semibold uppercase tracking-widest mt-1">Home</span>
+</a>
+<!-- Explore -->
+<a class="flex flex-col items-center justify-center text-gray-400 opacity-60 hover:opacity-100 hover:text-white transition-all duration-300 group" href="#">
+<span class="material-symbols-outlined text-2xl">explore</span>
+<span class="font-headline text-[10px] font-semibold uppercase tracking-widest mt-1">Explore</span>
+</a>
+<!-- Create (Central Highlight) -->
+<a class="flex flex-col items-center justify-center -mt-10 relative group transition-transform active:scale-95 duration-200" href="#">
+<div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-[0_0_25px_rgba(255,0,80,0.7)] border-4 border-[#201f1f] group-hover:shadow-[0_0_35px_rgba(255,0,80,1)] transition-all">
+<span class="material-symbols-outlined text-white text-4xl font-bold">add</span>
+</div>
+<span class="font-headline text-[10px] font-bold uppercase tracking-[0.15em] mt-2 text-primary drop-shadow-[0_0_5px_rgba(255,0,80,0.4)]">Create</span>
+</a>
+<!-- Activity -->
+<a class="flex flex-col items-center justify-center text-gray-400 opacity-60 hover:opacity-100 hover:text-white transition-all duration-300 group" href="#">
+<span class="material-symbols-outlined text-2xl">favorite</span>
+<span class="font-headline text-[10px] font-semibold uppercase tracking-widest mt-1">Activity</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-gray-400 opacity-60 hover:opacity-100 hover:text-white transition-all duration-300 group" href="#">
+<span class="material-symbols-outlined text-2xl">person</span>
+<span class="font-headline text-[10px] font-semibold uppercase tracking-widest mt-1">Profile</span>
+</a>
+</nav>
+<!-- Floating Reactions (Visual Only) -->
+<div class="fixed right-6 bottom-56 pointer-events-none flex flex-col gap-3 opacity-40">
+<span class="material-symbols-outlined text-primary scale-125 animate-bounce" style="font-variation-settings: 'FILL' 1; animation-duration: 3s;">favorite</span>
+<span class="material-symbols-outlined text-secondary translate-x-4 animate-pulse" style="animation-duration: 2s;">bolt</span>
+<span class="material-symbols-outlined text-tertiary -translate-x-2 animate-bounce" style="animation-duration: 4s;">star</span>
+</div>
+</body></html>

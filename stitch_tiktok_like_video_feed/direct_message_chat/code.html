@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary": "#29fcf3",
+              "on-background": "#ffffff",
+              "surface-container-low": "#141313",
+              "surface-bright": "#2d2c2c",
+              "primary-fixed": "#ff7482",
+              "on-error-container": "#ffd2c8",
+              "error-container": "#b92902",
+              "inverse-primary": "#bf003a",
+              "on-error": "#450900",
+              "inverse-on-surface": "#565554",
+              "outline": "#777575",
+              "surface-container": "#1a1919",
+              "primary-fixed-dim": "#ff576e",
+              "primary-container": "#ff7482",
+              "background": "#0e0e0e",
+              "tertiary-fixed-dim": "#efec00",
+              "on-tertiary-fixed": "#4d4c00",
+              "on-primary-container": "#4e0012",
+              "on-tertiary-container": "#5b5a00",
+              "on-primary-fixed-variant": "#5f0018",
+              "primary-dim": "#e80048",
+              "tertiary-container": "#f5f200",
+              "inverse-surface": "#fcf8f8",
+              "primary": "#ff8c95",
+              "on-primary": "#64001a",
+              "on-secondary": "#005c59",
+              "tertiary": "#fffcc5",
+              "on-secondary-fixed": "#004845",
+              "surface-dim": "#0e0e0e",
+              "surface-container-highest": "#262625",
+              "surface-tint": "#ff8c95",
+              "on-primary-fixed": "#000000",
+              "secondary-dim": "#00ede5",
+              "surface-container-lowest": "#000000",
+              "on-tertiary-fixed-variant": "#6b6900",
+              "on-surface": "#ffffff",
+              "on-secondary-fixed-variant": "#006763",
+              "on-surface-variant": "#adaaaa",
+              "on-tertiary": "#636200",
+              "outline-variant": "#494847",
+              "error-dim": "#d53d18",
+              "surface-variant": "#262625",
+              "surface-container-high": "#201f1f",
+              "tertiary-fixed": "#fefb00",
+              "error": "#ff7351",
+              "surface": "#0e0e0e",
+              "secondary-fixed-dim": "#00ede5",
+              "secondary-container": "#006a66",
+              "tertiary-dim": "#efec00",
+              "on-secondary-container": "#dafffc",
+              "secondary-fixed": "#29fcf3"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Be Vietnam Pro"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .neon-glow-primary {
+        box-shadow: 0 0 15px rgba(255, 140, 149, 0.3);
+      }
+      ::-webkit-scrollbar {
+        width: 4px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #262625;
+        border-radius: 10px;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation Shell (Suppressed Nav for Focused Task, but using provided header data) -->
+<header class="fixed top-0 w-full z-50 bg-black/10 backdrop-blur-xl shadow-[0_16px_3.5rem_rgba(255,0,80,0.08)] flex justify-between items-center px-6 py-4">
+<div class="flex items-center gap-4">
+<button class="hover:bg-zinc-800/50 transition-colors scale-95 active:scale-90 transition-transform p-2 rounded-full">
+<span class="material-symbols-outlined text-rose-500">arrow_back</span>
+</button>
+<div class="flex items-center gap-3">
+<div class="relative">
+<img alt="User Profile" class="w-10 h-10 rounded-full object-cover border border-primary/20" data-alt="Close up portrait of a stylish young woman with neon lighting reflections on her skin and purple tinted hair" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt9hdXIkudNWXjYIwK7qrdRgqqa6pm9KAWYJ4dw_F527WES0NanrzDGBPoGx_9hB0QtGfRXmCze93Yr-Tb0KDzqlSVpcPxoILNSnZMQS3fCyz2gqRC7MLHwZcXJoBiFv3UI5Ym_KEi8JYIS20YPuiO2Qgv3rENNT-kUDSsc66FBMPgPR6FQVCsD-D6Pft78NAxli4e7EnzHO6-dBdyHFspB9xH_ul3NTtrydxeb4RxUG39iwpqZA9EzP8AQKgJm3cR37nKnJEByfk"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-secondary rounded-full border-2 border-background"></span>
+</div>
+<div>
+<h1 class="font-headline font-bold tracking-tight text-lg text-rose-500 leading-none">Messages</h1>
+<p class="text-xs text-zinc-500 font-medium">Active now</p>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="hover:bg-zinc-800/50 transition-colors scale-95 active:scale-90 transition-transform p-2 rounded-full">
+<span class="material-symbols-outlined text-zinc-500">videocam</span>
+</button>
+<button class="hover:bg-zinc-800/50 transition-colors scale-95 active:scale-90 transition-transform p-2 rounded-full">
+<span class="material-symbols-outlined text-zinc-500">more_vert</span>
+</button>
+</div>
+</header>
+<!-- Chat Canvas -->
+<main class="pt-24 pb-32 px-4 max-w-3xl mx-auto flex flex-col gap-y-8 min-h-screen">
+<!-- Date Divider -->
+<div class="flex justify-center">
+<span class="px-4 py-1 rounded-full glass-card text-[10px] font-bold tracking-widest uppercase text-on-surface-variant/60">Today</span>
+</div>
+<!-- Received Message (Left) -->
+<div class="flex flex-col items-start gap-2 max-w-[85%] group">
+<div class="glass-card rounded-t-xl rounded-br-xl rounded-bl-none p-4 text-on-surface text-sm leading-relaxed border border-white/5">
+                Yo! Did you see the latest edit of the neon Tokyo drone shots? The grading is insane. 🔥
+            </div>
+<span class="text-[10px] text-on-surface-variant font-medium ml-1">14:20</span>
+</div>
+<!-- Sent Message (Right) -->
+<div class="flex flex-col items-end gap-2 max-w-[85%] ml-auto group">
+<div class="bg-gradient-to-br from-primary to-primary-container p-4 rounded-t-xl rounded-bl-xl rounded-br-none text-on-primary-container text-sm font-medium leading-relaxed neon-glow-primary">
+                Just saw it! That hyper-lapse transition at the Shibuya crossing was peak. How did you get that glow effect on the signs?
+            </div>
+<div class="flex items-center gap-1 mr-1">
+<span class="text-[10px] text-on-surface-variant font-medium">14:22</span>
+<span class="material-symbols-outlined text-[12px] text-secondary" style="font-variation-settings: 'FILL' 1;">done_all</span>
+</div>
+</div>
+<!-- Message with Image Content -->
+<div class="flex flex-col items-start gap-2 max-w-[85%]">
+<div class="glass-card rounded-xl p-2 border border-white/5">
+<img alt="Neon Cityscape" class="rounded-lg w-full h-48 object-cover mb-2" data-alt="Cinematic wide shot of Tokyo at night with glowing pink and cyan neon signs reflected in rain-slicked pavement" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_5yAHhcHNbjn9ZSX2M-adYsTMaVG5OYmsnZ1VeY5JSDksIrbYTYFGUzptyfixJ35mgvEkHUNpTWSqIQd9_KI-RfDyZsn4WXlddjYSSKyUmTfMDEvoedBHCu2QdFXPxLojG2i8zGroqgcykuY04NszbfTj145296y-40PuWOUaFaPcKlYvj9bn19l0uEUDqPO_10wIJvPdvuXuYycjupUz9r5XL_Z4dYP1mh3mgHEO_3S7O0FzyVqiNAmzj0kgqsv9-CChTXqaaw0"/>
+<div class="px-2 pb-2">
+<p class="text-sm text-on-surface">Used a custom glow-map with a 15% blur stack. Check this frame out.</p>
+</div>
+</div>
+<span class="text-[10px] text-on-surface-variant font-medium ml-1">14:25</span>
+</div>
+<!-- Sent Message (Right) -->
+<div class="flex flex-col items-end gap-2 max-w-[85%] ml-auto">
+<div class="bg-gradient-to-br from-primary to-primary-container p-4 rounded-t-xl rounded-bl-xl rounded-br-none text-on-primary-container text-sm font-medium leading-relaxed neon-glow-primary">
+                That's clean. Send me the preset later? I want to try it on the Cyberpunk series.
+            </div>
+<div class="flex items-center gap-1 mr-1">
+<span class="text-[10px] text-on-surface-variant font-medium">14:26</span>
+<span class="material-symbols-outlined text-[12px] text-secondary" style="font-variation-settings: 'FILL' 1;">done_all</span>
+</div>
+</div>
+<!-- Typing Indicator -->
+<div class="flex items-center gap-3 ml-1 opacity-60">
+<div class="flex gap-1 bg-surface-container-high px-3 py-2 rounded-full">
+<div class="w-1.5 h-1.5 bg-on-surface-variant rounded-full animate-pulse"></div>
+<div class="w-1.5 h-1.5 bg-on-surface-variant rounded-full animate-pulse [animation-delay:200ms]"></div>
+<div class="w-1.5 h-1.5 bg-on-surface-variant rounded-full animate-pulse [animation-delay:400ms]"></div>
+</div>
+</div>
+</main>
+<!-- Bottom Message Input Shell -->
+<footer class="fixed bottom-0 left-0 w-full z-50 px-4 pb-8 pt-4 bg-gradient-to-t from-background via-background/90 to-transparent">
+<div class="max-w-3xl mx-auto">
+<div class="glass-card rounded-full p-2 flex items-center gap-2 border border-white/10 shadow-2xl">
+<button class="p-2 text-zinc-400 hover:text-rose-400 transition-all scale-95 active:scale-90 flex items-center justify-center">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+<div class="flex-1 px-2">
+<input class="w-full bg-transparent border-none focus:ring-0 text-sm py-2 placeholder:text-zinc-600 font-medium" placeholder="Type a message..." type="text"/>
+</div>
+<div class="flex items-center gap-1 pr-1">
+<button class="p-2 text-zinc-400 hover:text-tertiary transition-all scale-95 active:scale-90 flex items-center justify-center">
+<span class="material-symbols-outlined">mood</span>
+</button>
+<button class="p-2 text-zinc-400 hover:text-secondary transition-all scale-95 active:scale-90 flex items-center justify-center">
+<span class="material-symbols-outlined">mic</span>
+</button>
+<button class="ml-1 bg-gradient-to-br from-[#ff8c95] to-[#ff7482] text-white rounded-full p-2.5 shadow-[0_0_15px_rgba(255,140,149,0.5)] scale-95 active:scale-90 transition-transform flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</div>
+</div>
+</footer>
+<!-- Background Ambient Glows -->
+<div class="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden pointer-events-none">
+<div class="absolute top-1/4 -right-1/4 w-[500px] h-[500px] bg-rose-500/10 blur-[120px] rounded-full"></div>
+<div class="absolute -bottom-1/4 -left-1/4 w-[500px] h-[500px] bg-secondary/5 blur-[120px] rounded-full"></div>
+</div>
+</body></html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-tint": "#ff8c95",
+                        "primary-dim": "#e80048",
+                        "on-background": "#ffffff",
+                        "on-tertiary-container": "#5b5a00",
+                        "secondary": "#29fcf3",
+                        "background": "#080808",
+                        "primary": "#ff8c95",
+                        "surface-container-low": "#121212",
+                        "primary-container": "#ff7482",
+                        "error": "#ff7351",
+                        "on-surface-variant": "#adaaaa",
+                        "outline-variant": "#333333",
+                        "on-surface": "#ffffff",
+                        "surface-variant": "#262625",
+                        "outline": "#4d4d4d",
+                        "surface": "#0e0e0e",
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Be Vietnam Pro", "sans-serif"],
+                        "label": ["Be Vietnam Pro", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(14, 14, 14, 0.45);
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .video-bg {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .chat-fade {
+            mask-image: linear-gradient(to top, black 85%, transparent 100%);
+        }
+        .reaction-float {
+            animation: float-up 3.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        @keyframes float-up {
+            0% { transform: translateY(0) scale(0.8); opacity: 0; }
+            10% { opacity: 1; }
+            100% { transform: translateY(-240px) scale(1.6) rotate(15deg); opacity: 0; }
+        }
+        .text-glow-primary {
+            text-shadow: 0 0 12px rgba(255, 140, 149, 0.4);
+        }
+        .pulse-soft {
+            animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse-ring {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.1); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body overflow-hidden">
+<!-- Full Screen Video Backdrop -->
+<img alt="Live Stream Content" class="video-bg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmr3fJcJzFHy4hry9HwGY7GL8Kv6PsZO8xTpRwh9SFZUkV8f0iOkZWjWvMoHfVXmTUsSsPD196liJCy1CXdWSV0wPfyyaTD18BHuwO7YlEEOg0bXZvV-y90ffANH39zD-fSRXHe37OW5nitDiYjMjhcZPGMJxC_PD6_IShFvmncVSCpyPRWmS4zFVRL96oPvK5G0ar9DlRIHXd34KNd_qmUiVVXAzTBjDs9zJxP2PGTmHYdO9ksGcGmz-h6h1PIwQeMRZhogJ6cMA"/>
+<!-- Refined Top Bar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-20 bg-gradient-to-b from-black/60 to-transparent">
+<div class="flex items-center gap-3.5">
+<div class="relative">
+<div class="w-11 h-11 rounded-full p-[2px] bg-gradient-to-tr from-primary to-secondary overflow-hidden">
+<img alt="Creator" class="w-full h-full object-cover rounded-full border border-black/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8pd_DNLaAGhn8XgU4A936VIP0MEXgA4nut3D6rW1J3tsg3K149T43-ulXn3KI54BoOP2Dh7oYvyEeZKDqFadzf8lrMYQUh6yJ2vgH2OPfscq7egHl3m9rLtDMVRPUDLNLXQ6KEw4Twm7Oo11ByNkbGjhsXYovLKBnmG7jgvq95mIPgO46uG7PXlhvGCtthIbl4WgEAObYctRvQEOlTlOmFOFoFRKzJyVEqcmTf0AWlCnPwlPZwpedZlkCs90rLv8tUU01VBPsFTs"/>
+</div>
+<div class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-primary rounded-full border-2 border-[#0e0e0e] pulse-soft"></div>
+</div>
+<div class="flex flex-col">
+<h1 class="font-headline font-extrabold italic tracking-tight text-lg text-white text-glow-primary">The Electric Cinema</h1>
+<div class="flex items-center gap-1.5">
+<span class="text-[10px] uppercase font-bold text-primary tracking-[0.15em]">Live Session</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="glass-panel px-3.5 py-1.5 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-xs" style="font-variation-settings: 'FILL' 1;">visibility</span>
+<span class="text-[11px] font-bold font-headline tracking-tighter">12,482</span>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full glass-panel border-white/5 text-white">
+<span class="material-symbols-outlined text-xl">search</span>
+</button>
+</div>
+</header>
+<!-- Content Layout -->
+<main class="relative h-screen w-full flex flex-col justify-end pb-32 px-5">
+<!-- Vertical Interaction Rail -->
+<aside class="absolute right-5 bottom-36 flex flex-col gap-5 items-center">
+<!-- Creator Mini-Profile -->
+<div class="relative group mb-2">
+<div class="w-14 h-14 rounded-full border-2 border-white/30 p-0.5 shadow-xl transition-transform active:scale-90">
+<img alt="Creator" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdqHeqpwccC6Q1m21t_Gro8YoPXviBJPk37Pxh4VqTf1ZT0e7PFkpILGm121nfYUCnuqYo56LTqiTaoGrq__4vf5oILWnrTqVjkT2mghuv6XVe1cp6CNMBbdNcYVMXElY79-3DuGcODs-gfwbk7-AfyO6jm7VSKatnLCyg82IwekQ1qh1iiTMNCZ5Lo2GBvZpvwAJ3xjyx-6pwkRhn2B2DcOaD6_uI1ejQTw7alzrA5-4JanPERlifbP-sg1UYCky5W8OzG0yS9p8"/>
+</div>
+<button class="absolute -bottom-1.5 left-1/2 -translate-x-1/2 bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center shadow-lg border border-white/10">
+<span class="material-symbols-outlined text-[14px] font-bold">add</span>
+</button>
+</div>
+<!-- Like Action -->
+<div class="flex flex-col items-center gap-1">
+<button class="w-13 h-13 flex items-center justify-center rounded-full glass-panel group active:scale-90 transition-all">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 duration-200" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<span class="text-[11px] font-bold text-white/90">242.1K</span>
+</div>
+<!-- Comments Action -->
+<div class="flex flex-col items-center gap-1">
+<button class="w-13 h-13 flex items-center justify-center rounded-full glass-panel group active:scale-90 transition-all">
+<span class="material-symbols-outlined text-white/90">mode_comment</span>
+</button>
+<span class="text-[11px] font-bold text-white/90">1.2K</span>
+</div>
+<!-- Share Action -->
+<div class="flex flex-col items-center gap-1">
+<button class="w-13 h-13 flex items-center justify-center rounded-full glass-panel group active:scale-90 transition-all">
+<span class="material-symbols-outlined text-white/90">ios_share</span>
+</button>
+<span class="text-[11px] font-bold text-white/90">Share</span>
+</div>
+<!-- Gift / Effects Action -->
+<button class="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-[#fefb00] to-[#f5f200] text-black shadow-lg shadow-yellow-500/20 active:scale-90 transition-all mt-2">
+<span class="material-symbols-outlined font-bold">celebration</span>
+</button>
+</aside>
+<!-- Bottom Left Interface -->
+<section class="w-full max-w-[82%] space-y-5">
+<!-- Scrolling Chat -->
+<div class="chat-fade max-h-56 overflow-y-hidden flex flex-col gap-3.5 pr-4">
+<div class="flex items-start gap-2.5">
+<img alt="User" class="w-7 h-7 rounded-full border border-white/10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMy9xwh3XJXqkx-1o0ahCm-nPbmtpoAltxhJK1BDLMCTGe7Iv-QB2gwgCs0h1tmWa7ZsMQBFq1BELcQ07E1M3xPyqvEjIQFqmgEbGAqUfiOywLd9MZKXXslZlbjANSEgqVq2Sh2BXXaSOQlCrSu2dlAKpRUQ8vU0fb8r6IdNn-s6X_h8tUUOpSABRVbfUw9CQbz84HyIVswdWZB-YhPTSTUmvw5Tap48ZkA7PP8kie80FZUjVUQbJDoPFlObUnfl9T1J3y4hY6U3I"/>
+<div class="glass-panel rounded-2xl rounded-tl-none px-3.5 py-2">
+<p class="text-[13px] leading-relaxed">
+<span class="font-bold text-secondary mr-1.5">Cyber_Ghost</span>
+<span class="text-white/90">This track is absolutely fire! 🔥 Live mixing is insane tonight.</span>
+</p>
+</div>
+</div>
+<div class="flex items-start gap-2.5">
+<img alt="User" class="w-7 h-7 rounded-full border border-white/10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVG7BJ7HD7Be9Zo21YWt-7jYLPWxt4At3tMs_byDyGrxvLuAaPdmFhbAmichVnIhTsuFveyRAbP9EDCoE7IWMlQc8gyId42CPxLTnNVczb-dlA8fsDDRsl0KdtR8EVOUeyH4QiWX-mpa6ppvI4OK0uF3JfR7_T_Xn1CAfUhlRTiAgfNqGDNG_ydIFC6lv_Nco9PAyNT2zAxuc9UhfOHdIRZI4mV5F99tHfTLEdmlq1l-MiZ3odPV9lozcdsScAM7X36-WD_q8PLtg"/>
+<div class="glass-panel rounded-2xl rounded-tl-none px-3.5 py-2">
+<p class="text-[13px] leading-relaxed">
+<span class="font-bold text-primary mr-1.5">Neon_Dreamer</span>
+<span class="text-white/90">The glow effect on the lead synth is incredible. Tutorial soon?</span>
+</p>
+</div>
+</div>
+<div class="flex items-start gap-2.5">
+<img alt="User" class="w-7 h-7 rounded-full border border-white/10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNMWc6SO9bHpKHLQldeeNRb_l0YHlPwZ9uPCXGT_-wjekxOINTDIaonsu89CU_rEwXlbq_ZPFNKeKE4SjuKRaFfhq0nCw3rcyjW9AcmhlB4q503ieqT9snwoYBbdCtB-4GWjqbnMLX2q_rIgj6-9YXoihAFOzNKXcQ1kB5PQpUPbM9RobMCpydSTJY5RqgbOW-hGWWwMfMdxrQ4m2EvPA-m_idstvbXYnrx7MDcZXvaMftOtIcaqd3Y3gR2HXw7g7ZvQjGfBlQtmg"/>
+<div class="bg-primary/20 backdrop-blur-xl border border-primary/30 rounded-2xl rounded-tl-none px-3.5 py-2">
+<p class="text-[13px] leading-relaxed">
+<span class="font-bold text-primary-fixed mr-1.5">Pixel_King</span>
+<span class="text-white font-medium">Just gifted 10 Super Sparks! ⚡️⚡️⚡️</span>
+</p>
+</div>
+</div>
+</div>
+<!-- Metadata & CTA Panel -->
+<div class="glass-panel p-5 rounded-[1.5rem] border-white/10 space-y-4">
+<div class="space-y-1.5">
+<h2 class="font-headline font-bold text-xl leading-tight tracking-tight text-white">Vivid Pulse: Midnight Session 04</h2>
+<p class="text-white/60 text-[13px] leading-relaxed line-clamp-2">Sound design workflow and live modular synthesis. Exploring granular patches for upcoming EP.</p>
+</div>
+<div class="flex items-center gap-3 pt-1">
+<button class="flex-1 bg-white text-black font-headline font-bold px-6 py-2.5 rounded-full text-xs uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-white/90 transition-all shadow-lg active:scale-95">
+<span class="material-symbols-outlined text-[16px] font-bold">person_add</span>
+                        Add Guest
+                    </button>
+<button class="glass-panel hover:bg-white/10 text-white font-headline font-bold px-6 py-2.5 rounded-full text-xs transition-all active:scale-95">
+                        Library
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Reactions Animation Overlay -->
+<div class="fixed right-8 bottom-48 pointer-events-none overflow-hidden h-72 w-32 flex flex-col justify-end items-center">
+<span class="material-symbols-outlined absolute text-primary opacity-0 reaction-float" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="material-symbols-outlined absolute text-secondary opacity-0 reaction-float" style="font-variation-settings: 'FILL' 1; animation-delay: 0.8s; left: 20%;">bolt</span>
+<span class="material-symbols-outlined absolute text-[#fefb00] opacity-0 reaction-float" style="font-variation-settings: 'FILL' 1; animation-delay: 1.4s; right: 20%;">auto_awesome</span>
+</div>
+<!-- Professional Tab Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50">
+<div class="mx-auto max-w-md bg-[#121212]/95 backdrop-blur-2xl border-t border-white/5 px-6 pb-8 pt-4 flex justify-between items-center rounded-t-[2.5rem] shadow-[0_-8px_32px_rgba(0,0,0,0.6)]">
+<a class="flex flex-col items-center justify-center p-2 text-white/50 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[28px]">home</span>
+</a>
+<a class="flex flex-col items-center justify-center p-2 text-white/50 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[28px]">explore</span>
+</a>
+<div class="relative -top-8">
+<button class="w-16 h-16 rounded-full bg-gradient-to-tr from-primary to-primary-container text-white flex items-center justify-center shadow-[0_8px_24px_rgba(255,140,149,0.4)] border-4 border-[#121212] active:scale-90 transition-all">
+<span class="material-symbols-outlined text-3xl font-bold">add</span>
+</button>
+</div>
+<a class="flex flex-col items-center justify-center p-2 text-white/50 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[28px]">notifications</span>
+</a>
+<a class="flex flex-col items-center justify-center p-2 text-white/50 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[28px]">person</span>
+</a>
+</div>
+</nav>
+</body></html>
